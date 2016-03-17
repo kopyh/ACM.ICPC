@@ -3315,19 +3315,21 @@ void floyd(int n)
 }
 ///网络流
 ///最大流
+{
+
 ///EdmondsKarp
 {
 
-#define MAX 0x3f3f3f3f
-#define N 1010
-#define M 100010
+//O(V*E^2)
 int n,m;
-int pre[N]//标记在这条路径上当前节点的前驱,同时标记该节点是否在队列中
-int g[N][N];//记录残留网络的容量
-int BFS(int src,int des)
+//标记在这条路径上当前节点的前驱,同时标记该节点是否在队列中
+int pre[N];
+//记录残留网络的容量
+int g[N][N];
+int BFS(int src,int des,int n)
 {
     int i,j;
-    int flow[N]//flow[]标记从源点到当前节点实际还剩多少流量可用
+    int flow[N];
     queue<int> q;
     while(!q.empty())
         q.pop();
@@ -3339,18 +3341,17 @@ int BFS(int src,int des)
     {
         int index = q.front();
         q.pop();
-        if(index == des)//找到了增广路径
+        if(index == des)
             break;
         for(i=1;i<=n;i++)
             if(i!=src && pre[i]==-1 && g[index][i]>0)
             {
-                pre[i] = index;//记录前驱
-                //关键：迭代的找到增量
+                pre[i] = index;
                 flow[i] = min(g[index][i],flow[index]);
                 q.push(i);
             }
     }
-    if(pre[des] == -1)//残留图中不再存在增广路径
+    if(pre[des] == -1)
         return -1;
     else
         return flow[des];
@@ -3359,40 +3360,199 @@ int maxFlow(int src,int des)
 {
     int increasement = 0;
     int sumflow = 0;
-    while((increasement = BFS(src,des)) != -1)
+    while((increasement = BFS(src,des,des-src)) != -1)
     {
-        int k = des;//利用前驱寻找路径
+        int k = des;
         while(k != src)
         {
             int last = pre[k];
-            g[last][k] -= increasement;//改变正向边的容量
-            g[k][last] += increasement;//改变反向边的容量
+            g[last][k] -= increasement;
+            g[k][last] += increasement;
             k = last;
         }
         sumflow += increasement;
     }
     return sumflow;
 }
-int main()
+
+
+}
+///SAP
 {
-    int i,j;
-    int s,t,w,src,des;
-    while(scanf("%d%d%d%d",&n,&m,&src,&des)!=EOF);
+
+int pre[N];
+int g[N][N];
+int gap[N],dis[N],cur[N];
+//0~sum-1
+int sap(int src,int des,int sum)
+{
+    memset(cur,0,sizeof(cur));
+    memset(dis,0,sizeof(dis));
+    memset(gap,0,sizeof(gap));
+    int u=pre[src]=src,maxflow=0,aug=-1;
+    gap[0]=sum;
+    while(dis[src]<sum)
     {
-        memset(g,0,sizeof(g));
-        for(i=0;i<m;++i)
+        int flag=1;
+        while(flag)
         {
-            scanf("%d%d%d",&s,&t,&w);
-            if(s == t)  //考虑起点终点相同的情况
-               continue;
-            g[s][t] += w;//此处注意可能出现多条同一起点终点的情况
+            flag=0;
+            for(int v=cur[u]; v<sum; v++)
+            {
+                if(g[u][v] && dis[u]==dis[v]+1)
+                {
+                    if(aug==-1 || aug>g[u][v])aug=g[u][v];
+                    pre[v]=u;
+                    u=cur[u]=v;
+                    if(v==des)
+                    {
+                        maxflow+=aug;
+                        for(u=pre[u]; v!=src; v=u,u=pre[u])
+                        {
+                            g[u][v]-=aug;
+                            g[v][u]+=aug;
+                        }
+                        aug=-1;
+                    }
+                    flag=1;
+                }
+                if(flag)break;
+            }
         }
-        printf("%d\n",maxFlow(src,des));
+        int mindis=sum-1;
+        for(int v=0; v<sum; v++)
+            if(g[u][v]&&mindis>dis[v])
+            {
+                cur[u]=v;
+                mindis=dis[v];
+            }
+        if((--gap[dis[u]])==0)break;
+        gap[dis[u]=mindis+1]++;
+        u=pre[u];
     }
-    return 0;
+    return maxflow;
+}
+
+
+}
+///ISAP
+{
+
+struct Edge
+{
+    int to,next,cap,flow;
+} edge[M];
+int tol;
+int head[N];
+int gap[N],dep[N],cur[N];
+void init()
+{
+    tol = 0;
+    memset(head,-1,sizeof(head));
+}
+void addedge(int u,int v,int w,int rw = 0)
+{
+    edge[tol].to = v;
+    edge[tol].cap = w;
+    edge[tol].flow = 0;
+    edge[tol].next = head[u];
+    head[u] = tol++;
+    edge[tol].to = u;
+    edge[tol].cap = rw;
+    edge[tol].flow = 0;
+    edge[tol].next = head[v];
+    head[v] = tol++;
+}
+int Q[N];
+void BFS(int start,int ends)
+{
+    memset(dep,-1,sizeof(dep));
+    memset(gap,0,sizeof(gap));
+    gap[0] = 1;
+    int fronts = 0, rear = 0;
+    dep[ends] = 0;
+    Q[rear++] = ends;
+    while(fronts != rear)
+    {
+        int u = Q[fronts++];
+        for(int i = head[u]; i != -1; i = edge[i].next)
+        {
+            int v = edge[i].to;
+            if(dep[v] != -1)continue;
+            Q[rear++] = v;
+            dep[v] = dep[u] + 1;
+            gap[dep[v]]++;
+        }
+    }
+}
+int S[N];
+int sap(int start,int ends,int sum)
+{
+    BFS(start,ends);
+    memcpy(cur,head,sizeof(head));
+    int top = 0;
+    int u = start;
+    int ans = 0;
+    while(dep[start] < sum)
+    {
+        if(u == ends)
+        {
+            int Min = INF;
+            int inser;
+            for(int i = 0; i < top; i++)
+                if(Min > edge[S[i]].cap - edge[S[i]].flow)
+                {
+                    Min = edge[S[i]].cap - edge[S[i]].flow;
+                    inser = i;
+                }
+            for(int i = 0; i < top; i++)
+            {
+                edge[S[i]].flow += Min;
+                edge[S[i]^1].flow -= Min;
+            }
+            ans += Min;
+            top = inser;
+            u = edge[S[top]^1].to;
+            continue;
+        }
+        bool flag = false;
+        int v;
+        for(int i = cur[u]; i != -1; i = edge[i].next)
+        {
+            v = edge[i].to;
+            if(edge[i].cap - edge[i].flow && dep[v]+1 == dep[u])
+            {
+                flag = true;
+                cur[u] = i;
+                break;
+            }
+        }
+        if(flag)
+        {
+            S[top++] = cur[u];
+            u = v;
+            continue;
+        }
+        int Min = N;
+        for(int i = head[u]; i != -1; i = edge[i].next)
+            if(edge[i].cap - edge[i].flow && dep[edge[i].to] < Min)
+            {
+                Min = dep[edge[i].to];
+                cur[u] = i;
+            }
+        gap[dep[u]]--;
+        if(!gap[dep[u]])return ans;
+        dep[u] = Min + 1;
+        gap[dep[u]]++;
+        if(u != start)u = edge[S[--top]^1].to;
+    }
+    return ans;
 }
 
 }
+
+}
+
 ///二分图匹配
 ///匈牙利算法，dfs实现
 {
