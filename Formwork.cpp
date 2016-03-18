@@ -76,6 +76,10 @@ DP！！！！！
     网络流
         最大流
             EdmondsKarp
+            dinic
+            SAP
+            ISAP
+        最小费用最大流
     二分图
         匈牙利算法
         Hopcroft-Karp算法
@@ -3321,7 +3325,6 @@ void floyd(int n)
 {
 
 //O(V*E^2)
-int n,m;
 //标记在这条路径上当前节点的前驱,同时标记该节点是否在队列中
 int pre[N];
 //记录残留网络的容量
@@ -3335,7 +3338,7 @@ int BFS(int src,int des,int n)
         q.pop();
     memset(pre,-1,sizeof(pre));
     pre[src] = src;
-    flow[src] = MAX;
+    flow[src] = INF;
     q.push(src);
     while(!q.empty())
     {
@@ -3356,11 +3359,11 @@ int BFS(int src,int des,int n)
     else
         return flow[des];
 }
-int maxFlow(int src,int des)
+int maxFlow(int src,int des,int n)
 {
     int increasement = 0;
     int sumflow = 0;
-    while((increasement = BFS(src,des,des-src)) != -1)
+    while((increasement = BFS(src,des,n)) != -1)
     {
         int k = des;
         while(k != src)
@@ -3375,6 +3378,67 @@ int maxFlow(int src,int des)
     return sumflow;
 }
 
+
+}
+///dinic
+{
+//O(V^2*E)
+struct edge{int x,y,next; int c;}e[M];
+int tot,head[N],ps[N],dep[N];
+void init()
+{
+    memset(head,-1,sizeof(head));
+    tot=0;
+}
+void addedge(int x,int y,int c)
+{
+    e[tot].x=x;e[tot].y=y;e[tot].c=c;
+    e[tot].next=head[x];head[x]=tot++;
+    e[tot].x=y;e[tot].y=x;e[tot].c=0;
+    e[tot].next=head[y];head[y]=tot++;
+}
+int flow(int src,int des,int n)
+{
+    int tr,res=0;
+    int i,j,k,l,r,top;
+    while(1)
+    {
+        //分层标号
+        memset(dep,-1,sizeof(dep));
+        for(l=dep[ps[0]=src]=0,r=1;l!=r;)
+        {
+            for(i=ps[l++],j=head[i];j!=-1;j=e[j].next)
+                if(e[j].c&&-1==dep[k=e[j].y])
+                {
+                    dep[k]=dep[i]+1;ps[r++]=k;
+                    if(k==des){ l=r; break; }
+                }
+        }
+        if(dep[des]==-1)break;
+        //深搜找增广路
+        for(i=src,top=0;;)
+        {
+            if(i==des)
+            {
+                for(k=0,tr=INF;k<top;++k)
+                    if(e[ps[k]].c<tr)tr=e[ps[l=k]].c;
+				for(k=0;k<top;++k)
+					e[ps[k]].c-=tr,e[ps[k]^1].c+=tr;
+				res+=tr;i=e[ps[top=l]].x;
+            }
+            for(j=head[i];j!=-1;j=e[j].next)
+                if(e[j].c&&dep[i]+1==dep[e[j].y])break;
+            if(j!=-1)
+                ps[top++]=j,i=e[j].y;
+            else
+            {
+                if(!top)break;
+                dep[i]=-1;i=e[ps[--top]].x;
+            }
+        }
+    }
+    return res;
+}
 
 }
 ///SAP
@@ -3552,7 +3616,99 @@ int sap(int start,int ends,int sum)
 }
 
 }
+///最小费用最大流
+{
 
+struct Edge
+{
+    int to,next,cap,flow,cost;
+} edge[M];
+int head[N],tol;
+int pre[N],dis[N];
+bool vis[N];
+int N;//节点总个数，节点编号从0~N-1
+void init(int n)
+{
+    N = n;
+    tol = 0;
+    memset(head,-1,sizeof(head));
+}
+void addedge(int u,int v,int cap,int cost)
+{
+    edge[tol].to = v;
+    edge[tol].cap = cap;
+    edge[tol].cost = cost;
+    edge[tol].flow = 0;
+    edge[tol].next = head[u];
+    head[u] = tol++;
+    edge[tol].to = u;
+    edge[tol].cap = 0;
+    edge[tol].cost = -cost;
+    edge[tol].flow = 0;
+    edge[tol].next = head[v];
+    head[v] = tol++;
+}
+bool spfa(int s,int t)
+{
+    queue<int>q;
+    for(int i = 0; i < N; i++)
+    {
+        dis[i] = INF;
+        vis[i] = false;
+        pre[i] = -1;
+    }
+    dis[s] = 0;
+    vis[s] = true;
+    q.push(s);
+    while(!q.empty())
+    {
+        int u = q.front();
+        q.pop();
+        vis[u] = false;
+        for(int i = head[u]; i != -1; i = edge[i].next)
+        {
+            int v = edge[i].to;
+            if(edge[i].cap > edge[i].flow &&
+                    dis[v] > dis[u] + edge[i].cost )
+            {
+                dis[v] = dis[u] + edge[i].cost;
+                pre[v] = i;
+                if(!vis[v])
+                {
+                    vis[v] = true;
+                    q.push(v);
+                }
+            }
+        }
+    }
+    if(pre[t] == -1)return false;
+    else return true;
+}
+//返回的是最大流，cost存的是最小费用
+int minCostMaxflow(int s,int t,int &cost)
+{
+    int flow = 0;
+    cost = 0;
+    while(spfa(s,t))
+    {
+        int Min = INF;
+        for(int i = pre[t]; i != -1; i = pre[edge[i^1].to])
+        {
+            if(Min > edge[i].cap - edge[i].flow)
+                Min = edge[i].cap - edge[i].flow;
+        }
+        for(int i = pre[t]; i != -1; i = pre[edge[i^1].to])
+        {
+            edge[i].flow += Min;
+            edge[i^1].flow -= Min;
+            cost += edge[i].cost * Min;
+        }
+        flow += Min;
+    }
+    return flow;
+}
+
+}
 ///二分图匹配
 ///匈牙利算法，dfs实现
 {
@@ -4062,6 +4218,8 @@ int solve()
 
 }
 ///最近公共祖先(LCA)
+{
+
 ///tarjan
 {
 
@@ -4270,6 +4428,8 @@ int main()
         printf("%d\n",dir[u] + dir[v] - 2*dir[lca]);
     }
     return 0;
+}
+
 }
 
 }
