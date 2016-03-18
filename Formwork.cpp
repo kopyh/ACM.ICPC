@@ -163,7 +163,6 @@ sscanf(init_str,"%d %s",num,str);
 
 #include <stdlib.h>
 int *p; p=(int*)malloc(sizeof(int)); free(p);
-//QuickSort
 int cmp( const void *a,const void *b )
 {return *(int*)b-*(int*)a;}//降序
 int cmp2(const void *a,const void *b)
@@ -183,13 +182,13 @@ k = (int)(log((double)n) / log(2.0));//2^k==n
 double sqrt(double num);
 double pow(double base,double exp);//求base的exp次方
 memset( the_array, 0, sizeof(the_array) );
-memcpy( the_array, src, sizeof(src));//src复制到the_array中
+memcpy( the_array, src, sizeof(src));
 
 #include <string.h>
-int strcmp( const char *str1, const char *str2 );//str1<str2,return负数；
+int strcmp( const char *str1, const char *str2 );//str1<str2,return负数
 void strcpy(int a[],int b[]);//字符串复制b赋给a
 int strlen(int a[]);
-char *strstr(char *str1, char *str2);//在str1中查找str2字符串第一次出现的位置，返回该位置指针，找不到则返回NULL；
+char *strstr(char *str1, char *str2);//str1中str2串第一次出现的指针,找不到返回NULL
 
 #include <time.h>
 clock_t clockBegin, clockEnd;
@@ -341,12 +340,12 @@ bitset<N> bit(str);
 bitset<N> bit(str,pos);
 bitset<N> bit(str,pos,num);
 bit.set();  bit.set(pos);   bit.reset();    bit.reset(pos);
-bit.flip(); bit.flip(pos); //按位取反；
-bit.size(); bit.count();//1的个数；
-bit.any();  bit.none(); //有1，无1；return bool;
+bit.flip(); bit.flip(pos); //按位取反
+bit.size(); bit.count();//1的个数
+bit.any();  bit.none(); //有1，无1；return bool
 bit.test(pos) == bit[pos]; //pos处为1？
 u = bit.to_ulong();
-str = bit.to_string(); //str[n-i-i]==bit[i];
+str = bit.to_string(); //str[n-i-i]==bit[i]
 
 ///algorithm;
 #include<algorithm>
@@ -575,37 +574,35 @@ public class Main {
 ///01背包
 {
 
-//n种物品中挑不重于m的最大价值物品，w[]重量，v[]价值
-f[i][v]=max{f[i-1][v],f[i-1][v-c[i]]+w[i]}//01背包的状态转移方程
-
+//01背包的状态转移方程
+dp[i][v]=max{dp[i-1][v],dp[i-1][v-c[i]]+w[i]}
 //初始化问题：
-memset(f,0,sizeof(f));
-/*
-f[0]=0;
-for(i=1;i<n;i++)//当要求背包必须全满时：初始化第一列(即重量为0时)值为0，其余为负无穷；
-    f[i]=-inf;
-*/
+memset(dp,0,sizeof(dp));
+//当要求背包必须全满时：初始化第一列(即重量为0时)值为0，其余为负无穷；
+for(dp[0]=0,i=1;i<n;i++)dp[i]=-INF;
 
 for(i=0;i<n;i++)
     for(j=m;j>=w[i];j--)
-        f[j]=max{f[j],f[j-w[i]]+v[i]};
+        dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 return dp[n][m];
 
 }
 ///完全背包
 {
 
-f[i][v]=max{f[i-1][v-k*c[i]]+k*w[i]};//完全背包状态转移方程
+//完全背包状态转移方程
+dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 for(i=0;i<n;i++)
     for(j=w[i];j>=m;j--)
-        f[j]=max{f[j],f[j-w[i]]+v[i]};
+        dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 
 }
 ///多重背包
 {
 
-f[i][v]=max{f[i-1][v-k*c[i]]+k*w[i]};//0<=k<=n[i];多重背包状态转移方程
+//0<=k<=n[i];多重背包状态转移方程
+dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 memset(dp,0,sizeof(dp));
 for(i=0;i<n;i++)
@@ -613,16 +610,13 @@ for(i=0;i<n;i++)
     memset(counts,0,sizeof(counts));
     for(j=w[i];j<=m;j++)
         if(dp[j]<dp[j-w[i]]+v[i] && counts[j-w[i]]<sum[i])
-        {
-            dp[j] = dp[j-w[i]]+v[i];
-            counts[j]=counts[j-w[i]]+1;
-        }
+            dp[j]=dp[j-w[i]]+v[i], counts[j]=counts[j-w[i]]+1;
 }
 
 }
 ///二维费用背包
 {
-    f[i][v][u]=max{f[i-1][v][u],f[i-1][v-a[i]][u-b[i]]+w[i]};
+    dp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
 }
 
 }
@@ -632,12 +626,10 @@ for(i=0;i<n;i++)
 ///最大连续子序列之和
 {
 
-int a[N],n;
-int solve()
+int solve(int a[],int n)
 {
     int i,maxx;
-    int sum[N];
-    memset(sum,0,sizeof(sum));
+    int sum[N]={0};
     sum[0]=max(a[0],0);
     for(i=1;i<n;i++)
         sum[i]=max(sum[i-1]+a[i],a[i]);
@@ -671,10 +663,8 @@ int maxSum()
         {
             for(k=1;k<=m;k++)
             {
-                if(i==0)
-                    a[k]=g[j][k];
-                else
-                    a[k]=g[j][k]-g[i-1][k];
+                if(i==0) a[k]=g[j][k];
+                else a[k]=g[j][k]-g[i-1][k];
             }
             sum = maxSum2();
             res = max(res,sum);
@@ -719,9 +709,7 @@ int LIS(int *a,int len)
 }
 
 //二分O(n*logn);
-#define N 5000100
-int a[N],b[N];
-int fen(int num,int l,int r)
+int fen(int num,int l,int r,int b[])
 {
     int mid;
     while(l<=r)
@@ -732,17 +720,15 @@ int fen(int num,int l,int r)
     }
     return l;
 }
-int LIS(int *a,int len)
+int LIS(int a[],int b[],int len)
 {
     int i,lenn;
     b[0]=a[0];
     lenn=1;
     for(i=1;i<len;i++)
     {
-        //如果a[i]比b[]数组中最大还大直接插入到后面即可
         if(a[i]>=b[lenn-1]) b[lenn++]=a[i];
-        //用二分的方法在b[]数组中找出第一个比a[i]大的位置并且让a[i]替代这个位置
-        else b[fen(a[i],0,lenn-1)]=a[i];
+        else b[fen(a[i],0,lenn-1,b)]=a[i];
     }
     return lenn;
 }
@@ -751,7 +737,7 @@ int LIS(int *a,int len)
 ///最长公共子序列(LCS)
 {
 
-int dp[N][N];
+int dp[N][N],n,m;
 int LCS(char *a, char *b)
 {
 	memset(dp,0,sizeof(dp));
@@ -772,7 +758,7 @@ int LCS(char *a, char *b)
 ///树dp
 {
 
-//技能树选择最大权值的办法，
+//技能树选择最大权值的办法
 vector<int>v[N];
 //f[k][i] means 在以k节点为根节点的子树中选择i个节点的最大值
 //每个节点的权值存在f[i][1]中,其他点初始化为-INF
