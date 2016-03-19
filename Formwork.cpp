@@ -1,4 +1,4 @@
-/*             My Formwork v2.9
+/*             My Formwork v2.10
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
@@ -146,9 +146,6 @@ DP！！！！！
     nim博弈：
     k倍减法博弈：
     sg函数
-    反转
-        一维反转(开关问题)
-        二维反转(十字反转)
 **/
 ///简单算法与STL！！！！！
 {
@@ -942,6 +939,7 @@ int main()
 ///Dancing Link
 {
 
+//用于求精确覆盖问题，数独的每个位置转换为覆盖矩阵的4个位置
 #define N 9
 const int MaxN = N*N*N + 10;
 const int MaxM = N*N*4 + 10;
@@ -1173,7 +1171,6 @@ int num[20][N]={0}; //记录元素所在区间当前位置前的元素进入到左子树的个数
 int lnum, rnum;    //询问区间里面k-th数左侧和右侧的数的个数
 long long sum[20][N]={0};//记录比当前元素小的元素的和
 long long lsum, rsum;   //询问区间里面k-th数左侧数之和与右侧数之和
-
 void build(int l, int r, int d)
 {
     if (l == r) return ;
@@ -1183,28 +1180,25 @@ void build(int l, int r, int d)
         if (val[d][i] > sorted[mid])
             same--;
     int lp = l, rp = mid+1;
-    for (int i=l; i<=r; i++) {
-        if (i == l) {
-            num[d][i] = 0;
-            sum[d][i] = 0;
-        } else {
-            num[d][i] = num[d][i-1];
-            sum[d][i] = sum[d][i-1];
-        }
-
-        if (val[d][i] > sorted[mid]) {
-            num[d][i]++;
-            sum[d][i] += val[d][i];
-            val[d+1][lp++] = val[d][i];
-        } else if (val[d][i] < sorted[mid])
+    for (int i=l; i<=r; i++)
+    {
+        if (i == l)num[d][i]=0, sum[d][i]=0;
+        else num[d][i]=num[d][i-1], sum[d][i]=sum[d][i-1];
+        if (val[d][i] > sorted[mid])
+            num[d][i]++, sum[d][i]+=val[d][i], val[d+1][lp++]=val[d][i];
+        else if (val[d][i] < sorted[mid])
             val[d+1][rp++] = val[d][i];
-        else {
-            if (same) {
+        else
+        {
+            if (same)
+            {
                 same--;
                 num[d][i]++;
                 sum[d][i] += val[d][i];
                 val[d+1][lp++] = val[d][i];
-            } else val[d+1][rp++] = val[d][i];
+            }
+            else
+                val[d+1][rp++] = val[d][i];
         }
     }
     build(l, mid, d+1);
@@ -1214,7 +1208,6 @@ int query(int a, int b, int k, int l, int r, int d)
 {
     if (a == b)
         return val[d][a];
-
     int mid = (l + r) >> 1;
     int s, ss;
     long long sss;
@@ -1245,8 +1238,6 @@ int query(int a, int b, int k, int l, int r, int d)
         return query(a, b, k-s, mid+1, r, d+1);
     }
 }
-bool cmp(int a,int b)
-{   return a>b; }
 void solve(int n,int m)
 {
     long long s[N]={0};
@@ -1256,7 +1247,7 @@ void solve(int n,int m)
         val[0][i] = sorted[i];
         s[i] = s[i-1] + sorted[i];
     }
-    sort(sorted+1,sorted+1+n,cmp);
+    sort(sorted+1,sorted+1+n);
     build(1,n,0);
 
     int x,y,k,res;
@@ -6095,99 +6086,6 @@ void solve()
     for(int i=0;i<n;i++)
         scanf("%d",&f[i]);
     getSG(N-1);
-}
-
-}
-///反转
-{
-
-///一维反转(开关问题)
-{
-
-//求一排硬币全部翻正面所需最少步骤
-//一次可以反转k个连续硬币；
-int solve(int k)  //k为一次翻转数量
-{
-    int i;
-    //flag[i]表示区间[i,i+k-1] 是否需要翻转
-    memset(flag,0,sizeof(flag));
-    int sum=0,cnt=0;//前k-1个转变的次数
-    //sum记录走到当前i，其前面k-1个翻转了多少次
-    for(i=0;i+k<=n;i++)
-    {
-        //如果前面翻转后为奇数 仍旧需要翻转
-        if((a[i]+sum)%2!=0)
-        {
-             flag[i]=1;
-             sum+=flag[i];
-             cnt++;
-        }
-        if(i-k+1>=0)//会有影响的是k-1格之内反转次数
-        {
-            sum-=flag[i-k+1];
-        }
-    }
-    //检查剩下的硬币是否还有为1的
-    for(i=n-k+1;i<n;i++)
-    {
-        if((sum+a[i])!=0)//无法全部反转成正面
-            return -1;
-        if(i-k+1>=0)
-        {
-            sum-=flag[i-k+1];
-        }
-    }
-    return cnt;
-}
-
-}
-///二维反转(十字反转)
-{
-
-//二维图中一次反转十字区域，求全部反转为0的反转方式；
-int n,m;
-//g储存初始形态，f储存反转方式
-int g[N][N],f[N][N];
-int check(int x,int y)
-{
-    return (g[x][y]+f[x][y]+f[x-1][y]+f[x+1][y]+f[x][y-1]+f[x][y+1]) % 2;
-}
-int solve()
-{
-    int i,j,k,t,res;
-    for(i=0;i<(1<<m);i++)
-    {
-        memset(f,0,sizeof(f));
-        res=0;
-        t=i;
-        for(j=1;j<=m;j++)
-        {
-            if(t&1)
-                f[1][j]=1;
-            t>>=1;
-        }
-        for(j=2;j<=n;j++)
-            for(k=1;k<=m;k++)
-                if(check(j-1,k))
-                    f[j][k]=1,res++;
-        flag=1;
-        for(j=1;j<=m;j++)
-            if(check(n,j))
-                flag=0;
-        if(flag)    //find the solve
-        {
-            for(j=1;j<=n;j++)
-            {
-                for(k=1;k<=m;k++)
-                    printf("%d ",f[j][k]);
-                printf("\n");
-            }
-            return res;
-        }
-    }
-    return -1;
-}
-
 }
 
 }
