@@ -1,4 +1,4 @@
-/*             My Formwork v2.8
+/*             My Formwork v2.9
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
@@ -32,6 +32,7 @@ DP！！！！！
     BFS(队列解法)
     A*启发式搜索算法
     IDA*迭代深化A*搜索
+    Dancing Link
 
 数据结构！！！！！
     并查集
@@ -149,7 +150,6 @@ DP！！！！！
         一维反转(开关问题)
         二维反转(十字反转)
 **/
-
 ///简单算法与STL！！！！！
 {
 
@@ -939,6 +939,129 @@ int main()
 ///IDA*迭代深化A*搜索
 //就是深搜，不断加大深搜上限，加上一个估价函数，
 //如过估价值加上当前搜索深度大于搜索深度上限的话就剪枝
+///Dancing Link
+{
+
+#define N 9
+const int MaxN = N*N*N + 10;
+const int MaxM = N*N*4 + 10;
+const int maxnode = MaxN*4 + MaxM + 10;
+char g[MaxN];
+struct DLX
+{
+    int n,m,size;
+    int U[maxnode],D[maxnode],R[maxnode],L[maxnode],Row[maxnode],Col[maxnode];
+    int H[MaxN],S[MaxM];
+    int ansd,ans[MaxN];
+    void init(int _n,int _m)
+    {
+        n = _n;
+        m = _m;
+        for(int i = 0; i <= m; i++)
+        {
+            S[i] = 0;
+            U[i] = D[i] = i;
+            L[i] = i-1;
+            R[i] = i+1;
+        }
+        R[m] = 0;
+        L[0] = m;
+        size = m;
+        for(int i = 1; i <= n; i++)H[i] = -1;
+    }
+    void Link(int r,int c)
+    {
+        ++S[Col[++size]=c];
+        Row[size] = r;
+        D[size] = D[c];
+        U[D[c]] = size;
+        U[size] = c;
+        D[c] = size;
+        if(H[r] < 0)H[r] = L[size] = R[size] = size;
+        else
+        {
+            R[size] = R[H[r]];
+            L[R[H[r]]] = size;
+            L[size] = H[r];
+            R[H[r]] = size;
+        }
+    }
+    void remove(int c)
+    {
+        L[R[c]] = L[c];
+        R[L[c]] = R[c];
+        for(int i = D[c]; i != c; i = D[i])
+            for(int j = R[i]; j != i; j = R[j])
+            {
+                U[D[j]] = U[j];
+                D[U[j]] = D[j];
+                --S[Col[j]];
+            }
+    }
+    void resume(int c)
+    {
+        for(int i = U[c]; i != c; i = U[i])
+            for(int j = L[i]; j != i; j = L[j])
+                ++S[Col[U[D[j]]=D[U[j]]=j]];
+        L[R[c]] = R[L[c]] = c;
+    }
+    bool Dance(int d)
+    {
+        if(R[0] == 0)
+        {
+            for(int i = 0; i < d; i++)g[(ans[i]-1)/9] = (ans[i]-1)%9 + '1';
+            for(int i = 0; i < N*N; i++)printf("%c",g[i]);
+            printf("\n");
+            return true;
+        }
+        int c = R[0];
+        for(int i = R[0]; i != 0; i = R[i])
+            if(S[i] < S[c])
+                c = i;
+        remove(c);
+        for(int i = D[c]; i != c; i = D[i])
+        {
+            ans[d] = Row[i];
+            for(int j = R[i]; j != i; j = R[j])remove(Col[j]);
+            if(Dance(d+1))return true;
+            for(int j = L[i]; j != i; j = L[j])resume(Col[j]);
+        }
+        resume(c);
+        return false;
+    }
+};
+void place(int &r,int &c1,int &c2,int &c3,int &c4,int i,int j,int k)
+{
+    r = (i*N+j)*N + k;
+    c1 = i*N+j+1;
+    c2 = N*N+i*N+k;
+    c3 = N*N*2+j*N+k;
+    c4 = N*N*3+((i/3)*3+(j/3))*N+k;
+}
+DLX dlx;
+int main()
+{
+    while(scanf("%s",g) == 1)
+    {
+        dlx.init(N*N*N,N*N*4);
+        int r,c1,c2,c3,c4;
+        for(int i = 0; i < N; i++)
+            for(int j = 0; j < N; j++)
+                for(int k = 1; k <= N; k++)
+                    if(g[i*N+j] == '.' || g[i*N+j] == '0'+k)
+                    {
+                        place(r,c1,c2,c3,c4,i,j,k);
+                        dlx.Link(r,c1);
+                        dlx.Link(r,c2);
+                        dlx.Link(r,c3);
+                        dlx.Link(r,c4);
+                    }
+        dlx.Dance(0);
+    }
+    return 0;
+}
+
+}
 
 }
 ///数据结构！！！！！
@@ -1044,13 +1167,12 @@ int query(int l,int r,int rt,int ql,int qr)
 
 //求区间第K大值，区间内大于小于k大值的数的和
 #define N 123456
-int sorted[N]={0};   //对原集合中元素排序后的值
+int sorted[N]={0};    //对原集合中元素排序后的值
 int val[20][N]={0};  //val记录第k层当前位置的值
 int num[20][N]={0}; //记录元素所在区间当前位置前的元素进入到左子树的个数
-int lnum, rnum;         //询问区间里面k-th数左侧和右侧的数的个数
-long long sum[20][N]={0};    //记录比当前元素小的元素的和
+int lnum, rnum;    //询问区间里面k-th数左侧和右侧的数的个数
+long long sum[20][N]={0};//记录比当前元素小的元素的和
 long long lsum, rsum;   //询问区间里面k-th数左侧数之和与右侧数之和
-
 
 void build(int l, int r, int d)
 {
@@ -2471,7 +2593,6 @@ int minString(char *s)
 }
 
 }
-
 ///Manacher最长回文子串
 {
 
@@ -5891,7 +6012,7 @@ while (a[i]<n)//构造数列
 }
 
 }
-///sg函数*：
+///sg函数：
 {
 
 //sg(x)=mex(f(y)|y是x的后继），即取后继节点集合中没有的最小非负整数
