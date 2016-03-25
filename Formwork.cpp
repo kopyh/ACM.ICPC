@@ -19,6 +19,7 @@ DP！！！！！
         最大子矩阵和
         最长递增子序列(LIS)
         最长公共子序列(LCS)
+    数位DP
     树DP
     区间DP
         最小代价构造回文串
@@ -752,6 +753,104 @@ int LCS(char *a, char *b)
 }
 
 }
+///数位dp
+{
+//是13的倍数包含13的个数
+///预处理
+{
+
+//dp[i][j][k]第i位余数为j的是否包含13的数的个数，k==0不包含，k==1首位为3，k==2包含13
+int dp[N][13][3],a[N];
+void init()
+{
+    a[0]=1;
+    for(int i=1;i<N;i++)
+        a[i] = a[i-1]*10%13;
+
+    memset(dp,0,sizeof(dp));
+    dp[0][0][0] = 1;
+    for(int i=1;i<N;i++)
+        for(int j=0;j<13;j++)
+        {
+            for(int k=0;k<10;k++)
+            {
+				dp[i][(j+a[i-1]*k)%13][0]+=dp[i-1][j][0];
+				dp[i][(j+a[i-1]*k)%13][2]+=dp[i-1][j][2];
+			}
+			dp[i][(j+a[i-1]*3)%13][1] += dp[i-1][j][0];
+            dp[i][(j+a[i-1])%13][0] -= dp[i-1][j][1];
+            dp[i][(j+a[i-1])%13][2] += dp[i-1][j][1];
+        }
+}
+int solve(int x)
+{
+    int dig[N],len=0;
+    while(x)dig[len++]=x%10,x/=10;
+    dig[len]=0;
+    int flag=0,ans=0,mod=0;
+    for(int i=len-1;i>=0;i--)
+    {
+//枚举当前位为j，得到前面的余数为(mod+j*a[i])%13，
+//后面位数中余数是(13-(mod+j*a[i])%13)%13的个数都是答案。
+        for(int j=0;j<dig[i];j++)
+            ans+=dp[i][(13-(mod+j*a[i])%13)%13][2];
+        if(flag)
+        {
+//前面已经有了13，只要是前面和后面所有位数的余数为0的就是答案。
+            for(int j=0;j<dig[i];j++)
+                ans+=dp[i][(13-(mod+j*a[i])%13)%13][0];
+        }
+        else
+        {
+			//首位是3的余数和为0就是答案。
+            if(dig[i+1]==1&&dig[i]>3)
+                ans+=dp[i+1][(13-mod)%13][1];
+			//取当前位为1后面首位为3的是答案。
+            if(dig[i]>1)
+                ans+=dp[i][(13-(mod+a[i])%13)%13][1];
+        }
+        if(dig[i+1]==1&&dig[i]==3)flag=1;
+        mod=(mod+dig[i]*a[i])%13;
+    }
+    return ans;
+}
+
+}
+///dfs
+{
+
+int dp[N][13][3],dig[N];
+//len:当前位，mod:前面留下的余数大小,k:前面是否出现13，flag:前面每一位是否都是上限。
+int dfs(int len, int mod, int k, int flag)
+{
+    if(len<=0)return (!mod && k==2);
+    if(!flag && dp[len][mod][k]!=-1)return dp[len][mod][k];
+    int num = flag?dig[len]:9;
+    int ans=0;
+    for(int i=0;i<=num;i++)
+    {
+        int modt = (mod*10+i)%13;
+        int kt;
+        if(k==2 || k==1&&i==3)kt=2;
+        else if(i==1)kt=1;
+        else kt=0;
+
+        ans+=dfs(len-1,modt,kt,flag&&num==i);
+    }
+    if(!flag)dp[len][mod][k] = ans;
+    return ans;
+}
+int solve(int x)
+{
+    memset(dp,-1,sizeof(dp));
+    int len=0;
+    while(x)dig[++len]=x%10,x/=10;
+    return dfs(len,0,0,1);
+}
+
+}
+
+}
 ///树dp
 {
 
@@ -798,8 +897,6 @@ int getRes(int w[],char s[])
 }
 ///括号匹配
 {
-
-
 //求最大括号匹配数
 bool is(char a,char b)
 {
