@@ -157,7 +157,7 @@ DP£¡£¡£¡£¡£¡
 
 # include<stdio.h>
 sprintf(result,"%d%d",num1,num2);
-sscanf(init_str,"%d %s",num,str);
+sscanf(init_str,"%d %s",&num,&str);
 
 #include <stdlib.h>
 int *p; p=(int*)malloc(sizeof(int)); free(p);
