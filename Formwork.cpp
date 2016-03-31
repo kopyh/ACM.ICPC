@@ -857,20 +857,22 @@ int solve(int x)
 //n节点技能树点m个技能获得最大权值的办法
 //f[k][i] means 在以k节点为根节点的子树中选择i个节点的最大值
 vector<int>g[N];
-int dp[N][N];
+int dp[N][N],w[N];
 void init(int n, int m)
 {
-    for(int i=0;i<=n;i++)for(int j=0;j<=m;j++)dp[i][j]=-INF;
+    for(int i=0;i<=n;i++)for(int j=0;j<=m;j++)dp[i][j]=0;
     for(int i=0;i<=n;i++)g[i].clear();
 }
-void dfs(int pos)
+void dfs(int pos,int fa)
 {
     int i,j,k;
-    for(i=0;i<g[pos].size();i++)dfs(g[pos][i]);
+    for(i=0;i<g[pos].size();i++)if(g[pos][i]!=fa)dfs(g[pos][i],pos);
+    for(k=0,i=0;i<=m;i++)k=max(k,dp[pos][i]),dp[pos][i]=k;
     for(i=0;i<g[pos].size();i++)
-        for(j=m;j>1;j--)//降序更新，防止重复加上子树的权值
-            for(k=0;k<j;k++)//j!=i 必须包含本节点的值
-                dp[pos][j] = max(dp[pos][j], dp[pos][j-k]+dp[g[pos][i]][k]);
+        if(g[pos][i]!=fa)
+            for(j=m;j>=w[pos];j--)//降序更新，防止重复加上子树的权值
+                for(k=1;j+k<=m;k++)
+                    dp[pos][j+k] = max(dp[pos][j+k], dp[pos][j]+dp[g[pos][i]][k]);
 }
 
 }
