@@ -149,12 +149,9 @@ DP！！！！！
     sg函数
 **/
 ///简单算法与STL！！！！！
-{
-
 #pragma comment(linker, "/STACK:1024000000,1024000000")
-///C
-{
 
+///C
 # include<stdio.h>
 sprintf(result,"%d%d",num1,num2);
 sscanf(init_str,"%d %s",&num,&str);
@@ -195,10 +192,7 @@ clockBegin = clock();
 clockEnd = clock();
 printf("time:%d\n", clockEnd - clockBegin);
 
-}
 ///C++
-{
-
 ///iostream
 #include<iostream>
 cin.getline(s,N,'\n');
@@ -375,10 +369,7 @@ find(begin,end,val);
 n = count(begin,end,val);
 next_permutation(begin,end);//返回该段序列的字典序下一种排列
 
-}
 ///输入输出外挂
-{
-
 int Scan()
 {
     int res=0,ch,flag=0;
@@ -396,41 +387,28 @@ void Out(int a)
     putchar(a%10+'0');
 }
 
-}
 ///大数处理
-{
-
 ///大数加法
-char str1[N], str2[N];
-char * bigAdd(char str1[], char str2[])
+void bigAdd(char a[], char b[], char ans[])
 {
-    char *temp;
-    int i, j, tmp, cp=0;
-    int l1 = strlen(str1);
-    int l2 = strlen(str2);
-    if(l1<l2){l1^=l2;l2^=l1;l1^=l2;temp=str2;str2=str1;str1=temp;}
-
-    for(i=l1-1,j=l2-1;i>=0&&j>=0;i--,j--)
+    int lena = strlen(a), lenb = strlen(b);
+    int i = lena-1,j = lenb-1,k = i>j?i:j, p = 0;
+    while(i>=0 || j>=0)
     {
-        tmp = str1[i]-'0' + str2[j]-'0' +cp;
-        str1[i] = tmp%10+'0', cp = tmp/10;
+        int t = (i>=0?a[i]-'0':0)+(j>=0?b[j]-'0':0)+p;
+        ans[k] = '0'+t%10;
+        p = t/10;
+        i--,j--,k--;
     }
-    while(cp)
+    ans[lena>lenb?lena:lenb]='\0';
+    if(p)
     {
-        if(i<0)
-        {
-            for(j=l1;j>=0;j--)
-                str1[j+1]=str1[j];
-            str1[0] = cp+'0';
-            cp=0;
-        }
-        else
-            tmp = str1[i]-'0'+cp, str1[i] = tmp%10+'0', cp = tmp/10, i--;
+        for(i=lena>lenb?lena:lenb; i>=0; i--)ans[i+1]=ans[i];
+        ans[0]='0'+p;
     }
-    return str1;
 }
+
 ///大数减法
-char str1[N], str2[N];
 char * bigSub(char *str1,char *str2)
 {
     int la=strlen(str1),lb=strlen(str2),flag=0,cp=0,i,j;
@@ -507,13 +485,10 @@ int bigCmp(char *str1,char *str2)
     return 0;
 }
 ///JAVA:
-{
-
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.math.BigDecimal;
 import java.util.Scanner;
-
 public class Main {
     static BigInteger gcd(BigInteger a,BigInteger b){
         if(!b.equals(BigInteger.ZERO)) return gcd(b,a.mod(b));
@@ -558,49 +533,31 @@ public class Main {
     }
 }
 
-}
-
-}
-
-}
 ///DP！！！！！
-{
-
 ///背包问题
-{
-
 ///01背包
-{
+//O(n*m)
+//转移方程：dp[i][v]=max{dp[i-1][v],dp[i-1][v-c[i]]+w[i]}
 
-//01背包的状态转移方程
-dp[i][v]=max{dp[i-1][v],dp[i-1][v-c[i]]+w[i]}
-//初始化问题：
-memset(dp,0,sizeof(dp));
-//当要求背包必须全满时：初始化第一列(即重量为0时)值为0，其余为负无穷；
-for(dp[0]=0,i=1;i<n;i++)dp[i]=-INF;
+memset(dp,0,sizeof(dp));//要求背包不一定全满
+for(dp[0]=0,i=1;i<n;i++)dp[i]=-INF;//要求背包必须全满
 
 for(i=0;i<n;i++)
     for(j=m;j>=w[i];j--)
         dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 return dp[n][m];
 
-}
 ///完全背包
-{
-
-//完全背包状态转移方程
-dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
+//O(n*m)
+//转移方程：dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 for(i=0;i<n;i++)
     for(j=w[i];j>=m;j--)
         dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 
-}
 ///多重背包
-{
-
-//0<=k<=n[i];多重背包状态转移方程
-dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
+//O(n*m)
+//转移方程：dp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 memset(dp,0,sizeof(dp));
 for(i=0;i<n;i++)
@@ -611,19 +568,12 @@ for(i=0;i<n;i++)
             dp[j]=dp[j-w[i]]+v[i], counts[j]=counts[j-w[i]]+1;
 }
 
-}
 ///二维费用背包
-{
-    dp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
-}
+//转移方程：dp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
 
-}
 ///长度DP
-{
-
 ///最大连续子序列之和
-{
-
+//O(n)
 int solve(int a[],int n)
 {
     int i,maxx;
@@ -634,60 +584,43 @@ int solve(int a[],int n)
     return sum[i-1];
 }
 
-}
 ///最大子矩阵和
+//O(n*n*m)
+int n,m,g[N][N],a[N];
+int maxSumLen()
 {
-
-int n,m;
-int n,sum,ans,res;
-int a[N],b[N],f[N][N],g[N][N];
-int maxSum2()
-{
-    memset(b,0,sizeof(b));
-    ans = b[0] = a[0];
-    for(int i=2;i<=m;i++)
-    {
-        b[i] = max(b[i-1]+a[i], a[i]);
-        ans = max(ans, b[i]);
-    }
-    return ans  ;
+    a[0] = max(a[0],0);
+    int ans = 0;
+    for(int i=1;i<=m;i++)
+        a[i]=max(a[i],a[i]+a[i-1]),ans=max(ans,a[i]);
+    return ans;
 }
 int maxSum()
 {
-    int i,j,k;
-    res=0;
-    for(i=1;i<=n;i++)
-        for(j=i;j<=n;j++)
+    int res = 0;
+    for(int i=1;i<=n;i++)
+        for(int j=i;j<=n;j++)
         {
-            for(k=1;k<=m;k++)
-            {
-                if(i==0) a[k]=g[j][k];
-                else a[k]=g[j][k]-g[i-1][k];
-            }
-            sum = maxSum2();
-            res = max(res,sum);
+            for(int k=1;k<=m;k++)
+                a[k]=g[j][k]-g[i-1][k];
+            res=max(res,maxSumLen());
         }
     return res;
 }
-int main()
+void solve()
 {
-    int i,j,t;
     memset(g,0,sizeof(g));
-    for(i=1;i<=n;i++)
-        for(j=1;j<=m;j++)
+    for(int i=1;i<=n;i++)
+        for(int j=1;j<=m;j++)
         {
-            scanf("%d",&t);
-            g[i][j]=g[i-1][j]+t;
+            scanf("%d",&g[i][j]);
+            g[i][j] += g[i-1][j];
         }
     printf("%d\n",maxSum());
-    return 0;
 }
 
-}
 ///最长递增子序列(LIS)
-{
-
-//O(n^2);
+//O(n^2)
 //转移方程：b[k]=max(max(b[j]|a[j]<a[k],j<k)+1,1);
 int LIS(int *a,int len)
 {
@@ -731,10 +664,8 @@ int LIS(int a[],int b[],int len)
     return lenn;
 }
 
-}
 ///最长公共子序列(LCS)
-{
-
+//O(n*m)
 int dp[N][N],n,m;
 int LCS(char *a, char *b)
 {
@@ -750,15 +681,9 @@ int LCS(char *a, char *b)
     return dp[n][m];
 }
 
-}
-
-}
 ///数位dp
-{
 //是13的倍数包含13的个数
 ///预处理
-{
-
 //dp[i][j][k]第i位余数为j的是否包含13的数的个数，k==0不包含，k==1首位为3，k==2包含13
 int dp[N][13][3],a[N];
 void init()
@@ -815,10 +740,7 @@ int solve(int x)
     return ans;
 }
 
-}
 ///dfs
-{
-
 int dp[N][13][3],dig[N];
 //len:当前位，mod:前面留下的余数大小,k:前面是否出现13，flag:前面每一位是否都是上限。
 int dfs(int len, int mod, int k, int flag)
@@ -848,19 +770,15 @@ int solve(int x)
     return dfs(len,0,0,1);
 }
 
-}
-
-}
 ///树dp
-{
-
+//O(n*m*m)
 //n节点技能树点m个技能获得最大权值的办法
-//f[k][i] means 在以k节点为根节点的子树中选择i个节点的最大值
+//dp[k][i] 在以k节点为根节点的子树中选择i权值的最大value, w[i] i节点所需权值
 vector<int>g[N];
 int dp[N][N],w[N];
 void init(int n, int m)
 {
-    for(int i=0;i<=n;i++)for(int j=0;j<=m;j++)dp[i][j]=0;
+    for(int i=0;i<=n;i++)for(int j=0;j<=m;j++)dp[i][j]=-INF;
     for(int i=0;i<=n;i++)g[i].clear();
 }
 void dfs(int pos,int fa)
@@ -875,20 +793,15 @@ void dfs(int pos,int fa)
                     dp[pos][j+k] = max(dp[pos][j+k], dp[pos][j]+dp[g[pos][i]][k]);
 }
 
-}
 ///区间DP
-{
-
 ///最小代价构造回文串；
-{
-
+//O(n^2)
 //w[]储存增添或删除不同字符所需代价，S[]储存原始串；
 //f[i][j] 将i到j构造为回文串所需的代价。
 int getRes(int w[],char s[])
 {
     int i,j,len = strlen(s);
-    int f[N][N];
-    memset(f,0,sizeof(f));
+    int f[len][len]={0};
     for(i=len-1;i>=0;i--)
         for(j=i;j<len;j++)
         {
@@ -899,9 +812,8 @@ int getRes(int w[],char s[])
     return f[0][len-1];
 }
 
-}
 ///括号匹配
-{
+//O(n^3)
 //求最大括号匹配数
 bool is(char a,char b)
 {
@@ -923,24 +835,14 @@ int getRes(char s[])
     return f[0][len-1];
 }
 
-}
-
-}
 ///Sparse Table
 ///一维RMQ
-{
-
-/*
-构造RMQ数组:
-ST(int n)   O(nlog(n))的算法复杂度
-dp[i][j] 表示从i到i+2^j -1中最小的一个值(从i开始持续2^j个数)
-dp[i][j]=min{dp[i][j-1],dp[i+2^(j-1)][j-1]}
-查询RMQ:
-RMQ(int i,int j)
-将i-j 分成两个2^k的区间
-即 k=(int)log2(i-j+1)
-查询结果应该为 min(f2[i][k],f2[j-2^k+1][k])
-*/
+//ST(n)初始化：O(n*logn)
+//dp[i][j] 从i到i+2^j -1中最小的一个值(从i开始持续2^j个数)
+//dp[i][j]=min{dp[i][j-1],dp[i+2^(j-1)][j-1]}
+//RMQ(i,j)查询
+//将i-j 分成两个2^k的区间 k=(int)log2(i-j+1)
+//查询结果应该为 min(f2[i][k],f2[j-2^k+1][k])
 int dp[N][35],num[N];
 void ST(int n)
 {
@@ -960,16 +862,11 @@ int RMQ(int l,int r)
     return t;
 }
 
-}
 ///二维RMQ
-{
-
-/*
-* 二维RMQ，预处理复杂度 n*m*log*(n)*log(m)
-* 数组下标从1开始
-*/
+//预处理 O(n*m*logn*logm)
+//数组下标从1开始
 int val[N][N];
-int dp[N][N][9][9];//最大值
+int dp[N][N][9][9];
 int mm[N];//二进制位数减一，使用前初始化
 void initRMQ(int n,int m)
 {
@@ -1023,14 +920,7 @@ int main()
     return 0;
 }
 
-
-}
-
-}
 ///搜索！！！！！
-{
-
-//搜索用不到模版啦
 ///DFS
 ///BFS
 ///A*启发式搜索算法(曼哈顿算法处理估价函数)
@@ -1038,9 +928,8 @@ int main()
 ///IDA*迭代深化A*搜索
 //就是深搜，不断加大深搜上限，加上一个估价函数，
 //如过估价值加上当前搜索深度大于搜索深度上限的话就剪枝
-///Dancing Link
-{
 
+///Dancing Link
 //用于求精确覆盖问题，数独的每个位置转换为覆盖矩阵的4个位置
 #define N 9
 const int MaxN = N*N*N + 10;
@@ -1161,25 +1050,12 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///数据结构！！！！！
-{
-
 ///并查集
-{
-
 void init(int n)
 {
     for(int i=1;i<=n;i++)f[i]=i;
 }
-//递归
-int getf(int v)
-{
-    return f[v]==v ? v : (f[v] = getf(f[v]));
-}
-//迭代
 int getf(int v)
 {
     while(f[v] != v)
@@ -1197,10 +1073,7 @@ void unions(int x,int y)
     f[y] = x;
 }
 
-}
 ///线段树
-{
-
 #define root 1 , n , 1
 #define lson l , m , rt << 1
 #define rson m + 1 , r , rt << 1 | 1
@@ -1261,10 +1134,7 @@ int query(int l,int r,int rt,int ql,int qr)
     return query(l,m,rt<<1,ql,qr)+query(m+1,r,rt<<1|1,ql,qr);
 }
 
-}
 ///划分树
-{
-
 //求区间第K大值，区间内大于小于k大值的数的和
 #define N 123456
 int sorted[N]={0};    //对原集合中元素排序后的值
@@ -1365,10 +1235,7 @@ void solve(int n,int m)
     }
 }
 
-}
 ///树状数组
-{
-
 #define N 1010000
 int inverse[N];
 void init()
@@ -1399,10 +1266,7 @@ int getSum(int now)
 	return sum;
 }
 
-}
 ///树链剖分
-{
-
 #define root 1 , tot , 1
 #define lson l , m , rt << 1
 #define rson m + 1 , r , rt << 1 | 1
@@ -1447,6 +1311,7 @@ void init()
 }
 int sum[N<<2];
 void pushUp(int rt)
+
 {
     sum[rt] = max(sum[rt<<1],sum[rt<<1|1]);
 }
@@ -1535,10 +1400,7 @@ int main()
     return 0;
 }
 
-}
 ///字典树
-{
-
 int sum=0,res=0;
 struct node
 {
@@ -1586,10 +1448,7 @@ void query_tree(char *str)
     res=tree[j].r;//以此为前缀的单词的数量
 }
 
-}
 ///Treap
-{
-
 struct Treap
 {
     int size;
@@ -1718,10 +1577,7 @@ void Print(Treap *t)
 }
 Treap *root=NULL;
 
-}
 ///伸展树(splay tree)
-{
-
 //数列的插入，删除，修改，翻转，循环，求极值，求和
 class SplayTree
 {
@@ -1995,12 +1851,10 @@ int main()
     return 0;
 }
 
-}
 ///主席树
-{
+//可持续化记录历史，就是建立历史上所有更新的线段树
+//对于每次询问从T[l]和T[r+1]同时开始查找，差值为区间内结果
 ///静态区间k大
-{
-
 #define N 112345
 #define M N*3
 int n,q,m,tot;
@@ -2104,10 +1958,7 @@ int main()
     return 0;
 }
 
-}
 ///动态区间k大
-{
-
 #define N 60010
 #define M 2500010
 int n,q,m,tot;
@@ -2285,10 +2136,7 @@ int main()
     return 0;
 }
 
-}
 ///区间不相同数数量
-{
-
 #define N 30010
 #define M 100*N
 int n,q,tot;
@@ -2388,10 +2236,7 @@ int main()
     return 0;
 }
 
-}
 ///树上路径点权第k大
-{
-
 #define N 200010
 #define M 40*N
 //主席树:
@@ -2588,13 +2433,8 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///哈希表
 ///ELFhash（字符串哈希函数）
-{
-
 const int MAXhash = 149993;
 typedef struct
 {
@@ -2658,15 +2498,9 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///字符串！！！！！
-{
-
 ///字符串最小表示法
-{
-
+//循环串字典序最小表示
 int minString(char *s)
 {
     int i=0,j=1,k=0;
@@ -2685,10 +2519,7 @@ int minString(char *s)
     return i<j?i:j;
 }
 
-}
 ///Manacher最长回文子串
-{
-
 int p[N*2];
 int Manacher(char *str)
 {
@@ -2713,10 +2544,7 @@ int Manacher(char *str)
     return ans-1;
 }
 
-}
 ///KMP
-{
-
 void getNext(char *pre, int len, int *next)
 {
     int i = 0,j = -1;
@@ -2749,10 +2577,7 @@ int kmp(char *str, char *pre)
     else return -1;
 }
 
-}
 ///扩展kmp
-{
-
 //next[i]:pre[i...lenp-1]与pre[0...lenp-1]的最长公共前缀
 //extend[i]:str[i...lens-1]与pre[0...lenp-1]的最长公共前缀
 void getEnext(char pre[],int len,int next[])
@@ -2799,10 +2624,7 @@ void ekmp(char pre[],char str[],int next[],int extend[])
     }
 }
 
-}
 ///AC自动机
-{
-
 #define N 500010
 #define M 128
 #define ZIFU 128
@@ -2907,14 +2729,9 @@ int main()
     return 0;
 }
 
-}
 ///后缀数组
-{
-
 //seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i的i-1的后缀子串的相同前缀长度。
 ///DA倍增算法 O(n*logn)
-{
-
 int seq[N], sa[N], ranks[N], height[N];
 int wwa[N], wwb[N], wws[N], wwv[N];
 bool cmp(int r[], int a, int b, int l)
@@ -2978,10 +2795,7 @@ int longestString()
     return res;
 }
 
-}
 ///DC3算法 O(N)
-{
-
 int seq[3*N], sa[3*N], ranks[3*N], height[3*N];
 int wwa[3*N], wwb[3*N], wws[3*N], wwv[3*N];
 int c0(int *r,int a,int b)
@@ -3036,12 +2850,7 @@ void solve()
     calheight(seq,n);
 }
 
-}
-
-}
 ///后缀自动机SAM
-{
-
 struct SAM
 {
     struct Node
@@ -3092,8 +2901,7 @@ struct SAM
     }
 };
 SAM sam;
-
-///最长公共子串
+//最长公共子串
 int n,m,sum,res,flag;
 char s[N];
 int main()
@@ -3130,18 +2938,10 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///图论！！！！！！
-{
-
 ///最小生成树
 ///prim
-{
-
-//O(n^2);
-#define N 1010
+//O(n^2)
 bool vis[N];
 int g[N][N],dist[N];
 int prim(int n)
@@ -3170,12 +2970,8 @@ int prim(int n)
     return res;
 }
 
-}
 ///kruskal
-{
-
-#define N 101000
-#define M 1000100
+//O(ElogE)
 int f[N];
 int cnt;
 struct node
@@ -3236,10 +3032,7 @@ int kruskal(int n,int m)
     return res;
 }
 
-}
 ///次小生成树
-{
-
 /*
 * 次小生成树
 * 求最小生成树时，用数组Max[i][j]来表示MST中i到j最大边权
@@ -3292,15 +3085,9 @@ int Prim(int cost[][N],int n)
     return ans;
 }
 
-
-}
 ///单源最短距离
 ///Dijkstra
-{
-
 //邻接矩阵存图，权值非负，O(n^2), 下标从1开始
-#define INF 0x3f3f3f3f
-#define N 1010
 int g[N][N],dist[N];
 bool vis[N];
 int dijkstra(int n,int u,int v)
@@ -3329,10 +3116,7 @@ int dijkstra(int n,int u,int v)
     return dist[v];
 }
 
-}
 ///堆优化Dijkstra
-{
-
 //O(ElogE)
 struct node
 {
@@ -3404,13 +3188,8 @@ void putRoad(int x,int y)
     printf("\n");
 }
 
-}
 ///Bellman-Ford
-{
-
 //能判负权边，直接存边，O(n*m);
-#define N 10010
-#define M 10010
 struct node
 {
     int x,y;
@@ -3450,12 +3229,7 @@ int bellman(int n,int m,int u)
     return 1;
 }
 
-}
 ///SPFA
-{
-
-#define N 10100
-#define M 10100
 struct node
 {
      int next=-1;
@@ -3507,11 +3281,8 @@ void SPFA(int u)
     }
 }
 
-}
 ///全图最短路
 ///Floyd
-{
-
 int g[N][N];
 void init(int n)
 {
@@ -3527,14 +3298,9 @@ void floyd(int n)
                 g[i][j] = min(g[i][j],g[i][k]+g[k][j]);
 }
 
-}
 ///网络流
 ///最大流
-{
-
 ///EdmondsKarp
-{
-
 //O(V*E^2)
 //标记在这条路径上当前节点的前驱,同时标记该节点是否在队列中
 int pre[N];
@@ -3589,10 +3355,7 @@ int maxFlow(int src,int des,int n)
     return sumflow;
 }
 
-
-}
 ///dinic
-{
 //O(V^2*E)
 struct edge{int x,y,next; int c;}e[M];
 int tot,head[N],ps[N],dep[N];
@@ -3651,10 +3414,7 @@ int flow(int src,int des,int n)
     return res;
 }
 
-}
 ///SAP
-{
-
 int pre[N];
 int g[N][N];
 int gap[N],dis[N],cur[N];
@@ -3708,11 +3468,7 @@ int sap(int src,int des,int sum)
     return maxflow;
 }
 
-
-}
 ///ISAP
-{
-
 struct Edge
 {
     int to,next,cap,flow;
@@ -3824,12 +3580,7 @@ int sap(int start,int ends,int sum)
     return ans;
 }
 
-}
-
-}
 ///最小费用最大流
-{
-
 struct Edge
 {
     int to,next,cap,flow,cost;
@@ -3919,11 +3670,8 @@ int minCostMaxflow(int s,int t,int &cost)
     return flow;
 }
 
-}
 ///二分图匹配
 ///匈牙利算法，dfs实现
-{
-
 //二分图匹配：二分图最大配对数
 //最小点覆盖：选取最少的点覆盖所有边
 //最大独立集：选取最多的点，集合中点之间无连接
@@ -4009,11 +3757,7 @@ int maxMatch()
     return res;
 }
 
-}
 ///Hopcroft-Karp算法
-{
-
-#define N 51234
 vector<int>g[N];
 int um[N],vm[N],n;
 int dx[N],dy[N],dis;
@@ -4087,10 +3831,7 @@ int maxMatch()
     return res;
 }
 
-}
 /// KM算法
-{
-
 //复杂度O(nx*nx*ny)
 //求最大权匹配
 //若求最小权匹配，可将权值取相反数，结果取相反数
@@ -4163,14 +3904,9 @@ int KM()
     return res;
 }
 
-}
 ///强连通分量
 ///tarjan
-{
-
-//O(n+m);
-#define N 110
-
+//O(n+m)
 vector<int>g[N];
 stack<int>st;
 // 深度优先搜索访问次序, 能追溯到的最早的次序
@@ -4246,15 +3982,9 @@ int solve()
     return cnt;
 }
 
-}
 ///双连通分量
-{
-
 ///边双连通分量
-{
-
 //连通分量中不含有桥，O(n+m);
-#define N 1123
 vector<int>g[N];
 stack<int>st;
 // 深度优先搜索访问次序, 能追溯到的最早的次序
@@ -4336,12 +4066,8 @@ int solve()
     return cnt;
 }
 
-}
 ///点双连通分量
-{
-
 //内部不含有割点的点集，割点属于所有包含它的联通分量，
-#define N 112345
 struct node
 {
     int x,y;
@@ -4425,18 +4151,8 @@ int solve()
     return cnt;
 }
 
-}
-
-}
 ///最近公共祖先(LCA)
-{
-
 ///tarjan
-{
-
-const int MAXN = 101001;
-const int MAXM = 101001;
-const int MAXQ = 101001;
 struct Tree{
     int head[MAXN];//前向星存图
     int next[MAXM];
@@ -4546,11 +4262,7 @@ int main()
     return 0;
 }
 
-
-}
 ///ST-RMQ在线算法
-{
-
 #define N 40010
 #define M 25
 int n,m;
@@ -4641,28 +4353,15 @@ int main()
     return 0;
 }
 
-}
-
-}
-
-}
 ///数论！！！！！
-{
-
 ///Fibonacci Number
-{
-
 int a[10]={0,1,1,2,3,5,8,13,21,34}
 a[i]=a[i-1]+a[i-2];
 a[n]=(pow((1+sqrt(5)),n)-pow((1-sqrt(5)),n))/(pow(2,n)*sqrt(5));
 
-}
 ///Greatest Common Divisor 最大公约数,欧几里德算法
-{
-
 long long gcd(long long x,long long y)
 {   return y?gcd(y,x%y):x;  }
-
 long long gcd(long long x,long long y)
 {
     if(x<y)x^=y,y^=x,x^=y;
@@ -4672,17 +4371,11 @@ long long gcd(long long x,long long y)
     return x;
 }
 
-}
 ///Lowest Common Multiple 最小公倍数
-{
-
 long long lcm(long long x,long long y)
 {   return x/gcd(x,y)*y;    }
 
-}
 ///扩展欧几里德算法
-{
-
 //扩展欧几里德求出a*x+b*y=gcd(a,b)的一组解,x0,y0，
 //x=x2+b/gcd(a,b)*t,y=y2-a/gcd(a,b)*t,(t为整数)，即为ax+by=c的所有解。
 long long exgcd(long long a, long long b,long long &x,long long &y)
@@ -4707,10 +4400,7 @@ long long solve(long long  a,long long b,long long c)
     return 0;
 }
 
-}
 ///快速幂运算
-{
-
 //eg:x^22==x^16+x^4+x^2;
 ////22==10110
 long long power(long long x,long long k,long long mod)
@@ -4725,10 +4415,7 @@ long long power(long long x,long long k,long long mod)
 	return ans;
 }
 
-}
 ///乘积求模
-{
-
 // a * b % n
 //例如: b = 1011101那么a * b mod n = (a * 1000000 mod n + a * 10000 mod n + a * 1000 mod n + a * 100 mod n + a * 1 mod n) mod n
 long long mod_mul(long long a,long long b,long long n)
@@ -4743,10 +4430,7 @@ long long mod_mul(long long a,long long b,long long n)
     return res;
 }
 
-}
 ///次方求模
-{
-
 //1:
 //a^b % n
 long long mod_exp(long long a,long long b,long long n)
@@ -4760,7 +4444,6 @@ long long mod_exp(long long a,long long b,long long n)
     }
     return res;
 }
-
 //2:
 //a^b mod c=(a mod c)^b mod c很容易设计出一个基于二分的递归算法。
 //快速幂算法，数论二分
@@ -4776,12 +4459,9 @@ long long mod_exp(long long a,long long b,long long c)
     return t;
 }
 
-}
 ///质数判断
 ///简单Prime判断
-{
-
-bool prime(int a)//简单优化
+bool prime(int a)
 {
     if(a==0||a==1)return false;
     if(a==2)return true;
@@ -4791,10 +4471,7 @@ bool prime(int a)//简单优化
     return true;
 }
 
-}
 ///Sieve Prime素数筛选法
-{
-
 #define N 11234567
 bool mark[N];
 int pri[N/10],cnt;
@@ -4818,8 +4495,6 @@ void SP()
 
 
 ///双筛
-{
-
 #define N 101000
 long long  a[N],sum,n,m;
 bool mark[N],num[N];//num[i]存n+i是否素数，
@@ -4851,18 +4526,11 @@ void solve()
     }
 }
 
-}
-
-}
 ///Miller-Rabin素数测试算法
-{
-
 //费马小定理：gcd(a,n)==1,a^(n-1)==1(mod n)，n为素数.
 //Carmichael：满足费小的合数，341,561,1105,1729……1e9范围内255个。
 //二次探测定理：x^2==1(mod n),n为素数,x==1||x==n-1.
-
 #define T 10//随机算法判定次数，N越大，判错概率越小
-
 long long modMul(long long a,long long b,long long n)
 {
     long long res = 0;
@@ -4923,7 +4591,6 @@ bool millerRabin(long long n)
     return true;
 }
 
-}
 ///因子
 ///唯一分解定理(因子个数)
 //sum=(s[0]+1)*(s[1]+1)*(s[2]+1)……
@@ -4957,8 +4624,6 @@ long long getFactorSum(long long x)
 }
 ///质因数分解
 ///pollard_rho 算法
-{
-
 long long factor[1000];//质因数分解结果（刚返回时是无序的）
 int sum;//质因数的个数。数组小标从0开始
 
@@ -5005,13 +4670,10 @@ void findFac(long long x)
     findFac(x/p);
 }
 
-}
 ///欧拉函数
-{
-
 //在数论，对正整数n，欧拉函数是少于或等于n的数中与n互质的数的数目。
 //欧拉定理：a与p互质，a^x==1(mod p)则x==euler[p];
-//直接求解欧拉函数
+///直接求解欧拉函数
 long long euler(long long n)
 {
      long long res=n,a=n;
@@ -5025,7 +4687,7 @@ long long euler(long long n)
      return res;
 }
 
-//筛选法打欧拉函数表
+///筛选法打欧拉函数表
 long long eul[N];
 void init()
 {
@@ -5038,10 +4700,7 @@ void init()
               eul[j]=eul[j]/i*(i-1);
 }
 
-}
 ///约瑟夫环
-{
-
 //就是长度为n的环每数m个就删去，最后留下一个。
 //找最后一点
 for(i=2,res=0;i<=n;i++)
@@ -5056,10 +4715,7 @@ for(i=0;i<n;i++)
         i=-1,res=0,k++;
 }
 
-}
 ///高斯消元
-{
-
 int a[N][N];//增广矩阵
 int x[N];//解集
 bool free_x[N];//标记是否是不确定的变元
@@ -5210,10 +4866,7 @@ int main()
     return 0;
 }
 
-}
 ///高斯消元处理开关问题
-{
-
 //一维开关之间互相有影响，求始末状态之间改变的方法数；
 int main()
 {
@@ -5248,15 +4901,8 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///组合数学！！！！！
-{
-
 ///排列组合
-{
-
 //求C(x,y),(x>=y);
 long long gcd(long long a,long long b)
 {    return b?gcd(b,a%b):a;     }
@@ -5282,10 +4928,7 @@ long long solve(long long x,long long y)
     return res;
 }
 
-}
 ///Lucas定理
-{
-
 //求C(n,m)%p;
 long long fac[100005];
 long long  getFact(long long  p){
@@ -5316,10 +4959,7 @@ long long  Lucas(long long  n,long long  m,long long  p){
     return ret;
 }
 
-}
 ///全排列
-{
-
 int len;int sum=0;
 char a[1000001][101];
 void Swap(char *a, char *b)
@@ -5356,16 +4996,10 @@ int main()
     return 0;
 }
 
-}
 ///错排公式
-{
-
 a[n]=(n-1)*(a[n-1]+a[n-2]);//n封信全部装错的可能
 
-}
 ///母函数：
-{
-
 ///整数划分
 //将整数n 分成最多n 份, 且每份不能为空, 任意两种分法不能相同
 #define N 130
@@ -5389,10 +5023,7 @@ void Init()
     }
 }
 
-}
 ///康托展开
-{
-
 int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //i的阶乘为fac[i]
 /*  康托展开.{1...n}的全排列由小到大有序，s[]为第几个数  */
 int KT(int n, int s[])
@@ -5410,10 +5041,7 @@ int KT(int n, int s[])
     return sum+1;
 }
 
-}
 ///逆康托展开
-{
-
 int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //i的阶乘为fac[i]
 /*  康托展开的逆运算. {1...n}的全排列，中的第k个数为s[]  */
 void invKT(int n, int k, int s[])
@@ -5435,10 +5063,7 @@ void invKT(int n, int k, int s[])
     }
 }
 
-}
 ///Catalan Number
-{
-
 //int num[10]={1,1,2,5,14,42,132,429,1430,4862};
 long long num[N];
 void Init()
@@ -5459,17 +5084,11 @@ void Init()
 6) n个数依次入栈，每个数只能入栈出栈一次，有多少种出栈序列
 */
 
-}
 ///Stirling Number(Second Kind)
-{
-
 //S(n, m)表示含n 个元素的集合划分为m 个集合的情况数或者是n 个有标号的球放到m 个无标号的盒子中, 要求无一为空, 其不同的方案数
 a[n][m]=a[n-1][m-1]+m*a[n-1][m];
 
-}
 ///容斥原理
-{
-
 //大小为n1,n2,n3的三个集合，有多少种组合
 //二集合中第i个不能与a[i]个一集合的项组合，不能与b[i]个三集合的项组合
 int a[N],b[N];
@@ -5484,7 +5103,6 @@ long long solve(int n2,int n2,int n3)
     }
     return sum;
 }
-
 //求小于n的数中能够整除a数组中某个数的数有多少个。
 void dfs(int now,int step,int flag)
 {
@@ -5493,12 +5111,7 @@ void dfs(int now,int step,int flag)
         dfs(i,lcm(step,a[i]),-flag);
 }
 
-}
-
-}
 ///计算几何！！！！！
-{
-
 const double eps = 1e-8;
 const double PI = acos(-1.0);
 int sgn(double x)
@@ -5976,39 +5589,24 @@ double Area_of_overlap(Point c1,double r1,Point c2,double r2)
 	return r1*r1*t1 + r2*r2*t2 - d*r1*sin(t1);
 }
 
-
 ///三角形公式
-{
+//三角形面积公式
+p=(a+b+c)/2;//半周长
+s=sqrt(p*(p-a)*(p-b)*(p-c));
 
-///三角形面积公式
-{
-    p=(a+b+c)/2;//半周长
-    s=sqrt(p*(p-a)*(p-b)*(p-c));
-}
+//三角形内切圆半径公式
+r=(2*s)/(a+b+c);
+r=(sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c))/2)/(a+b+c);
 
-///三角形内切圆半径公式
-{
-    r=(2*s)/(a+b+c);
-    r=(sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c))/2)/(a+b+c);
-}
+//三角形外接圆半径公式
+R=(a*b*c)/(4*s);
+R=(a*b*c/sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c)));
 
-///三角形外接圆半径公式
-{
-    R=(a*b*c)/(4*s);
-    R=(a*b*c/sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c)));
-}
+//圆内接四边形面积公式
+p=(a+b+c+d)/2;
+s=sqrt((p-a)*(p-b)*(p-c)*(p-d));
 
-///圆内接四边形面积公式
-{
-    p=(a+b+c+d)/2;
-    s=sqrt((p-a)*(p-b)*(p-c)*(p-d));
-}
-
-}
-
-///三分求极值
-{
-
+//三分求极值
 //三等分求图形函数极值
 //求(x,y)到y=a*x^2+b*x+c的最短距离；
 int a,b,c,x,y;
@@ -6034,23 +5632,13 @@ int main()
     return 0;
 }
 
-}
-
-}
 ///博弈论！！！！！
-{
-
 ///巴什博弈：
-{
-
 //二人轮流取一堆n个石子一次取1到m个，问谁先取完
 //必败态：n=k(m+1)，每轮共取m+1个。
 if(n%(m+1)==0)printf("second win\n");
 
-}
 ///威佐夫博弈：
-{
-
 //二人轮流取2堆a，b个石子，一次取其中一堆任意个或两堆相同数量个，问谁先取完
 //必败态：a=k(1+sqrt(5))/2,b=a+k;即a为黄金分割数向下取整，
 int ep1=(sqrt(5.0)-1.0)/2.0,ep2=(sqrt(5.0)+1.0)/2.0;
@@ -6059,10 +5647,7 @@ int tmp1=ep2*k,tmp2=k+tmp1;//判断是否为奇异局势
 int tmp3=ep2*(k+1),tmp4=k+1+tmp3;//求倍数时x的小数被抹去可能求值小1；
 if(tmp1==x&&tmp2==y||tmp3==x&&tmp4==y)printf("second win\n");
 
-}
 ///nim博弈：
-{
-
 //取n堆石子，一次从一堆中取任意个
 //必败态：a1^a2^a3^an=0,即各堆数量按位异或为0，转换为二进制之后每位相同数均为偶数。
 int a[N];
@@ -6088,10 +5673,7 @@ int nim(int n)
     return 0;
 }
 
-}
 ///k倍减法博弈：
-{
-
 //二人轮流取一堆石子，后一人取得数量不得超多迁移人数量的k倍；
 //k=1时：
 //转换为二进制取最后一个1，则后一人无法取到下一个1，必胜(若只有一个1必败)
@@ -6115,10 +5697,7 @@ while (a[i]<n)//构造数列
         b[i]=a[i];
 }
 
-}
 ///sg函数：
-{
-
 //sg(x)=mex(f(y)|y是x的后继），即取后继节点集合中没有的最小非负整数
 //必败态：sg(x)=0
 //由sg函数可求组合游戏，即sum=sg(1)^sg(2)^sg(n),参考nim博弈。
@@ -6167,7 +5746,6 @@ void solve()
     else return 0;
 }
 
-
 //f[]：可以取走的石子个数
 //sg[]:0~n的SG函数值
 //mex[]:mex{}
@@ -6201,12 +5779,7 @@ void solve()
     getSG(N-1);
 }
 
-}
-
-}
 ///header
-{
-
 //#include <bits/stdc++.h>
 #include <stdio.h>
 #include <string.h>
@@ -6237,12 +5810,12 @@ using namespace std;
 struct node
 {
     int x,y;
-    int r,w;
     friend bool operator < (node a, node b)
     {
-        return a.r > b.r;
+        return a.x > b.x;
     }
-}tn;
+};
+int n,m,res,sum,flag;
 int main()
 {
     int i,j,k,kk,t,x,y,z;
@@ -6261,9 +5834,3 @@ int main()
     printf("time=%lfs\n",(double)(finish-start)/1000);
     return 0;
 }
-
-}
-
-
-
-
