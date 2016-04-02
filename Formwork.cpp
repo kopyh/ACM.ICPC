@@ -4688,16 +4688,14 @@ long long euler(long long n)
 }
 
 ///筛选法打欧拉函数表
-long long eul[N];
+int eul[N];
 void init()
 {
-     eul[1]=1;
-     for(long long i=2;i<N;i++)
-       eul[i]=i;
-     for(long long i=2;i<N;i++)
+    for(int i=1;i<N;i++) eul[i] = i;
+    for(int i=2;i<N;i++)
         if(eul[i]==i)
-           for(long long j=i;j<N;j+=i)
-              eul[j]=eul[j]/i*(i-1);
+            for(int j=i;j<N;j+=i)
+                eul[j] = eul[j]/i*(i-1);
 }
 
 ///约瑟夫环
