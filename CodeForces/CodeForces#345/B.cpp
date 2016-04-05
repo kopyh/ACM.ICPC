@@ -1,35 +1,27 @@
 //kopyh
 #include <bits/stdc++.h>
-#define INF 0x3f3f3f3f3f3f3f3f
+#define INF 0x3f3f3f3f
 #define MOD 1000000007
-#define EPS 1e-6
-#define N 11234
+#define N 1123
 using namespace std;
-long long n,m,sum,res,flag;
-long long a[N],b[N];
+int n,m,sum,flag,res;
+int a[N];
 int main()
 {
-    long long i,j,k,kk,cas,T,t,x,y,z;
-    while(scanf("%I64d",&n)!=EOF)
+    int i,j,k,cas,T,t,x,y,z;
+    while(scanf("%d",&n)!=EOF)
     {
-        for(i=0;i<n;i++)scanf("%I64d",&a[i]);
-        sort(a,a+n);
-        res=0;sum=1;t=a[0];a[0]=0;
-        while(sum<n)
+        memset(a,0,sizeof(a));
+        for(i=0;i<n;i++)
         {
-            for(i=0;i<n;i++)
-                if(a[i]>t)
-                    sum++,t=a[i],a[i]=0,res++;
-            t=0;
-            for(i=0;!t&&i<n;i++)
-                if(a[i])
-                {
-                    t=a[i];a[i]=0;
-                    sum++;
-                    break;
-                }
+            scanf("%d",&t);
+            a[t]++;
         }
-        printf("%I64d\n",res);
+        t=res=0;
+        for(i=1;i<=1000;i++)
+            if(t<a[i])
+                res+=a[i]-t, t=a[i];
+        printf("%d\n",n-res);
     }
     return 0;
 }
