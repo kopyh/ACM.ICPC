@@ -3676,7 +3676,6 @@ int minCostMaxflow(int s,int t,int &cost)
 //最小点覆盖：选取最少的点覆盖所有边
 //最大独立集：选取最多的点，集合中点之间无连接
 //二分图最大匹配==最小点覆盖==总点数-最大独立集
-#define N 1234
 int n,m,cnt;
 int f[N];
 int vm[N],um[N];
@@ -3711,7 +3710,6 @@ int dfs(int u)
             vm[v] = u; um[u] = v;
             return v;
         }
-
     }
     return -1;
 }
@@ -3746,7 +3744,7 @@ int maxMatch()
 {
     Dye();
     int res = 0;
-    for(int i=1;i<=n;i++)
+    for(int i=1;i<=n+m;i++)
         if(!f[i])
         {
             memset(vis,0,sizeof(vis));
@@ -3758,6 +3756,8 @@ int maxMatch()
 }
 
 ///Hopcroft-Karp算法
+//O(E*sqrt(V))
+//只有u指向v的边
 vector<int>g[N];
 int um[N],vm[N],n;
 int dx[N],dy[N],dis;
@@ -4623,6 +4623,20 @@ long long getFactorSum(long long x)
     return sum;
 }
 ///质因数分解
+int num[N],now,all;
+void solve(int t)
+{
+    now = all = 0;
+    int tt=t;
+    for(int i=0;i<cnt&&pri[i]*pri[i]<=tt;i++)
+    {
+        if(tt%pri[i]==0)
+            num[now++] = pri[i];
+        while(tt%pri[i]==0)
+            tt/=pri[i],all++;
+    }
+    if(tt>1)num[now++] = tt, all++;
+}
 ///pollard_rho 算法
 long long factor[1000];//质因数分解结果（刚返回时是无序的）
 int sum;//质因数的个数。数组小标从0开始
