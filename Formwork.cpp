@@ -2445,7 +2445,6 @@ typedef struct
 Entry entry[MAXhash];
 int i = 1;      //词典总条数
 int hashIndex[MAXhash];
-
 int ELFHash(char *key)
 {
     unsigned long h=0;
@@ -2465,7 +2464,6 @@ int ELFHash(char *key)
 //    return h&0x7FFFFFFF;
     return h%MAXhash;
 }
-
 void finds(char f[])
 {
     int hashs = ELFHash(f);
@@ -2479,7 +2477,6 @@ void finds(char f[])
     }
     printf("eh\n");
 }
-
 int main()
 {
     char str[22];
@@ -3916,7 +3913,6 @@ int inStack[N],belong[N];
 // 索引号，强连通分量个数
 int index,cnt;
 int n,m;
-
 void init()
 {
     for(int i=0;i<N;i++)
@@ -3927,7 +3923,6 @@ void init()
 	memset(inStack, 0, sizeof(inStack));
 	index = cnt = 1;
 }
-
 void tarjan(int x,int fa)
 {
 	int i;
@@ -3954,7 +3949,6 @@ void tarjan(int x,int fa)
 			low[x] = min(low[x], dfn[t]);
 		}
 	}
-
 	// 最终退回来的时候 low == dfn ， 没有节点能将根节点更新，那必然就是根节点
 	if(low[x] == dfn[x])
 	{
@@ -3972,7 +3966,6 @@ void tarjan(int x,int fa)
 		cnt++;
 	}
 }
-
 // tarjan的成果是得到了一个belong数组，记录每个节点分别属于哪个强联通分量
 int solve()
 {
@@ -3994,7 +3987,6 @@ int inStack[N],belong[N];
 // 索引号，双连通分量个数
 int index,cnt;
 int n,m;
-
 void init()
 {
     for(int i=0;i<N;i++)
@@ -4005,7 +3997,6 @@ void init()
     memset(inStack, 0, sizeof(inStack));
     index = cnt = 1;
 }
-
 void tarjan(int x,int fa)
 {
     int i;
@@ -4057,7 +4048,6 @@ void tarjan(int x,int fa)
         cnt++;
     }
 }
-
 int solve()
 {
     for(int i = 1; i <= n; i++)
@@ -4086,7 +4076,6 @@ bool vis[N];
 // 索引号，块的个数
 int index,cnt;
 int n,m;
-
 void init()
 {
     for(int i=0;i<N;i++)
@@ -4097,7 +4086,6 @@ void init()
 	memset(low, 0, sizeof(low));
 	index = cnt = 1;
 }
-
 void judge(int u,int v)
 {
     int x,y;
@@ -4113,7 +4101,6 @@ void judge(int u,int v)
     }
     cnt++;
 }
-
 void tarjan(int x,int fa)
 {
 	low[x] = dfn[x] = index++;
@@ -4142,7 +4129,6 @@ void tarjan(int x,int fa)
         }
 	}
 }
-
 int solve()
 {
     for(int i = 1; i <= n; i++)
@@ -4493,7 +4479,6 @@ void SP()
     }
 }
 
-
 ///双筛
 #define N 101000
 long long  a[N],sum,n,m;
@@ -4597,14 +4582,15 @@ bool millerRabin(long long n)
 //s[i]为a的一个素因子的个数。
 long long getFactor(long long x)
 {
-    SP();
     long long sum=1;
-    for(int i=0;i<cnt&&pri[i]<=x;i++)
+    for(int i=0;i<cnt&&pri[i]*pri[i]<=x;i++)
     {
         long long res=0;
         while(x%pri[i]==0&&x)x/=pri[i],res++;
         sum*=(res+1);
     }
+    if(x>1)
+        sum*=2;
     return sum;
 }
 ///因子和
@@ -4612,14 +4598,15 @@ long long getFactor(long long x)
 //x有e[i]个素因子p[i];
 long long getFactorSum(long long x)
 {
-    SP();
     long long sum=1;
-    for(int i=0;i<cnt&&pri[i]<=x;i++)
+    for(int i=0;i<cnt&&pri[i]*pri[i]<=x;i++)
     {
         long long res=1,tmp=1;
         while(x%pri[i]==0&&x)x/=pri[i],tmp*=pri[i],res+=tmp;
         if(res)sum*=res;
     }
+    if(x>1)
+        sum*=x;
     return sum;
 }
 ///质因数分解
@@ -4640,7 +4627,6 @@ void solve(int t)
 ///pollard_rho 算法
 long long factor[1000];//质因数分解结果（刚返回时是无序的）
 int sum;//质因数的个数。数组小标从0开始
-
 long long gcd(long long a,long long b)
 {
     if(a==0)return 1;
@@ -4731,25 +4717,21 @@ for(i=0;i<n;i++)
 int a[N][N];//增广矩阵
 int x[N];//解集
 bool free_x[N];//标记是否是不确定的变元
-
 int  gcd(int x,int y)
 {   return y?gcd(y,x%y):x;  }
 int lcm(int a,int b)
 {   return a/gcd(a,b)*b;    }
-
 // 高斯消元法解方程组(Gauss-Jordan elimination).(-2表示有浮点数解，但无整数解，
 //-1表示无解，0表示唯一解，大于0表示无穷解，并返回自由变元的个数)
 //有equ个方程，var个变元。增广矩阵行数为equ,分别为0到equ-1,列数为var+1,分别为0到var.
 int Gauss(int equ,int var)
 {   // max_r当前这列绝对值最大的行.
     int i,j,k,max_r,col,ta,tb,LCM,temp,free_x_num,free_index;
-
     for(int i=0;i<=var;i++)
     {
         x[i]=0;
         free_x[i]=true;
     }
-
     //转换为上阶梯阵.
     col=0; // 当前处理的列
     for(k = 0;k < equ && col < var;k++,col++)
@@ -4791,7 +4773,6 @@ int Gauss(int equ,int var)
 //            }
         }
     }
-
     // 1. 无解的情况: 化简的增广阵中存在(0, 0, ..., a)这样的行(a != 0).
     for (i = k; i < equ; i++)
     { // 对于无穷解来说，如果要判断哪些是自由变元，那么初等行变换中的交换就会影响，则要记录交换.
@@ -5713,7 +5694,6 @@ while (a[i]<n)//构造数列
 //sg(x)=mex(f(y)|y是x的后继），即取后继节点集合中没有的最小非负整数
 //必败态：sg(x)=0
 //由sg函数可求组合游戏，即sum=sg(1)^sg(2)^sg(n),参考nim博弈。
-
 //f[]：可以取走的石子个数
 //sg[]:0~n的SG函数值
 //mex[]:mex{}
@@ -5757,7 +5737,6 @@ void solve()
     if(ans)return 1;
     else return 0;
 }
-
 //f[]：可以取走的石子个数
 //sg[]:0~n的SG函数值
 //mex[]:mex{}
