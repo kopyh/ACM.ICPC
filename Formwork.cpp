@@ -51,6 +51,7 @@ DP！！！！！
         树上路径点权第k大
     哈希表
         ELFhash（字符串哈希函数）
+    莫队算法
 
 字符串！！！！！
     字符串最小表示法
@@ -2492,6 +2493,55 @@ int main()
     }
     while(gets(str))
         finds(str);//开始输入查找字符串
+    return 0;
+}
+///莫队算法
+///分块有序暴力枚举
+long long n,m,sum,res,flag;
+long long num[N],ans[N],col[N];
+struct node
+{
+    long long l,r,id,pl;
+    friend bool operator < (node a, node b)
+    {
+        if(a.pl == b.pl) return a.r < b.r;
+        return a.pl < b.pl;
+    }
+}q[N];
+//区间操作,区间不相同数个数
+void updata(long long pos, int flag)
+{
+    res-=num[col[pos]];
+    num[col[pos]]=flag;
+    res+=num[col[pos]];
+}
+int main()
+{
+    long long  i,j,k,cas,T,t,x,y,z,l,r;
+    while(scanf("%I64d%I64d",&n,&m)!=EOF)
+    {
+        memset(num,0,sizeof(num));
+        for(i=1;i<=n;i++)
+            scanf("%I64d",&col[i]);
+        for(i=0;i<m;i++)
+        {
+            scanf("%I64d%I64d",&q[i].l,&q[i].r);
+            q[i].id=i; q[i].pl=(q[i].l-1)/(ceil(sqrt(1.0*n)));
+        }
+        sort(q,q+m);
+        l=1;r=res=0;
+        for(i=0;i<m;i++)
+        {
+            for(j=min(l,q[i].l);j<max(l,q[i].l);j++)
+                updata(j,(l>q[i].l?1:0));
+            for(j=max(r,q[i].r);j>min(r,q[i].r);j--)
+                updata(j,(r>q[i].r?0:1));
+            r = q[i].r; l = q[i].l;
+            ans[q[i].id] = res;
+        }
+        for(i=0;i<m;i++)
+            printf("%I64d\n",ans[i]);
+    }
     return 0;
 }
 
