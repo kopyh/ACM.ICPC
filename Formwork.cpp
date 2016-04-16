@@ -2672,22 +2672,25 @@ void ekmp(char pre[],char str[],int next[],int extend[])
 }
 
 ///AC自动机
-#define N 500010
-#define M 128
+#define N 100010
+#define M 201
 #define ZIFU 128
-//str储存单词字段，num存出现次数
 char str[N][M];
 int num[N],n,m;
 struct Trie
 {
-    //ends[]表示当前节点是哪个单词。
-    int next[N][ZIFU],fail[N],ends[N];
+    int next[N][ZIFU],fail[N];
+    vector<int>ends[N];
     int root,L;
+    int idx(char c)
+    {
+        return c;
+    }
     int newnode()
     {
         for(int i = 0;i < ZIFU;i++)
             next[L][i] = -1;
-        ends[L++] = -1;
+        ends[L++].clear();
         return L-1;
     }
     void init()
@@ -2695,20 +2698,18 @@ struct Trie
         L = 0;
         root = newnode();
     }
-    //添加单词字段
     void inserts(char s[],int id)
     {
         int len = strlen(s);
         int now = root;
         for(int i = 0;i < len;i++)
         {
-            if(next[now][s[i]] == -1)
-                next[now][s[i]] = newnode();
-            now = next[now][s[i]];
+            if(next[now][idx(s[i])] == -1)
+                next[now][idx(s[i])] = newnode();
+            now = next[now][idx(s[i])];
         }
-        ends[now] = id;
+        ends[now].push_back(id);
     }
-    //建立自动机
     void build()
     {
         queue<int>Q;
@@ -2735,7 +2736,6 @@ struct Trie
                 }
         }
     }
-    //查找buf字符串中包含多少个模式串
     int query(char buf[])
     {
         int sum=0;
@@ -2745,12 +2745,12 @@ struct Trie
         int now=root;
         for(int i=0;i<len;i++)
         {
-            now=next[now][buf[i]];
+            now=next[now][idx(buf[i])];
             int temp = now;
             while( temp != root )
             {
-                if(ends[temp] != -1)
-                    num[ends[temp]]++,sum++;
+                for(int j=0;j<ends[temp].size();j++)
+                    num[ends[temp][j]]++,sum++;
                 temp = fail[temp];
             }
         }
@@ -2758,8 +2758,7 @@ struct Trie
     }
 
 };
-//要匹配的字符串
-char buf[2*N];
+char buf[1000010];
 Trie ac;
 int main()
 {
