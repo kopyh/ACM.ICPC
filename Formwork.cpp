@@ -130,6 +130,7 @@ DP！！！！！
     Catalan Number
     Stirling Number(Second Kind)
     容斥原理
+    矩阵
 
 计算几何！！！！！
     坐标向量等
@@ -5151,6 +5152,39 @@ void dfs(int now,int step,int flag)
     sum+=(n/step)*flag;
     for(int i=now+1;i<m;i++)
         dfs(i,lcm(step,a[i]),-flag);
+}
+
+///矩阵
+struct Matrix
+{
+    long long ma[N][N];
+    long long n,m;
+};
+Matrix matMul(Matrix m1, Matrix m2, long long mod)
+{
+    Matrix ans;
+    memset(ans.ma,0,sizeof(ans.ma));
+    for(int i=0;i<m1.n;i++)
+        for(int j=0;j<m2.m;j++)
+            for(int k=0;k<m1.m;k++)
+                ans.ma[i][j]=(ans.ma[i][j]+m1.ma[i][k]*m2.ma[k][j]+mod)%mod;
+    ans.n=m1.n; ans.m=m2.m;
+    return ans;
+}
+Matrix matPow(Matrix m1, long long k, long long mod)
+{
+    Matrix ans;
+    for(int i=0;i<m1.n;i++)
+        for(int j=0;j<m1.m;j++)
+            ans.ma[i][j] = (i==j);
+    ans.n=ans.m=m1.n;
+    while(k)
+    {
+        if(k&1)ans = matMul(ans,m1,mod);
+        m1 = matMul(m1,m1,mod);
+        k>>=1;
+    }
+    return ans;
 }
 
 ///计算几何！！！！！
