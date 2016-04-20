@@ -76,6 +76,8 @@ DP！！！！！
         SPFA
     全图最短路
         Floyd
+    欧拉回路
+        fleury
     网络流
         最大流
             EdmondsKarp
@@ -3343,6 +3345,59 @@ void floyd(int n)
         for(int i=1;i<=n;i++)
             for(int j=1;j<=n;j++)
                 g[i][j] = min(g[i][j],g[i][k]+g[k][j]);
+}
+
+///欧拉回路
+///fleury
+int n,m;
+int g[N][N];
+stack<int> st;
+void dfs(int u)
+{
+    for(int i=1;i<=n;i++)
+        if(g[u][i])
+        {
+            g[u][i]=g[i][u]=0;
+            st.push(i);
+            dfs(i);
+            break;
+        }
+}
+void fleury(int u)
+{
+    while(!st.empty())st.pop();
+    st.push(u);
+    while(!st.empty())
+    {
+        int flag=1;
+        for(int i=1;i<=n;i++)
+            if(g[st.top()][i])
+            {
+                flag=0;
+                break;
+            }
+        if(flag)
+        {
+            printf("%d ",st.top());
+            st.pop();
+        }
+        else
+            dfs(st.top());
+    }
+}
+void solve()
+{
+    int res=0, u=1;
+    for(int i=1;i<=n;i++)
+    {
+        int sum=0;
+        for(int j=1;j<=n;j++)
+            sum+=g[i][j];
+        if(sum&1)u=i,res++;
+    }
+    if(res==0 || res==2)fleury(u);
+    else printf("Sorry! no euler path.");
+    printf("\n");
 }
 
 ///网络流
