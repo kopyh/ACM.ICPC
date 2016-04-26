@@ -2550,7 +2550,7 @@ int main()
 
 ///字符串！！！！！
 ///字符串最小表示法
-//循环串字典序最小表示
+//循环串字典序最小表示，O(n)
 int minString(char *s)
 {
     int i=0,j=1,k=0;
@@ -2570,6 +2570,7 @@ int minString(char *s)
 }
 
 ///Manacher最长回文子串
+//O(n)
 int p[N*2];
 int Manacher(char *str)
 {
@@ -2595,6 +2596,7 @@ int Manacher(char *str)
 }
 
 ///KMP
+//O(n+m),n%(n-next[n])==0得到循环节
 void getNext(char *pre, int len, int *next)
 {
     int i = 0,j = -1;
@@ -2779,7 +2781,8 @@ int main()
 }
 
 ///后缀数组
-//seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i的i-1的后缀子串的相同前缀长度。
+//处理子串重复或不相同的问题
+//seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i与i-1位的后缀子串的相同前缀长度。
 ///DA倍增算法 O(n*logn)
 int seq[N], sa[N], ranks[N], height[N];
 int wwa[N], wwb[N], wws[N], wwv[N];
@@ -2905,6 +2908,7 @@ struct SAM
     struct Node
     {
         int ch[26];
+        //失败指针,当前匹配位置的长度
         int f, len;
         void init()
         {
