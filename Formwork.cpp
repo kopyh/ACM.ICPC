@@ -2779,7 +2779,7 @@ int main()
 }
 
 ///后缀数组
-//seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i的i-1的后缀子串的相同前缀长度。
+//seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i与i-1位的后缀子串的相同前缀长度。
 ///DA倍增算法 O(n*logn)
 int seq[N], sa[N], ranks[N], height[N];
 int wwa[N], wwb[N], wws[N], wwv[N];
@@ -2816,7 +2816,7 @@ void calheight(int r[], int n)
 }
 void solve()
 {
-    //初始序0~n，最大值小于m。
+    //初始序0~n，字符数值1~m-1。
     seq[n]=0;
     da(seq,n+1,m);
     calheight(seq,n);
@@ -2893,7 +2893,7 @@ void calheight(int r[], int n)
 }
 void solve()
 {
-    //初始序0~n，最大值小于m。
+    //初始序0~n，字符数值1~m-1。
     seq[n]=0;
     dc3(seq,sa,n+1,m);
     calheight(seq,n);
