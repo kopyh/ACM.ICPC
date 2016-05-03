@@ -1099,7 +1099,7 @@ void pushDown(int l,int r,int rt)
         add[rt] = 0;
     }
 }
-void update(int l,int r,int rt,int ql,int qr,int val)
+void updata(int l,int r,int rt,int ql,int qr,int val)
 {
     if(l>qr||ql>r)return;
     if(l>=ql&&r<=qr)
@@ -1110,8 +1110,8 @@ void update(int l,int r,int rt,int ql,int qr,int val)
     }
     pushDown(l,r,rt);
     int m = (l+r)>>1;
-    if(ql<=m)update(lson,ql,qr,val);
-    if(qr>m)update(rson,ql,qr,val);
+    if(ql<=m)updata(lson,ql,qr,val);
+    if(qr>m)updata(rson,ql,qr,val);
     pushUp(rt);
 }
 void build(int l,int r,int rt)
@@ -1134,8 +1134,8 @@ int query(int l,int r,int rt,int ql,int qr)
     if(l>=ql&&r<=qr)
         return sum[rt];
     pushDown(l,r,rt);
-    int m = l+r>>1;
-    return query(l,m,rt<<1,ql,qr)+query(m+1,r,rt<<1|1,ql,qr);
+    int m = (l+r)>>1;
+    return query(lson,ql,qr)+query(rson,ql,qr);
 }
 
 ///划分树
@@ -3944,8 +3944,7 @@ int maxMatch()
 //复杂度O(nx*nx*ny)
 //求最大权匹配
 //若求最小权匹配，可将权值取相反数，结果取相反数
-const int N = 310;
-const int INF = 0x3f3f3f3f;
+const int N = 500;
 int nx,ny;//两边的点数
 int g[N][N];//二分图描述
 int linker[N],lx[N],ly[N];//y中各点匹配状态，x,y中的点标号
@@ -4006,11 +4005,18 @@ int KM()
             }
         }
     }
-    int res = 0;
+    int res = 0, cnt = 0;
     for(int i = 0;i < ny;i++)
-        if(linker[i] != -1)
-            res += g[linker[i]][i];
+        if(linker[i] != -1 && g[linker[i]][i]!=-INF)
+            res += g[linker[i]][i], cnt++;
+    if(cnt!=ny)return -1;
     return res;
+}
+void init()
+{
+    for(int i=0;i<nx;i++)
+        for(int j=0;j<ny;j++)
+            g[i][j]=-INF;
 }
 
 ///强连通分量
