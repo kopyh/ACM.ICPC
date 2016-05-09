@@ -104,10 +104,6 @@ DP！！！！！
     Lowest Common Multiple 最小公倍数
     扩展欧几里德算法
     快速幂运算
-    乘积求模
-    次方求模
-        按位乘积法
-        快速幂算法
     质数判断
         简单Prime判断
         Sieve Prime素数筛选法
@@ -2781,10 +2777,7 @@ int main()
 }
 
 ///后缀数组
-<<<<<<< HEAD
-=======
 //处理子串重复或不相同的问题
->>>>>>> 6d46811724b7a8a08edc853e39078c7bc70df43f
 //seq[]原始串，sa[i]排在i位的后缀子串的起始位置，ranks[i]i位开始的后缀子串的排序位置，height[i]排在i与i-1位的后缀子串的相同前缀长度。
 ///DA倍增算法 O(n*logn)
 int seq[N], sa[N], ranks[N], height[N];
@@ -4044,7 +4037,6 @@ void init()
 void tarjan(int x,int fa)
 {
 	int i;
-	// 刚搜到一个节点时low = dfn
 	low[x] = dfn[x] = index;
 	index++;
 	st.push(x);
@@ -4056,27 +4048,21 @@ void tarjan(int x,int fa)
 		if(!dfn[t])
 		{
 			tarjan(t,x);
-			// 回溯的时候改变当前节点的low值
 			low[x] = min(low[x], low[t]);
 		}
-		// 如果新搜索到的节点已经被搜索过而且现在在栈中
 		else if(inStack[t])
 		{
-		    // 更新当前节点的low值，这里的意思是两个节点之间有一条可达边，
-		    // 而前面节点已经在栈中，那么后面的节点就可能和前面的节点在一个联通分量中
 			low[x] = min(low[x], dfn[t]);
 		}
 	}
-	// 最终退回来的时候 low == dfn ， 没有节点能将根节点更新，那必然就是根节点
 	if(low[x] == dfn[x])
 	{
 		int temp;
-		// 一直出栈到此节点， 这些元素是一个强联通分量
 		while(!st.empty())
 		{
 			temp = st.top();
 			st.pop();
-			belong[temp] = cnt; // 标记强联通分量
+			belong[temp] = cnt;
 		 	inStack[temp] = 0;
 		 	if(temp == x)
 		 		break;
@@ -4118,7 +4104,6 @@ void init()
 void tarjan(int x,int fa)
 {
     int i;
-    // 刚搜到一个节点时low = dfn
     low[x] = dfn[x] = index;
     index++;
     st.push(x);
@@ -4128,7 +4113,6 @@ void tarjan(int x,int fa)
     for(i=0;i<len;i++)
     {
         int t=g[x][i];
-        //无向图双连通分量，mark防重边。
         if(!mark && t==fa)
         {
             mark=1;
@@ -4137,28 +4121,21 @@ void tarjan(int x,int fa)
         if(!dfn[t])
         {
             tarjan(t,x);
-            // 回溯的时候改变当前节点的low值
             low[x] = min(low[x], low[t]);
         }
-        // 如果新搜索到的节点已经被搜索过而且现在在栈中
         else if(inStack[t])
         {
-            // 更新当前节点的low值，这里的意思是两个节点之间有一条可达边，
-            // 而前面节点已经在栈中，那么后面的节点就可能和前面的节点在一个联通分量中
             low[x] = min(low[x], dfn[t]);
         }
     }
-
-    // 最终退回来的时候 low == dfn ， 没有节点能将根节点更新，那必然就是根节点
     if(low[x] == dfn[x])
     {
         int temp;
-        // 一直出栈到此节点， 这些元素是一个双联通分量
         while(!st.empty())
         {
             temp = st.top();
             st.pop();
-            belong[temp] = cnt; // 标记双联通分量
+            belong[temp] = cnt;
             inStack[temp] = 0;
             if(temp == x)
                 break;
@@ -5196,7 +5173,8 @@ void Init()
 */
 
 ///Stirling Number(Second Kind)
-//S(n, m)表示含n 个元素的集合划分为m 个集合的情况数或者是n 个有标号的球放到m 个无标号的盒子中, 要求无一为空, 其不同的方案数
+//1) S(n, m)表示含n 个元素的集合划分为m 个集合的情况数
+//2) 是n 个有标号的球放到m 个无标号的盒子中, 要求无一为空, 其不同的方案数
 a[n][m]=a[n-1][m-1]+m*a[n-1][m];
 
 ///容斥原理
