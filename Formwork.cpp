@@ -741,17 +741,17 @@ int solve(int x)
 }
 
 ///dfs
-int dp[N][13][3],dig[N];
+long long dp[N][13][3],dig[N];
 //len:当前位，mod:前面留下的余数大小,k:前面是否出现13，flag:前面每一位是否都是上限。
-int dfs(int len, int mod, int k, int flag)
+long long dfs(int len, long long mod, int k, int flag)
 {
     if(len<=0)return (!mod && k==2);
     if(!flag && dp[len][mod][k]!=-1)return dp[len][mod][k];
     int num = flag?dig[len]:9;
-    int ans=0;
+    long long ans=0;
     for(int i=0;i<=num;i++)
     {
-        int modt = (mod*10+i)%13;
+        long long modt = (mod*10+i)%13;
         int kt;
         if(k==2 || k==1&&i==3)kt=2;
         else if(i==1)kt=1;
@@ -762,12 +762,15 @@ int dfs(int len, int mod, int k, int flag)
     if(!flag)dp[len][mod][k] = ans;
     return ans;
 }
-int solve(int x)
+long long solve(long long x)
 {
-    memset(dp,-1,sizeof(dp));
     int len=0;
     while(x)dig[++len]=x%10,x/=10;
     return dfs(len,0,0,1);
+}
+void init()
+{
+    memset(dp,-1,sizeof(dp));
 }
 
 ///树dp
