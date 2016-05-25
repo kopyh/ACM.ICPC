@@ -1080,11 +1080,19 @@ void unions(int x,int y)
 #define root 1 , n , 1
 #define lson l , m , rt << 1
 #define rson m + 1 , r , rt << 1 | 1
-
-int sum[N<<2],add[N<<2];
+struct node
+{
+    int pos,val;
+    node(int x=0,int y=0){pos=x,val=y;}
+    friend bool operator < (node a, node b)
+    {
+        return a.val < b.val;
+    }
+}arr[N<<2];
+int add[N<<2],tot;
 void pushUp(int rt)
 {
-    sum[rt] = sum[rt<<1]+sum[rt<<1|1];
+    arr[rt] = max(arr[rt<<1],arr[rt<<1|1]);
 }
 void pushDown(int l,int r,int rt)
 {
@@ -1093,8 +1101,8 @@ void pushDown(int l,int r,int rt)
         int m = (l+r)>>1;
         add[rt<<1] += add[rt];
         add[rt<<1|1] += add[rt];
-        sum[rt<<1] += (m-l+1)*add[rt];
-        sum[rt<<1|1] += (r-m)*add[rt];
+        arr[rt<<1].val += add[rt];
+        arr[rt<<1|1].val += add[rt];
         add[rt] = 0;
     }
 }
@@ -1103,7 +1111,7 @@ void updata(int l,int r,int rt,int ql,int qr,int val)
     if(l>qr||ql>r)return;
     if(l>=ql&&r<=qr)
     {
-        sum[rt] += (r-l+1)*val;
+        arr[rt].val += val;
         add[rt] += val;
         return;
     }
@@ -1118,7 +1126,8 @@ void build(int l,int r,int rt)
     add[rt]=0;
     if(l == r)
     {
-        scanf("%d",&sum[rt]);
+        arr[rt].val = a[++tot];
+        arr[rt].pos = tot;
         return;
     }
     int m = (l+r)>>1;
@@ -1126,15 +1135,15 @@ void build(int l,int r,int rt)
     build(rson);
     pushUp(rt);
 }
-int query(int l,int r,int rt,int ql,int qr)
+node query(int l,int r,int rt,int ql,int qr)
 {
     if(l>qr||ql>r)
-        return 0;
+        return node(0,0);
     if(l>=ql&&r<=qr)
-        return sum[rt];
+        return arr[rt];
     pushDown(l,r,rt);
     int m = (l+r)>>1;
-    return query(lson,ql,qr)+query(rson,ql,qr);
+    return max(query(lson,ql,qr),query(rson,ql,qr));
 }
 
 ///»®·ÖÊ÷
