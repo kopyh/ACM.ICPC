@@ -155,6 +155,7 @@ DP！！！！！
 # include<stdio.h>
 sprintf(result,"%d%d",num1,num2);
 sscanf(init_str,"%d %s",&num,&str);
+int __builtin_popcount(unsigned int);//二进制位中1的个数
 
 #include <stdlib.h>
 int *p; p=(int*)malloc(sizeof(int)); free(p);
