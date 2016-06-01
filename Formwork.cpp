@@ -3179,7 +3179,7 @@ int dijkstra(int n,int u,int v)
 }
 
 ///∂—”≈ªØDijkstra
-//O(ElogE)
+//O(VlogV)
 struct node
 {
     int v;
@@ -3486,7 +3486,7 @@ void addedge(int x,int y,int c)
     e[tot].x=y;e[tot].y=x;e[tot].c=0;
     e[tot].next=head[y];head[y]=tot++;
 }
-int flow(int src,int des,int n)
+int maxFlow(int src,int des,int n)
 {
     int tr,res=0;
     int i,j,k,l,r,top;
@@ -3534,7 +3534,7 @@ int pre[N];
 int g[N][N];
 int gap[N],dis[N],cur[N];
 //0~sum-1
-int sap(int src,int des,int sum)
+int maxFlow(int src,int des,int sum)
 {
     memset(cur,0,sizeof(cur));
     memset(dis,0,sizeof(dis));
@@ -3632,7 +3632,7 @@ void BFS(int start,int ends)
     }
 }
 int S[N];
-int sap(int start,int ends,int sum)
+int maxFlow(int start,int ends,int sum)
 {
     BFS(start,ends);
     memcpy(cur,head,sizeof(head));
