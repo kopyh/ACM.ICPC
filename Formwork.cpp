@@ -152,17 +152,17 @@ DP！！！！！
 #pragma comment(linker, "/STACK:1024000000,1024000000")
 
 ///C
-# include<stdio.h>
+#include <stdio.h>
 sprintf(result,"%d%d",num1,num2);
 sscanf(init_str,"%d %s",&num,&str);
 int __builtin_popcount(unsigned int);//二进制位中1的个数
 
 #include <stdlib.h>
 int *p; p=(int*)malloc(sizeof(int)); free(p);
-int cmp( const void *a,const void *b )
-{return *(int*)b-*(int*)a;}//降序
-int cmp2(const void *a,const void *b)
-{return *(double*)a>(double*)*b?1:-1;}//double
+int cmp(const void *a, const void *b )
+{return *(int*)b - *(int*)a;}//降序
+int cmp2(const void *a, const void *b)
+{return *(double*)a>(double*)*b ? 1 : -1;}//double
 qsort(str,n,sizeof(str[0]),cmp);
 
 #include <math.h>
@@ -170,6 +170,7 @@ double fabs(double x);
 double ceil(double x);//向上取整
 double floor(double x);//向下取整
 double round(double x);//最接近x的整数
+//角度制 = 弧度制/180*PI;
 double asin(double arg);//求反正弦 arg∈[-1,1],返回值∈[-pi/2,+pi/2]
 double sin(double arg);//求正弦 arg为弧度,返回值∈[-1, 1]
 double exp(double arg);//求e的arg次方
@@ -181,7 +182,7 @@ memset( the_array, 0, sizeof(the_array) );
 memcpy( the_array, src, sizeof(src));
 
 #include <string.h>
-int strcmp( const char *str1, const char *str2 );//str1<str2,return负数
+int strcmp(const char *str1, const char *str2 );//str1<str2,return负数
 void strcpy(int a[],int b[]);//字符串复制b赋给a
 int strlen(int a[]);
 char *strstr(char *str1, char *str2);//str1中str2串第一次出现的指针,找不到返回NULL
@@ -5775,12 +5776,13 @@ if(n%(m+1)==0)printf("second win\n");
 
 ///威佐夫博弈：
 //二人轮流取2堆a，b个石子，一次取其中一堆任意个或两堆相同数量个，问谁先取完
-//必败态：a=k(1+sqrt(5))/2,b=a+k;即a为黄金分割数向下取整，
-int ep1=(sqrt(5.0)-1.0)/2.0,ep2=(sqrt(5.0)+1.0)/2.0;
-int k=x*ep1;//求倍数
-int tmp1=ep2*k,tmp2=k+tmp1;//判断是否为奇异局势
-int tmp3=ep2*(k+1),tmp4=k+1+tmp3;//求倍数时x的小数被抹去可能求值小1；
-if(tmp1==x&&tmp2==y||tmp3==x&&tmp4==y)printf("second win\n");
+必败态：a=k(1+sqrt(5))/2,b=a+k;即a为黄金分割数向下取整，
+if(a>b)a^=b,b^=a,a^=b;
+double r=(sqrt(5.0)-1)/2;
+double R=1.0/r;
+double j=(int)(r*a);
+if(a!=(int)(j*R))j+=1;
+printf(b!=(int)(j*R)+j?"first win\n":"second win\n");
 
 ///nim博弈：
 //取n堆石子，一次从一堆中取任意个
