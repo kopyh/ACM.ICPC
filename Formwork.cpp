@@ -1090,6 +1090,10 @@ struct node
     {
         return a.val < b.val;
     }
+    friend node operator + (node a, node b)
+    {
+        return  node(a.pos,a.val+b.val);
+    }
 }arr[N<<2];
 int add[N<<2],tot;
 void pushUp(int rt)
