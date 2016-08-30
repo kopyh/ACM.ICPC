@@ -1,4 +1,4 @@
-/*             My Formwork v2.10
+/*             My Formwork v3.10
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
@@ -1098,7 +1098,7 @@ struct node
 int add[N<<2],tot;
 void pushUp(int rt)
 {
-    arr[rt] = max(arr[rt<<1],arr[rt<<1|1]);
+    arr[rt] = arr[rt<<1]+arr[rt<<1|1];
 }
 void pushDown(int l,int r,int rt)
 {
@@ -1107,8 +1107,8 @@ void pushDown(int l,int r,int rt)
         int m = (l+r)>>1;
         add[rt<<1] += add[rt];
         add[rt<<1|1] += add[rt];
-        arr[rt<<1].val += add[rt];
-        arr[rt<<1|1].val += add[rt];
+        arr[rt<<1].val += (m-l+1)*add[rt];
+        arr[rt<<1|1].val += (r-m)*add[rt];
         add[rt] = 0;
     }
 }
@@ -1117,7 +1117,7 @@ void updata(int l,int r,int rt,int ql,int qr,int val)
     if(l>qr||ql>r)return;
     if(l>=ql&&r<=qr)
     {
-        arr[rt].val += val;
+        arr[rt].val += (r-l+1)*val;
         add[rt] += val;
         return;
     }
@@ -1149,7 +1149,7 @@ node query(int l,int r,int rt,int ql,int qr)
         return arr[rt];
     pushDown(l,r,rt);
     int m = (l+r)>>1;
-    return max(query(lson,ql,qr),query(rson,ql,qr));
+    return query(lson,ql,qr)+query(rson,ql,qr);
 }
 
 ///划分树
@@ -3027,6 +3027,7 @@ int prim(int n)
                 minn=dist[j];
                 pos=j;
             }
+        if(minn==INF)return -1;
         res+=minn;
         vis[pos]=true;
         //更新权值，与dijkstra不同的地方(起点为所有加入生成树的节点，找到树最近的点)
@@ -3096,6 +3097,7 @@ int kruskal(int n,int m)
         }
         i++;
     }
+    if(k<n-1)return -1;
     return res;
 }
 
@@ -3262,7 +3264,13 @@ struct node
     int x,y;
     int r;
 }edge[M];
-int pre[N],dist[N];
+int pre[N],dist[N],cnt;
+void inserts(int u,int v,int w)
+{
+    edge[cnt].x = u;
+    edge[cnt].y = v;
+    edge[cnt++].r = w;
+}
 bool relax(int x,int y,int r)
 {
     if(dist[x]>dist[y]+r)
@@ -3425,16 +3433,17 @@ void solve()
 //标记在这条路径上当前节点的前驱,同时标记该节点是否在队列中
 int pre[N];
 //记录残留网络的容量
-int g[N][N];
+int g[N][N],flow[N];
 int BFS(int src,int des,int n)
 {
     int i,j;
-    int flow[N];
+
     queue<int> q;
     while(!q.empty())
         q.pop();
     memset(pre,-1,sizeof(pre));
     pre[src] = src;
+    memset(flow,0,sizeof(flow));
     flow[src] = INF;
     q.push(src);
     while(!q.empty())
@@ -3473,6 +3482,20 @@ int maxFlow(int src,int des,int n)
         sumflow += increasement;
     }
     return sumflow;
+}
+int main()
+{
+    memset(g,0,sizeof(g));
+    for(i=0;i<m;i++)
+    {
+        scanf("%d%d%d",&x[i],&y[i],&z);
+        g[x[i]][y[i]]=g[y[i]][x[i]]=z;
+    }
+    maxFlow(1,2,n);
+    //输出割边
+    for(i=0;i<m;i++)
+        if(flow[x[i]]&&!flow[y[i]] || flow[y[i]]&&!flow[x[i]])
+            printf("%d %d\n",x[i],y[i]);
 }
 
 ///dinic
@@ -3705,13 +3728,11 @@ struct Edge
 {
     int to,next,cap,flow,cost;
 } edge[M];
-int head[N],tol;
+int head[N],tol,tot;//tot总节点数，0~tot-1
 int pre[N],dis[N];
 bool vis[N];
-int N;//节点总个数，节点编号从0~N-1
-void init(int n)
+void init()
 {
-    N = n;
     tol = 0;
     memset(head,-1,sizeof(head));
 }
@@ -3733,7 +3754,7 @@ void addedge(int u,int v,int cap,int cost)
 bool spfa(int s,int t)
 {
     queue<int>q;
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < tot; i++)
     {
         dis[i] = INF;
         vis[i] = false;
