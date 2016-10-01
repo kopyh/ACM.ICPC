@@ -1467,6 +1467,7 @@ void query_tree(char *str)
 }
 
 ///Treap
+//求第K大数 与 x的大小排名
 struct Treap
 {
     int size;
