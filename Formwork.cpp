@@ -13,6 +13,7 @@ DP！！！！！
         01背包
         完全背包
         多重背包
+        多重背包(单调队列优化)
         二维费用背包
     长度DP
         最大连续子序列之和
@@ -569,6 +570,33 @@ for(i=0;i<n;i++)
         if(dp[j]<dp[j-w[i]]+v[i] && counts[j-w[i]]<sum[i])
             dp[j]=dp[j-w[i]]+v[i], counts[j]=counts[j-w[i]]+1;
 }
+
+///多重背包(单调队列优化)
+//O(n*m)
+//dp[i][j*w[i]+k]=max{dp[i-1][jj*w[i]+k]+(j-jj)*v[i]};
+//  =max{(dp[i-1][jj*w[i]+k]-jj*v[i]) + j*v[i]};
+//单调队列优化形如下式的DP:
+//dp[i]=max/min(f[k]) + g[i];(k<i && g[i]是与k无关的变量)
+memset(dp,0,sizeof(dp));
+for(i=1;i<=n;i++)
+{
+    num[i] = min(num[i],m/w[i]);
+    for(k=0;k<w[i];k++)//分成w[i]份转移
+    {
+        int head=0,tail=0;
+        for(j=0;j<=(m-k)/w[i];j++)
+        {
+            int t=dp[j*w[i]+k]-j*v[i];//当前值进队列
+            while(head<tail && t>=f[tail-1].f)
+                tail--;//单调队列降序
+            f[tail].f=t;f[tail++].pos=j;
+            while(head<tail && f[head].pos+num[i]<j)
+                head++;//保证num[i]足够
+            dp[j*w[i]+k] = f[head].f+j*v[i];
+        }
+    }
+}
+
 
 ///二维费用背包
 //转移方程：dp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
