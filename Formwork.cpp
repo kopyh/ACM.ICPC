@@ -576,7 +576,7 @@ for(i=0;i<n;i++)
 //dp[i][j*w[i]+k]=max{dp[i-1][jj*w[i]+k]+(j-jj)*v[i]};
 //  =max{(dp[i-1][jj*w[i]+k]-jj*v[i]) + j*v[i]};
 //单调队列优化形如下式的DP:
-//dp[i]=max/min(f[k]) + g[i];(k<i && g[i]是与k无关的变量)
+//dp[i]=max/min(f[k]) + g[i];(k<i && f[k]与j无关，g[i]与k无关)
 memset(dp,0,sizeof(dp));
 for(i=1;i<=n;i++)
 {
