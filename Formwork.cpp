@@ -1,4 +1,4 @@
-/*             My Formwork v3.10
+/*             My Formwork v3.11
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
@@ -15,6 +15,7 @@ DP！！！！！
         多重背包
         多重背包(单调队列优化)
         二维费用背包
+    斜率优化DP
     长度DP
         最大连续子序列之和
         最大子矩阵和
@@ -597,9 +598,50 @@ for(i=1;i<=n;i++)
     }
 }
 
-
 ///二维费用背包
 //转移方程：dp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
+
+///斜率优化DP
+//dp[i] = min{dp[j]+m+(sum[i]-sum[j])^2};
+int n,m,res,flag;
+int a[N],q[N];
+long long sum[N],dp[N];
+long long dy(int i)
+{
+    return dp[i]+sum[i]*sum[i];
+}
+long long dx(int j,int k)
+{
+    return 2*(sum[j]-sum[k]);
+}
+long long f(int j,int k)
+{
+    return ((dy(j)-dy(k)));
+}
+int main()
+{
+    int i,j,k,cas,T,t,x,y,z;
+    while(scanf("%d%d",&n,&m)!=EOF)
+    {
+        int head=0,tail=-1;
+        sum[0]=0;
+        for(i=1; i<=n; i++)
+        {
+            scanf("%d",&a[i]);
+            sum[i]=sum[i-1]+a[i];
+        }
+        q[++tail]=0;
+        for(i=1; i<=n; i++)
+        {
+            while(head<tail&&f(q[head+1],q[head])<=sum[i]*dx(q[head+1],q[head]))++head;
+            dp[i]=dp[q[head]]+(sum[i]-sum[q[head]])*(sum[i]-sum[q[head]])+m;
+            while(head<tail&&f(i,q[tail])*dx(q[tail],q[tail-1])<=f(q[tail],q[tail-1])*dx(i,q[tail]))--tail;
+            q[++tail]=i;
+        }
+        printf("%I64d\n",dp[n]);
+    }
+    return 0;
+}
 
 ///长度DP
 ///最大连续子序列之和
