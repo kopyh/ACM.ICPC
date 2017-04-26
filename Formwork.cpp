@@ -130,17 +130,21 @@ DP！！！！！
     Catalan Number
     Stirling Number(Second Kind)
     容斥原理
-    矩阵
+    矩阵快速幂
 
 计算几何！！！！！
-    坐标向量等
-    三角形
-        三角形面积公式
-        三角形内切圆半径公式
-        三角形外接圆半径公式
-        圆内接四边形面积公式
-        多边形面积
+    Point
+    Line
+    点与直线关系
+    多边形
     凸包
+    平面最近点对
+    旋转卡壳
+        两点间距离最大值
+        平面点集最大三角形面积
+        两凸包最小距离
+    圆
+    三角形公式
     三分求极值
 
 博弈论！！！！！
@@ -912,12 +916,12 @@ int getRes(char s[])
 
 ///Sparse Table
 ///一维RMQ
-//ST(n)初始化：O(n*logn)
+//ST(n)初始化：O(n*logn),查询是O(1)
 //dp[i][j] 从i到i+2^j -1中最小的一个值(从i开始持续2^j个数)
 //dp[i][j]=min{dp[i][j-1],dp[i+2^(j-1)][j-1]}
 //RMQ(i,j)查询
 //将i-j 分成两个2^k的区间 k=(int)log2(i-j+1)
-//查询结果应该为 min(f2[i][k],f2[j-2^k+1][k])
+//查询结果应该为 min(dp[i][k],dp[j-2^k+1][k])
 int dp[N][35],num[N];
 void ST(int n)
 {
@@ -3257,7 +3261,7 @@ int dijkstra(int n,int u,int v)
 }
 
 ///堆优化Dijkstra
-//O(VlogV)
+//O(E+VlogV)
 struct node
 {
     int v;
@@ -5310,7 +5314,7 @@ void dfs(int now,int step,int flag)
         dfs(i,lcm(step,a[i]),-flag);
 }
 
-///矩阵
+///矩阵快速幂
 struct Matrix
 {
     long long ma[N][N];
