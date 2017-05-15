@@ -1,13 +1,12 @@
-/*             My Formwork v3.11
+/*             My Formwork v3.12
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
 简单算法与STL！！！！！
     STL
     输入输出外挂
-	大数处理
-		大数加法，减法，乘法, 比较, JAVA
-
+    大数处理
+        大数加法，减法，乘法, 比较, JAVA
 DP！！！！！
     背包问题
         01背包
@@ -29,14 +28,12 @@ DP！！！！！
         Sparse Table
             一维RMQ
             二维RMQ
-
 搜索！！！！！
     DFS
     BFS(队列解法)
     A*启发式搜索算法
     IDA*迭代深化A*搜索
     Dancing Link
-
 数据结构！！！！！
     并查集
     线段树
@@ -54,7 +51,6 @@ DP！！！！！
     哈希表
         ELFhash（字符串哈希函数）
     莫队算法
-
 字符串！！！！！
     字符串最小表示法
     Manacher最长回文子串
@@ -65,7 +61,6 @@ DP！！！！！
         DA倍增算法
         DC3算法
     后缀自动机
-
 图论！！！！！！
     最小生成树
         prim
@@ -99,12 +94,14 @@ DP！！！！！
     最近公共祖先(LCA)
         tarjan
         ST-RMQ在线算法
-
 数论！！！！！
     Fibonacci Number
     Greatest Common Divisor 最大公约数,欧几里德算法
     Lowest Common Multiple 最小公倍数
     扩展欧几里德算法
+    逆元
+        扩展欧几里得解法
+        费马小定理解法
     快速幂运算
     质数判断
         简单Prime判断
@@ -117,7 +114,6 @@ DP！！！！！
     约瑟夫环
     高斯消元
         开关问题
-
 组合数学！！！！！
     排列组合
     Lucas定理
@@ -131,7 +127,6 @@ DP！！！！！
     Stirling Number(Second Kind)
     容斥原理
     矩阵快速幂
-
 计算几何！！！！！
     Point
     Line
@@ -146,7 +141,6 @@ DP！！！！！
     圆
     三角形公式
     三分求极值
-
 博弈论！！！！！
     巴什博弈：
     威佐夫博弈：
@@ -241,7 +235,7 @@ vs.swap(v);
 //去重，unique删除begin到end之间的相邻重复元素后返回一个新的结尾的迭代器
 vs.erase(unique(s.begin(),s.end()),s.end())；
 
-///map,key—value关联式容器，可利用key值快速查找记录
+///map,key―value关联式容器，可利用key值快速查找记录
 #include<map>
 map<int,string> mp;//int做key值字符串为value
 //string name; mp[name]+=123;
@@ -355,7 +349,7 @@ bool cmp(int a,int b)
 bool cmp(node a,node b)
 {
 //    if(a.y == b.y)return a.x > b.x;//降序
-	return a.y > b.y;//降序
+    return a.y > b.y;//降序
 }
 struct node
 {
@@ -515,31 +509,308 @@ public class Main {
 //        while(T>0)
         while(cin.hasNext())
         {
-//        	T--;
+//          T--;
             n = cin.nextInt();
-	        a = BigInteger.valueOf(n);
-	        b = cin.nextBigInteger();
-	        c = cin.nextBigInteger(2);//二进制
-	        System.out.println(c.toString(2));
-        	aa = cin.nextBigDecimal();
-        	System.out.println(a+" "+aa);
+            a = BigInteger.valueOf(n);
+            b = cin.nextBigInteger();
+            c = cin.nextBigInteger(2);//二进制
+            System.out.println(c.toString(2));
+            aa = cin.nextBigDecimal();
+            System.out.println(a+" "+aa);
 
             if(a.compareTo(zero)==0)break;
-	        a = a.add(b);
-	        a = a.subtract(b);
-	        a = a.divide(b);
-	        a = a.multiply(b);
-	        a = a.remainder(b);//a%b
-	        a = a.pow(n);
+            a = a.add(b);
+            a = a.subtract(b);
+            a = a.divide(b);
+            a = a.multiply(b);
+            a = a.remainder(b);//a%b
+            a = a.pow(n);
 
-	        s = aa.toPlainString();
-        	if (s.charAt(n) == '0')
-				cout.println("0");
+            s = aa.toPlainString();
+            if (s.charAt(n) == '0')
+                cout.println("0");
             int x = 0, y = s.length() - 1;
             cout.println(s.substring(x, y));
         }
     }
 }
+
+/*
+* 完全大数模板
+* 输出cin>>a
+* 输出a.print();
+* 注意这个输入不能自动去掉前导0的，可以先读入到char数组，去掉前导0，再用构造函数。
+*/
+#define MAXN 9999
+#define MAXSIZE 1010
+#define DLEN 4
+class BigNum
+{
+private:
+    int a[500]; //可以控制大数的位数
+    int len;
+public:
+    BigNum()
+    {
+        len=1;    //构造函数
+        memset(a,0,sizeof(a));
+    }
+    BigNum(const int); //将一个int类型的变量转化成大数
+    BigNum(const char*); //将一个字符串类型的变量转化为大数
+    BigNum(const BigNum &); //拷贝构造函数
+    BigNum &operator=(const BigNum &); //重载赋值运算符，大数之间进行赋值运算
+    friend istream& operator>>(istream&,BigNum&); //重载输入运算符
+    friend ostream& operator<<(ostream&,BigNum&); //重载输出运算符
+    BigNum operator+(const BigNum &)const; //重载加法运算符，两个大数之间的相加运算
+    BigNum operator-(const BigNum &)const; //重载减法运算符，两个大数之间的相减运算
+    BigNum operator*(const BigNum &)const; //重载乘法运算符，两个大数之间的相乘运算
+    BigNum operator/(const int &)const; //重载除法运算符，大数对一个整数进行相除运算
+    BigNum operator^(const int &)const; //大数的n次方运算
+    int operator%(const int &)const; //大数对一个int类型的变量进行取模运算
+    bool operator>(const BigNum &T)const; //大数和另一个大数的大小比较
+    bool operator>(const int &t)const; //大数和一个int类型的变量的大小比较
+    void print(); //输出大数
+};
+BigNum::BigNum(const int b) //将一个int类型的变量转化为大数
+{
+    int c,d=b;
+    len=0;
+    memset(a,0,sizeof(a));
+    while(d>MAXN)
+    {
+        c=d-(d/(MAXN+1))*(MAXN+1);
+        d=d/(MAXN+1);
+        a[len++]=c;
+    }
+    a[len++]=d;
+}
+BigNum::BigNum(const char *s) //将一个字符串类型的变量转化为大数
+{
+    int t,k,index,L,i;
+    memset(a,0,sizeof(a));
+    L=strlen(s);
+    len=L/DLEN;
+    if(L%DLEN)len++;
+    index=0;
+    for(i=L-1; i>=0; i-=DLEN)
+    {
+        t=0;
+        k=i-DLEN+1;
+        if(k<0)k=0;
+        for(int j=k; j<=i; j++)
+            t=t*10+s[j]-'0';
+        a[index++]=t;
+    }
+}
+BigNum::BigNum(const BigNum &T):len(T.len) //拷贝构造函数
+{
+    int i;
+    memset(a,0,sizeof(a));
+    for(i=0; i<len; i++)
+        a[i]=T.a[i];
+}
+BigNum & BigNum::operator=(const BigNum &n) //重载赋值运算符，大数之间赋值运算
+{
+    int i;
+    len=n.len;
+    memset(a,0,sizeof(a));
+    for(i=0; i<len; i++)
+        a[i]=n.a[i];
+    return *this;
+}
+istream& operator>>(istream &in,BigNum &b)
+{
+    char ch[MAXSIZE*4];
+    int i=-1;
+    in>>ch;
+    int L=strlen(ch);
+    int count=0,sum=0;
+    for(i=L-1; i>=0;)
+    {
+        sum=0;
+        int t=1;
+        for(int j=0; j<4&&i>=0; j++,i--,t*=10)
+        {
+            sum+=(ch[i]-'0')*t;
+        }
+        b.a[count]=sum;
+        count++;
+    }
+    b.len=count++;
+    return in;
+}
+ostream& operator<<(ostream& out,BigNum& b) //重载输出运算符
+{
+    int i;
+    cout<<b.a[b.len-1];
+    for(i=b.len-2; i>=0; i--)
+    {
+        printf("%04d",b.a[i]);
+    }
+    return out;
+}
+BigNum BigNum::operator+(const BigNum &T)const //两个大数之间的相加运算
+{
+    BigNum t(*this);
+    int i,big;
+    big=T.len>len?T.len:len;
+    for(i=0; i<big; i++)
+    {
+        t.a[i]+=T.a[i];
+        if(t.a[i]>MAXN)
+        {
+            t.a[i+1]++;
+            t.a[i]-=MAXN+1;
+        }
+    }
+    if(t.a[big]!=0)
+        t.len=big+1;
+    else t.len=big;
+    return t;
+}
+BigNum BigNum::operator-(const BigNum &T)const //两个大数之间的相减运算
+{
+    int i,j,big;
+    bool flag;
+    BigNum t1,t2;
+    if(*this>T)
+    {
+        t1=*this;
+        t2=T;
+        flag=0;
+    }
+    else
+    {
+        t1=T;
+        t2=*this;
+        flag=1;
+    }
+    big=t1.len;
+    for(i=0; i<big; i++)
+    {
+        if(t1.a[i]<t2.a[i])
+        {
+            j=i+1;
+            while(t1.a[j]==0)
+                j++;
+            t1.a[j--]--;
+            while(j>i)
+                t1.a[j--]+=MAXN;
+            t1.a[i]+=MAXN+1-t2.a[i];
+        }
+        else t1.a[i]-=t2.a[i];
+    }
+    t1.len=big;
+    while(t1.a[len-1]==0 && t1.len>1)
+    {
+        t1.len--;
+        big--;
+    }
+    if(flag)
+        t1.a[big-1]=0-t1.a[big-1];
+    return t1;
+}
+BigNum BigNum::operator*(const BigNum &T)const //两个大数之间的相乘
+{
+    BigNum ret;
+    int i,j,up;
+    int temp,temp1;
+    for(i=0; i<len; i++)
+    {
+        up=0;
+        for(j=0; j<T.len; j++)
+        {
+            temp=a[i]*T.a[j]+ret.a[i+j]+up;
+            if(temp>MAXN)
+            {
+                temp1=temp-temp/(MAXN+1)*(MAXN+1);
+                up=temp/(MAXN+1);
+                ret.a[i+j]=temp1;
+            }
+            else
+            {
+                up=0;
+                ret.a[i+j]=temp;
+            }
+        }
+        if(up!=0)
+            ret.a[i+j]=up;
+    }
+    ret.len=i+j;
+    while(ret.a[ret.len-1]==0 && ret.len>1)ret.len--;
+    return ret;
+}
+BigNum BigNum::operator/(const int &b)const //大数对一个整数进行相除运算
+{
+    BigNum ret;
+    int i,down=0;
+    for(i=len-1; i>=0; i--)
+    {
+        ret.a[i]=(a[i]+down*(MAXN+1))/b;
+        down=a[i]+down*(MAXN+1)-ret.a[i]*b;
+    }
+    ret.len=len;
+    while(ret.a[ret.len-1]==0 && ret.len>1)
+        ret.len--;
+    return ret;
+}
+int BigNum::operator%(const int &b)const //大数对一个 int类型的变量进行取模
+{
+    int i,d=0;
+    for(i=len-1; i>=0; i--)
+        d=((d*(MAXN+1))%b+a[i])%b;
+    return d;
+}
+BigNum BigNum::operator^(const int &n)const //大数的n次方运算
+{
+    BigNum t,ret(1);
+    int i;
+    if(n<0)exit(-1);
+    if(n==0)return 1;
+    if(n==1)return *this;
+    int m=n;
+    while(m>1)
+    {
+        t=*this;
+        for(i=1; (i<<1)<=m; i<<=1)
+            t=t*t;
+        m-=i;
+        ret=ret*t;
+        if(m==1)ret=ret*(*this);
+    }
+    return ret;
+}
+bool BigNum::operator>(const BigNum &T)const //大数和另一个大数的大小比较
+{
+    int ln;
+    if(len>T.len)return true;
+    else if(len==T.len)
+    {
+        ln=len-1;
+        while(a[ln]==T.a[ln]&&ln>=0)
+            ln--;
+        if(ln>=0 && a[ln]>T.a[ln])
+            return true;
+        else
+            return false;
+    }
+    else
+        return false;
+}
+bool BigNum::operator>(const int &t)const //大数和一个int类型的变量的大小比较
+{
+    BigNum b(t);
+    return *this>b;
+}
+void BigNum::print() //输出大数
+{
+    int i;
+    printf("%d",a[len-1]);
+    for(i=len-2; i>=0; i--)
+        printf("%04d",a[i]);
+    printf("\n");
+}
+
 
 ///DP！！！！！
 ///背包问题
@@ -745,15 +1016,15 @@ int LIS(int a[],int b[],int len)
 int dp[N][N],n,m;
 int LCS(char *a, char *b)
 {
-	memset(dp,0,sizeof(dp));
-	for(int i = 1; i <= n; i++)
-		for(int j = 1; j <= m; j++)
+    memset(dp,0,sizeof(dp));
+    for(int i = 1; i <= n; i++)
+        for(int j = 1; j <= m; j++)
         {
-			if(a[i-1] == b[j-1])
+            if(a[i-1] == b[j-1])
                 dp[i][j] = dp[i-1][j-1] + 1;
             else
                 dp[i][j] = max(dp[i][j-1],dp[i-1][j]);
-		}
+        }
     return dp[n][m];
 }
 
@@ -775,10 +1046,10 @@ void init()
         {
             for(int k=0;k<10;k++)
             {
-				dp[i][(j+a[i-1]*k)%13][0]+=dp[i-1][j][0];
-				dp[i][(j+a[i-1]*k)%13][2]+=dp[i-1][j][2];
-			}
-			dp[i][(j+a[i-1]*3)%13][1] += dp[i-1][j][0];
+                dp[i][(j+a[i-1]*k)%13][0]+=dp[i-1][j][0];
+                dp[i][(j+a[i-1]*k)%13][2]+=dp[i-1][j][2];
+            }
+            dp[i][(j+a[i-1]*3)%13][1] += dp[i-1][j][0];
             dp[i][(j+a[i-1])%13][0] -= dp[i-1][j][1];
             dp[i][(j+a[i-1])%13][2] += dp[i-1][j][1];
         }
@@ -803,10 +1074,10 @@ int solve(int x)
         }
         else
         {
-			//首位是3的余数和为0就是答案。
+            //首位是3的余数和为0就是答案。
             if(dig[i+1]==1&&dig[i]>3)
                 ans+=dp[i+1][(13-mod)%13][1];
-			//取当前位为1后面首位为3的是答案。
+            //取当前位为1后面首位为3的是答案。
             if(dig[i]>1)
                 ans+=dp[i][(13-(mod+a[i])%13)%13][1];
         }
@@ -1336,26 +1607,26 @@ void init()
 }
 int lowbit(int t)
 {
-	return t & (t^(t-1));//2^k(k是t末尾零的个数)
+    return t & (t^(t-1));//2^k(k是t末尾零的个数)
         //return t & (-t);
 }
 void add(int pos,int num)
 {
-	while (pos<=n)
+    while (pos<=n)
     {
-		inverse[pos]+=num;
-		pos+=lowbit(pos);
-	}
+        inverse[pos]+=num;
+        pos+=lowbit(pos);
+    }
 }
 int getSum(int now)
 {
-	int sum=0;
-	while (now>0)
+    int sum=0;
+    while (now>0)
     {
-		sum+=inverse[now];
-		now-=lowbit(now);
-	}
-	return sum;
+        sum+=inverse[now];
+        now-=lowbit(now);
+    }
+    return sum;
 }
 
 ///树链剖分
@@ -3614,9 +3885,9 @@ int maxFlow(int src,int des,int n)
             {
                 for(k=0,tr=INF;k<top;++k)
                     if(e[ps[k]].c<tr)tr=e[ps[l=k]].c;
-				for(k=0;k<top;++k)
-					e[ps[k]].c-=tr,e[ps[k]^1].c+=tr;
-				res+=tr;i=e[ps[top=l]].x;
+                for(k=0;k<top;++k)
+                    e[ps[k]].c-=tr,e[ps[k]^1].c+=tr;
+                res+=tr;i=e[ps[top=l]].x;
             }
             for(j=head[i];j!=-1;j=e[j].next)
                 if(e[j].c&&dep[i]+1==dep[e[j].y])break;
@@ -4143,46 +4414,46 @@ void init()
     for(int i=0;i<N;i++)
         g[i].clear();
     while(!st.empty())st.pop();
-	memset(dfn, 0, sizeof(dfn));
-	memset(low, 0, sizeof(low));
-	memset(inStack, 0, sizeof(inStack));
-	index = cnt = 1;
+    memset(dfn, 0, sizeof(dfn));
+    memset(low, 0, sizeof(low));
+    memset(inStack, 0, sizeof(inStack));
+    index = cnt = 1;
 }
 void tarjan(int x,int fa)
 {
-	int i;
-	low[x] = dfn[x] = index;
-	index++;
-	st.push(x);
-	inStack[x] = 1;
-	int len = g[x].size();
-	for(i=0;i<len;i++)
-	{
-	    int t=g[x][i];
-		if(!dfn[t])
-		{
-			tarjan(t,x);
-			low[x] = min(low[x], low[t]);
-		}
-		else if(inStack[t])
-		{
-			low[x] = min(low[x], dfn[t]);
-		}
-	}
-	if(low[x] == dfn[x])
-	{
-		int temp;
-		while(!st.empty())
-		{
-			temp = st.top();
-			st.pop();
-			belong[temp] = cnt;
-		 	inStack[temp] = 0;
-		 	if(temp == x)
-		 		break;
-		}
-		cnt++;
-	}
+    int i;
+    low[x] = dfn[x] = index;
+    index++;
+    st.push(x);
+    inStack[x] = 1;
+    int len = g[x].size();
+    for(i=0;i<len;i++)
+    {
+        int t=g[x][i];
+        if(!dfn[t])
+        {
+            tarjan(t,x);
+            low[x] = min(low[x], low[t]);
+        }
+        else if(inStack[t])
+        {
+            low[x] = min(low[x], dfn[t]);
+        }
+    }
+    if(low[x] == dfn[x])
+    {
+        int temp;
+        while(!st.empty())
+        {
+            temp = st.top();
+            st.pop();
+            belong[temp] = cnt;
+            inStack[temp] = 0;
+            if(temp == x)
+                break;
+        }
+        cnt++;
+    }
 }
 // tarjan的成果是得到了一个belong数组，记录每个节点分别属于哪个强联通分量
 int solve()
@@ -4291,9 +4562,9 @@ void init()
         g[i].clear(),blocks[i].clear();
     bridge.clear();
     while(!st.empty())st.pop();
-	memset(dfn, 0, sizeof(dfn));
-	memset(low, 0, sizeof(low));
-	index = cnt = 1;
+    memset(dfn, 0, sizeof(dfn));
+    memset(low, 0, sizeof(low));
+    index = cnt = 1;
 }
 void judge(int u,int v)
 {
@@ -4312,31 +4583,31 @@ void judge(int u,int v)
 }
 void tarjan(int x,int fa)
 {
-	low[x] = dfn[x] = index++;
-	int len = g[x].size();
-	for(int i=0;i<len;i++)
-	{
-	    int t=g[x][i];
-	    if(t==fa)
+    low[x] = dfn[x] = index++;
+    int len = g[x].size();
+    for(int i=0;i<len;i++)
+    {
+        int t=g[x][i];
+        if(t==fa)
             continue;
-		if(!dfn[t] && dfn[t]<dfn[x])
-		{
-		    //加入树枝边
-		    st.push(node(x,t));
-			tarjan(t,x);
-			low[x] = min(low[x], low[t]);
-			if(dfn[x]<=low[t])
+        if(!dfn[t] && dfn[t]<dfn[x])
+        {
+            //加入树枝边
+            st.push(node(x,t));
+            tarjan(t,x);
+            low[x] = min(low[x], low[t]);
+            if(dfn[x]<=low[t])
                 judge(x,t);
             if(dfn[x]<low[t])
                 bridge.push_back(node(x,t));
-		}
-		else if(dfn[t] < dfn[x])
+        }
+        else if(dfn[t] < dfn[x])
         {
             //加入后向边
             st.push(node(x,t));
-			low[x] = min(low[x], dfn[t]);
+            low[x] = min(low[x], dfn[t]);
         }
-	}
+    }
 }
 int solve()
 {
@@ -4595,19 +4866,44 @@ long long solve(long long  a,long long b,long long c)
     return 0;
 }
 
+///逆元
+//扩展欧几里得解法
+long long exgcd(long long l,long long r,long long &x,long long &y)
+{
+    if(r==0){x=1;y=0;return l;}
+    else
+    {
+        long long d=exgcd(r,l%r,y,x);
+        y-=l/r*x;
+        return d;
+    }
+}
+long long mod_inverse(long long a,long long m)
+{
+    long long x,y;
+    if(exgcd(a,m,x,y)==1)//ax+my=1
+        return (x%m+m)%m;
+    return -1;//不存在
+}
+//费马小定理解法
+long long mod_inverse(long long a,long long m)
+{
+    return power(a,m-2,m);
+}
+
 ///快速幂运算
 //eg:x^22==x^16+x^4+x^2;
 ////22==10110
 long long power(long long x,long long k,long long mod)
 {
-	long long ans = 1;
-	while(k)
+    long long ans = 1;
+    while(k)
     {
-		if(k & 1) ans=ans*x%mod;
-		x=x*x%mod;
-		k >>= 1;
-	}
-	return ans;
+        if(k & 1) ans=ans*x%mod;
+        x=x*x%mod;
+        k >>= 1;
+    }
+    return ans;
 }
 
 ///乘积求模
@@ -5140,14 +5436,14 @@ long long  getFact(long long  p){
 }
 long long power(long long x,long long k,long long mod)
 {
-	long long ans = 1;
-	while(k)
+    long long ans = 1;
+    while(k)
     {
-		if(k & 1) ans=ans*x%mod;
-		x=x*x%mod;
-		k >>= 1;
-	}
-	return ans;
+        if(k & 1) ans=ans*x%mod;
+        x=x*x%mod;
+        k >>= 1;
+    }
+    return ans;
 }
 long long  Lucas(long long  n,long long  m,long long  p){
     long long  ret=1;
@@ -5352,88 +5648,88 @@ const double eps = 1e-8;
 const double PI = acos(-1.0);
 int sgn(double x)
 {
-	if (fabs(x) < eps)return 0;
-	if (x < 0)return -1;
-	else return 1;
+    if (fabs(x) < eps)return 0;
+    if (x < 0)return -1;
+    else return 1;
 }
 ///1.1 Point
 struct Point
 {
-	double x,y;
-	Point() {}
-	Point(double x,double y):x(x),y(y){}
-	Point operator -(const Point & b)const
-	{
-		return Point(x - b.x,y - b.y);
-	}
-	bool operator ==(const Point & b)const
-	{
-		return x==b.x && y==b.y;
-	}
-	//两点间距离
+    double x,y;
+    Point() {}
+    Point(double x,double y):x(x),y(y){}
+    Point operator -(const Point & b)const
+    {
+        return Point(x - b.x,y - b.y);
+    }
+    bool operator ==(const Point & b)const
+    {
+        return x==b.x && y==b.y;
+    }
+    //两点间距离
     double operator &(const Point & b)const
     {
         return sqrt((*this-b)*(*this-b));
     }
-	//*叉积
-	//1.判断向量方向, >0 P在Q顺时针方向 ==0 同向或反向
-	//2.求面积, 叉积的长度 |a×b| 可以解释成以a和b为邻边的平行四边形的面积
-	double operator ^(const Point & b)const
-	{
-		return x*b.y - y*b.x;
-	}
-	//*点积
-	//a*b = |a|*|b|*cos<a,b> (0<= (<a,b>) <= PI)
-	double operator *(const Point & b)const
-	{
-		return x*b.x + y*b.y;
-	}
-	//*比较(先x后y) //极角排序需要最低的一点(改为先y后x)
-	bool operator < (const Point & b) const
-	{
-	    if(x!=b.x)  return x<b.x;
-	    if(y!=b.y)  return y<b.y;
-	}
-	//*绕原点旋转角度B（弧度值）后x,y的值
-	void transXY(double B)
-	{
-		double tx = x,ty = y;
-		x = tx*cos(B) - ty*sin(B);
-		y = tx*sin(B) + ty*cos(B);
-	}
+    //*叉积
+    //1.判断向量方向, >0 P在Q顺时针方向 ==0 同向或反向
+    //2.求面积, 叉积的长度 |a×b| 可以解释成以a和b为邻边的平行四边形的面积
+    double operator ^(const Point & b)const
+    {
+        return x*b.y - y*b.x;
+    }
+    //*点积
+    //a*b = |a|*|b|*cos<a,b> (0<= (<a,b>) <= PI)
+    double operator *(const Point & b)const
+    {
+        return x*b.x + y*b.y;
+    }
+    //*比较(先x后y) //极角排序需要最低的一点(改为先y后x)
+    bool operator < (const Point & b) const
+    {
+        if(x!=b.x)  return x<b.x;
+        if(y!=b.y)  return y<b.y;
+    }
+    //*绕原点旋转角度B（弧度值）后x,y的值
+    void transXY(double B)
+    {
+        double tx = x,ty = y;
+        x = tx*cos(B) - ty*sin(B);
+        y = tx*sin(B) + ty*cos(B);
+    }
 };
 ///1.2 Line
 struct Line
 {
-	Point s,e;
-	Line() {}
-	Line(Point s,Point e):s(s),e(e){}
-	bool operator ==(const Line & b)const
-	{
-		return s==b.s && e==b.e;
-	}
-	//*获取Line的向量
+    Point s,e;
+    Line() {}
+    Line(Point s,Point e):s(s),e(e){}
+    bool operator ==(const Line & b)const
+    {
+        return s==b.s && e==b.e;
+    }
+    //*获取Line的向量
     Point getV()
     {
         return e-s;
     }
-	//两直线相交求交点
-	//返回为（INF，INF）表示直线重合, (-INF,-INF) 表示平行, (x,y)是相交的交点
-	Point operator &(const Line & b)const
-	{
-		Point res = s;
-		if (sgn((s-e)^(b.s-b.e)) == 0)
-		{
-			if (sgn((s-b.e)^(b.s-b.e)) == 0)
-				return Point(INF,INF);//重合
-			else return Point(-INF,-INF);//平行
-		}
-		double t = ((s-b.s)^(b.s-b.e))/((s-e)^(b.s-b.e));
-		res.x += (e.x-s.x)*t;
-		res.y += (e.y-s.y)*t;
-		return res;
-	}
-	//*判断线段相交
+    //两直线相交求交点
+    //返回为（INF，INF）表示直线重合, (-INF,-INF) 表示平行, (x,y)是相交的交点
+    Point operator &(const Line & b)const
+    {
+        Point res = s;
+        if (sgn((s-e)^(b.s-b.e)) == 0)
+        {
+            if (sgn((s-b.e)^(b.s-b.e)) == 0)
+                return Point(INF,INF);//重合
+            else return Point(-INF,-INF);//平行
+        }
+        double t = ((s-b.s)^(b.s-b.e))/((s-e)^(b.s-b.e));
+        res.x += (e.x-s.x)*t;
+        res.y += (e.y-s.y)*t;
+        return res;
+    }
+    //*判断线段相交
     bool operator ^ (const Line & b) const
     {
         return
@@ -5444,7 +5740,7 @@ struct Line
             sgn((b.s-e)^(s-e))*sgn((b.e-e)^(s-e)) <= 0 &&
             sgn((s-b.e)^(b.s-b.e))*sgn((e-b.e)^(b.s-b.e)) <= 0;
     }
-	//*判断直线l1和线段l2是否相交
+    //*判断直线l1和线段l2是否相交
     bool operator % (const Line & b) const
     {
         return sgn((b.s-e)^(s-e))*sgn((b.e-e)^(s-e)) <= 0;
@@ -5455,39 +5751,39 @@ struct Line
 //返回为result,是点到直线最近的点
 Point PtoL(Point P,Line L)
 {
-	Point result;
-	double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
-	result.x = L.s.x + (L.e.x-L.s.x)*t;
-	result.y = L.s.y + (L.e.y-L.s.y)*t;
-	return result;
+    Point result;
+    double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
+    result.x = L.s.x + (L.e.x-L.s.x)*t;
+    result.y = L.s.y + (L.e.y-L.s.y)*t;
+    return result;
 }
 
 //点到线段的距离
 //返回点到线段最近的点
 Point PtoS(Point P,Line L)
 {
-	Point res;
-	double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
-	if (t >= 0 && t <= 1)
-	{
-		res.x = L.s.x + (L.e.x - L.s.x)*t;
-		res.y = L.s.y + (L.e.y - L.s.y)*t;
-	}
-	else
-	{
-		if( (P&L.s) < (P&L.e))	res = L.s;
-		else                    res = L.e;
-	}
-	return res;
+    Point res;
+    double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
+    if (t >= 0 && t <= 1)
+    {
+        res.x = L.s.x + (L.e.x - L.s.x)*t;
+        res.y = L.s.y + (L.e.y - L.s.y)*t;
+    }
+    else
+    {
+        if( (P&L.s) < (P&L.e))  res = L.s;
+        else                    res = L.e;
+    }
+    return res;
 }
 
 //判断点在线段上
 bool onSeg(Point P,Line L)
 {
-	return
-	    sgn((L.s-P)^(L.e-P)) == 0 &&
-	    sgn((P.x - L.s.x) * (P.x - L.e.x)) <= 0 &&
-	    sgn((P.y - L.s.y) * (P.y - L.e.y)) <= 0;
+    return
+        sgn((L.s-P)^(L.e-P)) == 0 &&
+        sgn((P.x - L.s.x) * (P.x - L.e.x)) <= 0 &&
+        sgn((P.y - L.s.y) * (P.y - L.e.y)) <= 0;
 }
 
 ///1.4 多边形
@@ -5495,10 +5791,10 @@ bool onSeg(Point P,Line L)
 //点的编号从0~n-1
 double Area(Point p[],int n)
 {
-	double res = 0;
-	for (int i = 0; i < n; i++)
-		res += (p[i]^p[(i+1)%n])/2;
-	return fabs(res);
+    double res = 0;
+    for (int i = 0; i < n; i++)
+        res += (p[i]^p[(i+1)%n])/2;
+    return fabs(res);
 }
 
 //判断点在凸多边形内
@@ -5510,12 +5806,12 @@ double Area(Point p[],int n)
 //1:点在凸多边形内
 int inConvexPoly(Point a,Point p[],int n)
 {
-	for (int i = 0; i < n; i++)
-	{
-		if (sgn((p[i]-a)^(p[(i+1)%n]-a)) < 0)return -1;
-		else if (OnSeg(a,Line(p[i],p[(i+1)%n])))return 0;
-	}
-	return 1;
+    for (int i = 0; i < n; i++)
+    {
+        if (sgn((p[i]-a)^(p[(i+1)%n]-a)) < 0)return -1;
+        else if (OnSeg(a,Line(p[i],p[(i+1)%n])))return 0;
+    }
+    return 1;
 }
 
 //判断点在任意多边形内
@@ -5526,34 +5822,34 @@ int inConvexPoly(Point a,Point p[],int n)
 //1:点在任意多边形内
 int inPoly(Point p,Point poly[],int n)
 {
-	int cnt;
-	Line ray,side;
-	cnt = 0;
-	ray.s = p;
-	ray.e.y = p.y;
-	ray.e.x = -100000000000.0;//-INF,注意取值防止越界
-	for (int i = 0; i < n; i++)
-	{
-		side.s = poly[i];
-		side.e = poly[(i+1)%n];
-		if (OnSeg(p,side))return 0;
+    int cnt;
+    Line ray,side;
+    cnt = 0;
+    ray.s = p;
+    ray.e.y = p.y;
+    ray.e.x = -100000000000.0;//-INF,注意取值防止越界
+    for (int i = 0; i < n; i++)
+    {
+        side.s = poly[i];
+        side.e = poly[(i+1)%n];
+        if (OnSeg(p,side))return 0;
 //如果平行轴则不考虑
-		if (sgn(side.s.y - side.e.y) == 0)
-			continue;
+        if (sgn(side.s.y - side.e.y) == 0)
+            continue;
 
-		if (OnSeg(side.s,ray))
-		{
-			if (sgn(side.s.y - side.e.y) > 0)cnt++;
-		}
-		else if (OnSeg(side.e,ray))
-		{
-			if (sgn(side.e.y - side.s.y) > 0)cnt++;
-		}
-		else if (ray^side)
-			cnt++;
-	}
-	if (cnt % 2 == 1)return 1;
-	else return -1;
+        if (OnSeg(side.s,ray))
+        {
+            if (sgn(side.s.y - side.e.y) > 0)cnt++;
+        }
+        else if (OnSeg(side.e,ray))
+        {
+            if (sgn(side.e.y - side.s.y) > 0)cnt++;
+        }
+        else if (ray^side)
+            cnt++;
+    }
+    if (cnt % 2 == 1)return 1;
+    else return -1;
 }
 
 //*判断凸多边形
@@ -5562,13 +5858,13 @@ int inPoly(Point p,Point poly[],int n)
 //点的编号1~n-1
 bool isConvex(Point poly[],int n)
 {
-	bool s[3]={0};
-	for (int i = 0; i < n; i++)
-	{
-		s[sgn( (poly[(i+1)%n]-poly[i])^(poly[(i+2)%n]-poly[i]) )+1] = true;
-		if (s[0] && s[2])return false;
-	}
-	return true;
+    bool s[3]={0};
+    for (int i = 0; i < n; i++)
+    {
+        s[sgn( (poly[(i+1)%n]-poly[i])^(poly[(i+2)%n]-poly[i]) )+1] = true;
+        if (s[0] && s[2])return false;
+    }
+    return true;
 }
 
 ///2、凸包
@@ -5583,50 +5879,50 @@ int Stack[N],top;
 bool _cmp(Point p1,Point p2)
 {
     const int pos = 0;
-	double tmp = (p1-hull[pos])^(p2-hull[pos]);
-	if (sgn(tmp) > 0)return true;
-	else if (sgn(tmp) == 0 && sgn((p1&hull[pos]) - (p2&hull[pos])) <= 0)
-		return true;
-	else return false;
+    double tmp = (p1-hull[pos])^(p2-hull[pos]);
+    if (sgn(tmp) > 0)return true;
+    else if (sgn(tmp) == 0 && sgn((p1&hull[pos]) - (p2&hull[pos])) <= 0)
+        return true;
+    else return false;
 }
 void Graham(int n)
 {
-	Point p0;
-	int k = 0;
-	p0 = hull[0];
+    Point p0;
+    int k = 0;
+    p0 = hull[0];
 //找最下边的一个点
-	for(int i = 1; i < n; i++)
-	{
-		if ( (p0.y > hull[i].y) || (p0.y == hull[i].y && p0.x > hull[i].x) )
-		{
-			p0 = hull[i];
-			k = i;
-		}
-	}
-	swap(hull[k],hull[0]);
-	sort(hull+1,hull+n,_cmp);
-	if (n == 1)
-	{
-		top = 1;
-		Stack[0] = 0;
-		return;
-	}
-	if (n == 2)
-	{
-		top = 2;
-		Stack[0] = 0;
-		Stack[1] = 1;
-		return ;
-	}
-	Stack[0] = 0;
-	Stack[1] = 1;
-	top = 2;
-	for (int i = 2; i < n; i++)
-	{
-		while (top > 1 && sgn((hull[Stack[top-1]]-hull[Stack[top-2]])^(hull[i]-hull[Stack[top-2]])) <=0)
-			top--;
-		Stack[top++] = i;
-	}
+    for(int i = 1; i < n; i++)
+    {
+        if ( (p0.y > hull[i].y) || (p0.y == hull[i].y && p0.x > hull[i].x) )
+        {
+            p0 = hull[i];
+            k = i;
+        }
+    }
+    swap(hull[k],hull[0]);
+    sort(hull+1,hull+n,_cmp);
+    if (n == 1)
+    {
+        top = 1;
+        Stack[0] = 0;
+        return;
+    }
+    if (n == 2)
+    {
+        top = 2;
+        Stack[0] = 0;
+        Stack[1] = 1;
+        return ;
+    }
+    Stack[0] = 0;
+    Stack[1] = 1;
+    top = 2;
+    for (int i = 2; i < n; i++)
+    {
+        while (top > 1 && sgn((hull[Stack[top-1]]-hull[Stack[top-2]])^(hull[i]-hull[Stack[top-2]])) <=0)
+            top--;
+        Stack[top++] = i;
+    }
 }
 
 ///3、平面最近点对
@@ -5635,33 +5931,33 @@ Point p[N];
 Point tmpt[N];
 bool cmpy(Point a,Point b)
 {
-	return a.y < b.y;
+    return a.y < b.y;
 }
 double dfs(int left,int right)
 {
-	double d = INF;
-	if (left == right)return d;
-	if (left + 1 == right)
-		return p[left]&p[right];
-	int mid = (left+right)/2;
-	double d1 = dfs(left,mid);
-	double d2 = dfs(mid+1,right);
-	d = min(d1,d2);
-	int k = 0;
-	for (int i = left; i <= right; i++)
-	{
-		if (fabs(p[mid].x - p[i].x) <= d)
-			tmpt[k++] = p[i];
-	}
-	sort(tmpt,tmpt+k,cmpy);
-	for (int i = 0; i <k; i++)
-	{
-		for (int j = i+1; j < k && tmpt[j].y - tmpt[i].y < d; j++)
-		{
-			d = min(d,(tmpt[i]&tmpt[j]));
-		}
-	}
-	return d;
+    double d = INF;
+    if (left == right)return d;
+    if (left + 1 == right)
+        return p[left]&p[right];
+    int mid = (left+right)/2;
+    double d1 = dfs(left,mid);
+    double d2 = dfs(mid+1,right);
+    d = min(d1,d2);
+    int k = 0;
+    for (int i = left; i <= right; i++)
+    {
+        if (fabs(p[mid].x - p[i].x) <= d)
+            tmpt[k++] = p[i];
+    }
+    sort(tmpt,tmpt+k,cmpy);
+    for (int i = 0; i <k; i++)
+    {
+        for (int j = i+1; j < k && tmpt[j].y - tmpt[i].y < d; j++)
+        {
+            d = min(d,(tmpt[i]&tmpt[j]));
+        }
+    }
+    return d;
 }
 double Closest_Pair()
 {
@@ -5673,21 +5969,21 @@ double Closest_Pair()
 //4.1 求两点间距离平方的最大值
 int dist2(Point a,Point b)
 {
-	return (a-b)*(a-b);
+    return (a-b)*(a-b);
 }
 int rotating_calipers(Point p[],int n)
 {
-	int ans = 0;
-	Point v;
-	int cur = 1;
-	for (int i = 0; i < n; i++)
-	{
-		v = p[i]-p[(i+1)%n];
-		while ((v^(p[(cur+1)%n]-p[cur])) < 0)
-			cur = (cur+1)%n;
-		ans = max(ans,max(dist2(p[i],p[cur]),dist2(p[(i+1)%n],p[(cur+1)%n])));
-	}
-	return ans;
+    int ans = 0;
+    Point v;
+    int cur = 1;
+    for (int i = 0; i < n; i++)
+    {
+        v = p[i]-p[(i+1)%n];
+        while ((v^(p[(cur+1)%n]-p[cur])) < 0)
+            cur = (cur+1)%n;
+        ans = max(ans,max(dist2(p[i],p[cur]),dist2(p[(i+1)%n],p[(cur+1)%n])));
+    }
+    return ans;
 }
 Point p[N]
 int len(int n)
@@ -5700,21 +5996,21 @@ int len(int n)
 //4.2 旋转卡壳计算平面点集最大三角形面积
 int rotating_calipers(Point p[],int n)
 {
-	int ans = 0;
-	Point v;
-	for (int i = 0; i < n; i++)
-	{
-		int j = (i+1)%n;
-		int k = (j+1)%n;
-		while (j != i && k != i)
-		{
-			ans = max(ans,abs((p[j]-p[i])^(p[k]-p[i])));
-			while ( ((p[i]-p[j])^(p[(k+1)%n]-p[k])) < 0 )
-				k = (k+1)%n;
-			j = (j+1)%n;
-		}
-	}
-	return ans;
+    int ans = 0;
+    Point v;
+    for (int i = 0; i < n; i++)
+    {
+        int j = (i+1)%n;
+        int k = (j+1)%n;
+        while (j != i && k != i)
+        {
+            ans = max(ans,abs((p[j]-p[i])^(p[k]-p[i])));
+            while ( ((p[i]-p[j])^(p[(k+1)%n]-p[k])) < 0 )
+                k = (k+1)%n;
+            j = (j+1)%n;
+        }
+    }
+    return ans;
 }
 Point p[N];
 double maxArea(int n)
@@ -5722,68 +6018,68 @@ double maxArea(int n)
     Graham(n);
     for (int i = 0; i < top; i++)p[i] = hull[Stack[i]];
     return (double)rotating_calipers(p,top)/2;
-	return 0;
+    return 0;
 }
 
 //4.3 求解两凸包最小距离
 //点p0到线段p1p2的距离
 Point PtoS(Point P,Line L)
 {
-	Point res;
-	double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
-	if (t >= 0 && t <= 1)
-	{
-		res.x = L.s.x + (L.e.x - L.s.x)*t;
-		res.y = L.s.y + (L.e.y - L.s.y)*t;
-	}
-	else
-	{
-		if( (P&L.s) < (P&L.e))	res = L.s;
-		else                    res = L.e;
-	}
-	return res;
+    Point res;
+    double t = ((P-L.s)*(L.e-L.s))/((L.e-L.s)*(L.e-L.s));
+    if (t >= 0 && t <= 1)
+    {
+        res.x = L.s.x + (L.e.x - L.s.x)*t;
+        res.y = L.s.y + (L.e.y - L.s.y)*t;
+    }
+    else
+    {
+        if( (P&L.s) < (P&L.e))  res = L.s;
+        else                    res = L.e;
+    }
+    return res;
 }
 double pointtoseg(Point p0,Point p1,Point p2)
 {
-	return (p0&PtoS(p0,Line(p1,p2)));
+    return (p0&PtoS(p0,Line(p1,p2)));
 }
 //平行线段p0p1和p2p3的距离
 double dispallseg(Point p0,Point p1,Point p2,Point p3)
 {
-	double ans1 = min(pointtoseg(p0,p2,p3),pointtoseg(p1,p2,p3));
-	double ans2 = min(pointtoseg(p2,p0,p1),pointtoseg(p3,p0,p1));
-	return min(ans1,ans2);
+    double ans1 = min(pointtoseg(p0,p2,p3),pointtoseg(p1,p2,p3));
+    double ans2 = min(pointtoseg(p2,p0,p1),pointtoseg(p3,p0,p1));
+    return min(ans1,ans2);
 }
 //得到向量a1a2和b1b2的位置关系
 double Get_angle(Point a1,Point a2,Point b1,Point b2)
 {
-	return (a2-a1)^(b1-b2);
+    return (a2-a1)^(b1-b2);
 }
 double rotating_calipers(Point p[],int np,Point q[],int nq)
 {
-	int sp = 0, sq = 0;
-	for (int i = 0; i < np; i++)
-		if (sgn(p[i].y - p[sp].y) < 0)
-			sp = i;
-	for (int i = 0; i < nq; i++)
-		if (sgn(q[i].y - q[sq].y) > 0)
-			sq = i;
-	double tmp;
-	double ans = (p[sp]&q[sq]);
-	for (int i = 0; i < np; i++)
-	{
-		while (sgn(tmp = Get_angle(p[sp],p[(sp+1)%np],q[sq],q[(sq+1)%nq])) < 0)
-			sq = (sq+1)%nq;
-		if (sgn(tmp) == 0)
-			ans = min(ans,dispallseg(p[sp],p[(sp+1)%np],q[sq],q[(sq+1)%nq]));
-		else ans = min(ans,pointtoseg(q[sq],p[sp],p[(sp+1)%np]));
-		sp = (sp+1)%np;
-	}
-	return ans;
+    int sp = 0, sq = 0;
+    for (int i = 0; i < np; i++)
+        if (sgn(p[i].y - p[sp].y) < 0)
+            sp = i;
+    for (int i = 0; i < nq; i++)
+        if (sgn(q[i].y - q[sq].y) > 0)
+            sq = i;
+    double tmp;
+    double ans = (p[sp]&q[sq]);
+    for (int i = 0; i < np; i++)
+    {
+        while (sgn(tmp = Get_angle(p[sp],p[(sp+1)%np],q[sq],q[(sq+1)%nq])) < 0)
+            sq = (sq+1)%nq;
+        if (sgn(tmp) == 0)
+            ans = min(ans,dispallseg(p[sp],p[(sp+1)%np],q[sq],q[(sq+1)%nq]));
+        else ans = min(ans,pointtoseg(q[sq],p[sp],p[(sp+1)%np]));
+        sp = (sp+1)%np;
+    }
+    return ans;
 }
 double solve(Point p[],int n,Point q[],int m)
 {
-	return min(rotating_calipers(p,n,q,m),rotating_calipers(q,m,p,n));
+    return min(rotating_calipers(p,n,q,m),rotating_calipers(q,m,p,n));
 }
 Point p[MAXN],q[MAXN];
 double len(int n,int m)
@@ -5803,26 +6099,26 @@ double len(int n,int m)
 //*过三点求圆心坐标（三角形外心）
 Point waixin(Point a,Point b,Point c)
 {
-	double a1 = b.x - a.x, b1 = b.y - a.y, c1 = (a1*a1 + b1*b1)/2;
-	double a2 = c.x - a.x, b2 = c.y - a.y, c2 = (a2*a2 + b2*b2)/2;
-	double d = a1*b2 - a2*b1;
-	return Point(a.x + (c1*b2 - c2*b1)/d, a.y + (a1*c2 -a2*c1)/d);
+    double a1 = b.x - a.x, b1 = b.y - a.y, c1 = (a1*a1 + b1*b1)/2;
+    double a2 = c.x - a.x, b2 = c.y - a.y, c2 = (a2*a2 + b2*b2)/2;
+    double d = a1*b2 - a2*b1;
+    return Point(a.x + (c1*b2 - c2*b1)/d, a.y + (a1*c2 -a2*c1)/d);
 }
 
 //*两个圆的公共部分面积
 double Area_of_overlap(Point c1,double r1,Point c2,double r2)
 {
-	double d = dist(c1,c2);
-	if (r1 + r2 < d + eps)return 0;
-	if (d < fabs(r1 - r2) + eps)
-	{
-		double r = min(r1,r2);
-		return PI*r*r;
-	}
-	double x = (d*d + r1*r1 - r2*r2)/(2*d);
-	double t1 = acos(x / r1);
-	double t2 = acos((d - x)/r2);
-	return r1*r1*t1 + r2*r2*t2 - d*r1*sin(t1);
+    double d = dist(c1,c2);
+    if (r1 + r2 < d + eps)return 0;
+    if (d < fabs(r1 - r2) + eps)
+    {
+        double r = min(r1,r2);
+        return PI*r*r;
+    }
+    double x = (d*d + r1*r1 - r2*r2)/(2*d);
+    double t1 = acos(x / r1);
+    double t2 = acos((d - x)/r2);
+    return r1*r1*t1 + r2*r2*t2 - d*r1*sin(t1);
 }
 
 ///三角形公式
