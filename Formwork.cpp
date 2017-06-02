@@ -2,190 +2,190 @@
 *          2014-2016 code by kopyh
 **********************************************************************************************************/
 /******catalogue***********
-¼òµ¥Ëã·¨ÓëSTL£¡£¡£¡£¡£¡
+ç®€å•ç®—æ³•ä¸STLï¼ï¼ï¼ï¼ï¼
     STL
-    ÊäÈëÊä³öÍâ¹Ò
-    ´óÊı´¦Àí
-        ´óÊı¼Ó·¨£¬¼õ·¨£¬³Ë·¨, ±È½Ï, JAVA
-DP£¡£¡£¡£¡£¡
-    ±³°üÎÊÌâ
-        01±³°ü
-        ÍêÈ«±³°ü
-        ¶àÖØ±³°ü
-        ¶àÖØ±³°ü(µ¥µ÷¶ÓÁĞÓÅ»¯)
-        ¶şÎ¬·ÑÓÃ±³°ü
-    Ğ±ÂÊÓÅ»¯DP
-    ³¤¶ÈDP
-        ×î´óÁ¬Ğø×ÓĞòÁĞÖ®ºÍ
-        ×î´ó×Ó¾ØÕóºÍ
-        ×î³¤µİÔö×ÓĞòÁĞ(LIS)
-        ×î³¤¹«¹²×ÓĞòÁĞ(LCS)
-    ÊıÎ»DP
-    Ê÷DP
-    Çø¼äDP
-        ×îĞ¡´ú¼Û¹¹Ôì»ØÎÄ´®
-        ×î´óÀ¨ºÅÆ¥ÅäÊı
+    è¾“å…¥è¾“å‡ºå¤–æŒ‚
+    å¤§æ•°å¤„ç†
+        å¤§æ•°åŠ æ³•ï¼Œå‡æ³•ï¼Œä¹˜æ³•, æ¯”è¾ƒ, JAVA
+DPï¼ï¼ï¼ï¼ï¼
+    èƒŒåŒ…é—®é¢˜
+        01èƒŒåŒ…
+        å®Œå…¨èƒŒåŒ…
+        å¤šé‡èƒŒåŒ…
+        å¤šé‡èƒŒåŒ…(å•è°ƒé˜Ÿåˆ—ä¼˜åŒ–)
+        äºŒç»´è´¹ç”¨èƒŒåŒ…
+    æ–œç‡ä¼˜åŒ–DP
+    é•¿åº¦DP
+        æœ€å¤§è¿ç»­å­åºåˆ—ä¹‹å’Œ
+        æœ€å¤§å­çŸ©é˜µå’Œ
+        æœ€é•¿é€’å¢å­åºåˆ—(LIS)
+        æœ€é•¿å…¬å…±å­åºåˆ—(LCS)
+    æ•°ä½DP
+    æ ‘DP
+    åŒºé—´DP
+        æœ€å°ä»£ä»·æ„é€ å›æ–‡ä¸²
+        æœ€å¤§æ‹¬å·åŒ¹é…æ•°
         Sparse Table
-            Ò»Î¬RMQ
-            ¶şÎ¬RMQ
-ËÑË÷£¡£¡£¡£¡£¡
+            ä¸€ç»´RMQ
+            äºŒç»´RMQ
+æœç´¢ï¼ï¼ï¼ï¼ï¼
     DFS
-    BFS(¶ÓÁĞ½â·¨)
-    A*Æô·¢Ê½ËÑË÷Ëã·¨
-    IDA*µü´úÉî»¯A*ËÑË÷
+    BFS(é˜Ÿåˆ—è§£æ³•)
+    A*å¯å‘å¼æœç´¢ç®—æ³•
+    IDA*è¿­ä»£æ·±åŒ–A*æœç´¢
     Dancing Link
-Êı¾İ½á¹¹£¡£¡£¡£¡£¡
-    ²¢²é¼¯
-    Ïß¶ÎÊ÷
-    »®·ÖÊ÷
-    Ê÷×´Êı×é
-    Ê÷Á´ÆÊ·Ö
-    ×ÖµäÊ÷
+æ•°æ®ç»“æ„ï¼ï¼ï¼ï¼ï¼
+    å¹¶æŸ¥é›†
+    çº¿æ®µæ ‘
+    åˆ’åˆ†æ ‘
+    æ ‘çŠ¶æ•°ç»„
+    æ ‘é“¾å‰–åˆ†
+    å­—å…¸æ ‘
     Treap
-    ÉìÕ¹Ê÷(splay tree)
-    Ö÷Ï¯Ê÷
-        ¾²Ì¬Çø¼äk´ó
-        ¶¯Ì¬Çø¼äk´ó
-        Çø¼ä²»ÏàÍ¬ÊıÊıÁ¿
-        Ê÷ÉÏÂ·¾¶µãÈ¨µÚk´ó
-    ¹şÏ£±í
-        ELFhash£¨×Ö·û´®¹şÏ£º¯Êı£©
-    Äª¶ÓËã·¨
-×Ö·û´®£¡£¡£¡£¡£¡
-    ×Ö·û´®×îĞ¡±íÊ¾·¨
-    Manacher×î³¤»ØÎÄ×Ó´®
+    ä¼¸å±•æ ‘(splay tree)
+    ä¸»å¸­æ ‘
+        é™æ€åŒºé—´kå¤§
+        åŠ¨æ€åŒºé—´kå¤§
+        åŒºé—´ä¸ç›¸åŒæ•°æ•°é‡
+        æ ‘ä¸Šè·¯å¾„ç‚¹æƒç¬¬kå¤§
+    å“ˆå¸Œè¡¨
+        ELFhashï¼ˆå­—ç¬¦ä¸²å“ˆå¸Œå‡½æ•°ï¼‰
+    è«é˜Ÿç®—æ³•
+å­—ç¬¦ä¸²ï¼ï¼ï¼ï¼ï¼
+    å­—ç¬¦ä¸²æœ€å°è¡¨ç¤ºæ³•
+    Manacheræœ€é•¿å›æ–‡å­ä¸²
     KMP
-    À©Õ¹kmp
-    AC×Ô¶¯»ú
-    ºó×ºÊı×é
-        DA±¶ÔöËã·¨
-        DC3Ëã·¨
-    ºó×º×Ô¶¯»ú
-Í¼ÂÛ£¡£¡£¡£¡£¡£¡
-    ×îĞ¡Éú³ÉÊ÷
+    æ‰©å±•kmp
+    ACè‡ªåŠ¨æœº
+    åç¼€æ•°ç»„
+        DAå€å¢ç®—æ³•
+        DC3ç®—æ³•
+    åç¼€è‡ªåŠ¨æœº
+å›¾è®ºï¼ï¼ï¼ï¼ï¼ï¼
+    æœ€å°ç”Ÿæˆæ ‘
         prim
         kruskal
-    ´ÎĞ¡Éú³ÉÊ÷
-    µ¥Ô´×î¶Ì¾àÀë
+    æ¬¡å°ç”Ÿæˆæ ‘
+    å•æºæœ€çŸ­è·ç¦»
         Dijkstra
-        ¶ÑÓÅ»¯Dijkstra
+        å †ä¼˜åŒ–Dijkstra
         Bellman-Ford
         SPFA
-    È«Í¼×î¶ÌÂ·
+    å…¨å›¾æœ€çŸ­è·¯
         Floyd
-    Å·À­»ØÂ·
+    æ¬§æ‹‰å›è·¯
         fleury
-    ÍøÂçÁ÷
-        ×î´óÁ÷
+    ç½‘ç»œæµ
+        æœ€å¤§æµ
             EdmondsKarp
             dinic
             SAP
             ISAP
-        ×îĞ¡·ÑÓÃ×î´óÁ÷
-    ¶ş·ÖÍ¼
-        ĞÙÑÀÀûËã·¨
-        Hopcroft-KarpËã·¨
-        KMËã·¨
-    Ç¿Á¬Í¨·ÖÁ¿
+        æœ€å°è´¹ç”¨æœ€å¤§æµ
+    äºŒåˆ†å›¾
+        åŒˆç‰™åˆ©ç®—æ³•
+        Hopcroft-Karpç®—æ³•
+        KMç®—æ³•
+    å¼ºè¿é€šåˆ†é‡
         tarjan
-    Ë«Á¬Í¨·ÖÁ¿
-        ±ßË«Á¬Í¨·ÖÁ¿
-        µãË«Á¬Í¨·ÖÁ¿
-    ×î½ü¹«¹²×æÏÈ(LCA)
+    åŒè¿é€šåˆ†é‡
+        è¾¹åŒè¿é€šåˆ†é‡
+        ç‚¹åŒè¿é€šåˆ†é‡
+    æœ€è¿‘å…¬å…±ç¥–å…ˆ(LCA)
         tarjan
-        ST-RMQÔÚÏßËã·¨
-ÊıÂÛ£¡£¡£¡£¡£¡
+        ST-RMQåœ¨çº¿ç®—æ³•
+æ•°è®ºï¼ï¼ï¼ï¼ï¼
     Fibonacci Number
-    Greatest Common Divisor ×î´ó¹«Ô¼Êı,Å·¼¸ÀïµÂËã·¨
-    Lowest Common Multiple ×îĞ¡¹«±¶Êı
-    À©Õ¹Å·¼¸ÀïµÂËã·¨
-    ÄæÔª
-        À©Õ¹Å·¼¸ÀïµÃ½â·¨
-        ·ÑÂíĞ¡¶¨Àí½â·¨
-    ¿ìËÙÃİÔËËã
-    ÖÊÊıÅĞ¶Ï
-        ¼òµ¥PrimeÅĞ¶Ï
-        Sieve PrimeËØÊıÉ¸Ñ¡·¨
-        Miller-RabinËØÊı²âÊÔËã·¨
-    Î¨Ò»·Ö½â¶¨Àí£¬Òò×Ó·Ö½âÇóºÍ
-    ÖÊÒòÊı·Ö½â
-        pollard_rho Ëã·¨
-    Å·À­º¯Êı
-    Ô¼Éª·ò»·
-    ¸ßË¹ÏûÔª
-        ¿ª¹ØÎÊÌâ
-×éºÏÊıÑ§£¡£¡£¡£¡£¡
-    ÅÅÁĞ×éºÏ
-    Lucas¶¨Àí
-    È«ÅÅÁĞ
-    ´íÅÅ¹«Ê½
-    Ä¸º¯Êı
-        ÕûÊı»®·Ö
-    ¿µÍĞÕ¹¿ª
-    Äæ¿µÍĞÕ¹¿ª
+    Greatest Common Divisor æœ€å¤§å…¬çº¦æ•°,æ¬§å‡ é‡Œå¾·ç®—æ³•
+    Lowest Common Multiple æœ€å°å…¬å€æ•°
+    æ‰©å±•æ¬§å‡ é‡Œå¾·ç®—æ³•
+    é€†å…ƒ
+        æ‰©å±•æ¬§å‡ é‡Œå¾—è§£æ³•
+        è´¹é©¬å°å®šç†è§£æ³•
+    å¿«é€Ÿå¹‚è¿ç®—
+    è´¨æ•°åˆ¤æ–­
+        ç®€å•Primeåˆ¤æ–­
+        Sieve Primeç´ æ•°ç­›é€‰æ³•
+        Miller-Rabinç´ æ•°æµ‹è¯•ç®—æ³•
+    å”¯ä¸€åˆ†è§£å®šç†ï¼Œå› å­åˆ†è§£æ±‚å’Œ
+    è´¨å› æ•°åˆ†è§£
+        pollard_rho ç®—æ³•
+    æ¬§æ‹‰å‡½æ•°
+    çº¦ç‘Ÿå¤«ç¯
+    é«˜æ–¯æ¶ˆå…ƒ
+        å¼€å…³é—®é¢˜
+ç»„åˆæ•°å­¦ï¼ï¼ï¼ï¼ï¼
+    æ’åˆ—ç»„åˆ
+    Lucaså®šç†
+    å…¨æ’åˆ—
+    é”™æ’å…¬å¼
+    æ¯å‡½æ•°
+        æ•´æ•°åˆ’åˆ†
+    åº·æ‰˜å±•å¼€
+    é€†åº·æ‰˜å±•å¼€
     Catalan Number
     Stirling Number(Second Kind)
-    Èİ³âÔ­Àí
-    ¾ØÕó¿ìËÙÃİ
-¼ÆËã¼¸ºÎ£¡£¡£¡£¡£¡
+    å®¹æ–¥åŸç†
+    çŸ©é˜µå¿«é€Ÿå¹‚
+è®¡ç®—å‡ ä½•ï¼ï¼ï¼ï¼ï¼
     Point
     Line
-    µãÓëÖ±Ïß¹ØÏµ
-    ¶à±ßĞÎ
-    Í¹°ü
-    Æ½Ãæ×î½üµã¶Ô
-    Ğı×ª¿¨¿Ç
-        Á½µã¼ä¾àÀë×î´óÖµ
-        Æ½Ãæµã¼¯×î´óÈı½ÇĞÎÃæ»ı
-        Á½Í¹°ü×îĞ¡¾àÀë
-    Ô²
-    Èı½ÇĞÎ¹«Ê½
-    Èı·ÖÇó¼«Öµ
-²©ŞÄÂÛ£¡£¡£¡£¡£¡
-    °ÍÊ²²©ŞÄ£º
-    Íş×ô·ò²©ŞÄ£º
-    nim²©ŞÄ£º
-    k±¶¼õ·¨²©ŞÄ£º
-    sgº¯Êı
+    ç‚¹ä¸ç›´çº¿å…³ç³»
+    å¤šè¾¹å½¢
+    å‡¸åŒ…
+    å¹³é¢æœ€è¿‘ç‚¹å¯¹
+    æ—‹è½¬å¡å£³
+        ä¸¤ç‚¹é—´è·ç¦»æœ€å¤§å€¼
+        å¹³é¢ç‚¹é›†æœ€å¤§ä¸‰è§’å½¢é¢ç§¯
+        ä¸¤å‡¸åŒ…æœ€å°è·ç¦»
+    åœ†
+    ä¸‰è§’å½¢å…¬å¼
+    ä¸‰åˆ†æ±‚æå€¼
+åšå¼ˆè®ºï¼ï¼ï¼ï¼ï¼
+    å·´ä»€åšå¼ˆï¼š
+    å¨ä½å¤«åšå¼ˆï¼š
+    nimåšå¼ˆï¼š
+    kå€å‡æ³•åšå¼ˆï¼š
+    sgå‡½æ•°
 **/
-///¼òµ¥Ëã·¨ÓëSTL£¡£¡£¡£¡£¡
+///ç®€å•ç®—æ³•ä¸STLï¼ï¼ï¼ï¼ï¼
 #pragma comment(linker, "/STACK:1024000000,1024000000")
 
 ///C
 #include <stdio.h>
 sprintf(result,"%d%d",num1,num2);
 sscanf(init_str,"%d %s",&num,&str);
-int __builtin_popcount(unsigned int);//¶ş½øÖÆÎ»ÖĞ1µÄ¸öÊı
+int __builtin_popcount(unsigned int);//äºŒè¿›åˆ¶ä½ä¸­1çš„ä¸ªæ•°
 
 #include <stdlib.h>
 int *p; p=(int*)malloc(sizeof(int)); free(p);
 int cmp(const void *a, const void *b )
-{return *(int*)b - *(int*)a;}//½µĞò
+{return *(int*)b - *(int*)a;}//é™åº
 int cmp2(const void *a, const void *b)
 {return *(double*)a>(double*)*b ? 1 : -1;}//double
 qsort(str,n,sizeof(str[0]),cmp);
 
 #include <math.h>
 double fabs(double x);
-double ceil(double x);//ÏòÉÏÈ¡Õû
-double floor(double x);//ÏòÏÂÈ¡Õû
-double round(double x);//×î½Ó½üxµÄÕûÊı
-//½Ç¶ÈÖÆ = »¡¶ÈÖÆ/180*PI;
-double asin(double arg);//Çó·´ÕıÏÒ arg¡Ê[-1,1],·µ»ØÖµ¡Ê[-pi/2,+pi/2]
-double sin(double arg);//ÇóÕıÏÒ argÎª»¡¶È,·µ»ØÖµ¡Ê[-1, 1]
-double exp(double arg);//ÇóeµÄarg´Î·½
-double log(double num);//ÇónumµÄ¶ÔÊı,»ùÊıÎªe
+double ceil(double x);//å‘ä¸Šå–æ•´
+double floor(double x);//å‘ä¸‹å–æ•´
+double round(double x);//æœ€æ¥è¿‘xçš„æ•´æ•°
+//è§’åº¦åˆ¶ = å¼§åº¦åˆ¶/180*PI;
+double asin(double arg);//æ±‚åæ­£å¼¦ argâˆˆ[-1,1],è¿”å›å€¼âˆˆ[-pi/2,+pi/2]
+double sin(double arg);//æ±‚æ­£å¼¦ argä¸ºå¼§åº¦,è¿”å›å€¼âˆˆ[-1, 1]
+double exp(double arg);//æ±‚eçš„argæ¬¡æ–¹
+double log(double num);//æ±‚numçš„å¯¹æ•°,åŸºæ•°ä¸ºe
 k = (int)(log((double)n) / log(2.0));//2^k==n
 double sqrt(double num);
-double pow(double base,double exp);//ÇóbaseµÄexp´Î·½
+double pow(double base,double exp);//æ±‚baseçš„expæ¬¡æ–¹
 memset( the_array, 0, sizeof(the_array) );
 memcpy( the_array, src, sizeof(src));
 
 #include <string.h>
-int strcmp(const char *str1, const char *str2 );//str1<str2,return¸ºÊı
-void strcpy(int a[],int b[]);//×Ö·û´®¸´ÖÆb¸³¸øa
+int strcmp(const char *str1, const char *str2 );//str1<str2,returnè´Ÿæ•°
+void strcpy(int a[],int b[]);//å­—ç¬¦ä¸²å¤åˆ¶bèµ‹ç»™a
 int strlen(int a[]);
-char *strstr(char *str1, char *str2);//str1ÖĞstr2´®µÚÒ»´Î³öÏÖµÄÖ¸Õë,ÕÒ²»µ½·µ»ØNULL
+char *strstr(char *str1, char *str2);//str1ä¸­str2ä¸²ç¬¬ä¸€æ¬¡å‡ºç°çš„æŒ‡é’ˆ,æ‰¾ä¸åˆ°è¿”å›NULL
 
 #include <time.h>
 clock_t clockBegin, clockEnd;
@@ -211,9 +211,9 @@ ss>>a>>b>>c;
 ///string
 #include<string>
 string s,st[maxn],ss(sss);//char sss[N];
-s.c_str();//·µ»Ø×Ö·ûÊı×é£»
-string st = s.substr(now,len);//½ØÈ¡´Ónow´¦¿ªÊ¼³¤¶ÈÎªlenµÄ×Ó×Ö·û´®£»
-st.assign(s,now,len);//¹¦ÄÜÍ¬ÉÏ
+s.c_str();//è¿”å›å­—ç¬¦æ•°ç»„ï¼›
+string st = s.substr(now,len);//æˆªå–ä»nowå¤„å¼€å§‹é•¿åº¦ä¸ºlençš„å­å­—ç¬¦ä¸²ï¼›
+st.assign(s,now,len);//åŠŸèƒ½åŒä¸Š
 getline(cin,s,'\n');
 
 ///pair
@@ -232,27 +232,27 @@ vs.begin();  vs.end();
 vs.insert(it,x); vs.insert(it,n,x);   vs.insert(it,first,last);
 vs.pop_back();   vs.erase(it);    vs.erase(first,last);    vs.clear();
 vs.swap(v);
-//È¥ÖØ£¬uniqueÉ¾³ıbeginµ½endÖ®¼äµÄÏàÁÚÖØ¸´ÔªËØºó·µ»ØÒ»¸öĞÂµÄ½áÎ²µÄµü´úÆ÷
-vs.erase(unique(s.begin(),s.end()),s.end())£»
+//å»é‡ï¼Œuniqueåˆ é™¤beginåˆ°endä¹‹é—´çš„ç›¸é‚»é‡å¤å…ƒç´ åè¿”å›ä¸€ä¸ªæ–°çš„ç»“å°¾çš„è¿­ä»£å™¨
+vs.erase(unique(s.begin(),s.end()),s.end())ï¼›
 
-///map,key¨Dvalue¹ØÁªÊ½ÈİÆ÷£¬¿ÉÀûÓÃkeyÖµ¿ìËÙ²éÕÒ¼ÇÂ¼
+///map,keyâ€•valueå…³è”å¼å®¹å™¨ï¼Œå¯åˆ©ç”¨keyå€¼å¿«é€ŸæŸ¥æ‰¾è®°å½•
 #include<map>
-map<int,string> mp;//int×ökeyÖµ×Ö·û´®Îªvalue
+map<int,string> mp;//intåškeyå€¼å­—ç¬¦ä¸²ä¸ºvalue
 //string name; mp[name]+=123;
-multimap<int, string> mp;//ÔÊĞíÖØ¸´
-map<string , int>::iterator it;//ÓÃÖ¸Õë´¦Àí
+multimap<int, string> mp;//å…è®¸é‡å¤
+map<string , int>::iterator it;//ç”¨æŒ‡é’ˆå¤„ç†
 m.insert();
 m.begin();  m.end();    m.find();
 m.clear();  m.erase();
 m.count();  m.empty();  m.size();
 m.swap();
-//·µ»ØÒ»¸ö·Çµİ¼õĞòÁĞ[first, last)ÖĞµÄµÚÒ»¸ö´óÓÚµÈÓÚÖµvalµÄÎ»ÖÃµÄµü´úÆÚ¡£
+//è¿”å›ä¸€ä¸ªéé€’å‡åºåˆ—[first, last)ä¸­çš„ç¬¬ä¸€ä¸ªå¤§äºç­‰äºå€¼valçš„ä½ç½®çš„è¿­ä»£æœŸã€‚
 lower_bound(first,last,val);
-//·µ»ØÒ»¸ö·Çµİ¼õĞòÁĞ[first, last)ÖĞµÚÒ»¸ö´óÓÚvalµÄÎ»ÖÃµÄµü´úÆÚ¡£
+//è¿”å›ä¸€ä¸ªéé€’å‡åºåˆ—[first, last)ä¸­ç¬¬ä¸€ä¸ªå¤§äºvalçš„ä½ç½®çš„è¿­ä»£æœŸã€‚
 upper_bound(first,last,val);
-m.max_size();//·µ»Ø¿ÉÒÔÈİÄÉµÄ×î´óÔªËØ¸öÊı
+m.max_size();//è¿”å›å¯ä»¥å®¹çº³çš„æœ€å¤§å…ƒç´ ä¸ªæ•°
 
-///stack£º
+///stackï¼š
 #include<stack>
 stack<int>s;
 s.push(x);
@@ -267,63 +267,63 @@ q.push(x);
 q.pop();
 q.front();  q.back();
 q.empty();  q.size();
-//ÓÅÏÈ¶ÓÁĞ£¬ÓÅÏÈÊä³öÓÅÏÈ¼¶¸ßµÄ¶ÓÁĞÏî:
+//ä¼˜å…ˆé˜Ÿåˆ—ï¼Œä¼˜å…ˆè¾“å‡ºä¼˜å…ˆçº§é«˜çš„é˜Ÿåˆ—é¡¹:
 struct node
 {
     int x, y;
     friend bool operator < (node a, node b)
     {
-//        if(a.y==b.y)return a.x > b.x;//¶şÎ¬ÅĞ¶Ï£¬°´x½µĞò
-        return a.y < b.y;//°´y½µĞò
+//        if(a.y==b.y)return a.x > b.x;//äºŒç»´åˆ¤æ–­ï¼ŒæŒ‰xé™åº
+        return a.y < b.y;//æŒ‰yé™åº
     }
 };
-priority_queue<node>q;//¶¨Òå½á¹¹Ìå
+priority_queue<node>q;//å®šä¹‰ç»“æ„ä½“
 struct mycmp
 {
     bool operator()(const int &a,const int &b)
     {
-        return a>b;//ÉıĞò
+        return a>b;//å‡åº
     }
 };
 priority_queue<int,vector<int>,mycmp> q;
-priority_queue<int,vector<int>,greater<int> > q;//Êı×éÉıĞòÓÅÏÈ¶ÓÁĞ
-priority_queue<int,vector<int>,less<int> > q;//Êı×é½µĞòÓÅÏÈ¶ÓÁĞ
-q.top();//·µ»ØÓÅÏÈ¶ÓÁĞ¶Ô¶¥ÔªËØ
+priority_queue<int,vector<int>,greater<int> > q;//æ•°ç»„å‡åºä¼˜å…ˆé˜Ÿåˆ—
+priority_queue<int,vector<int>,less<int> > q;//æ•°ç»„é™åºä¼˜å…ˆé˜Ÿåˆ—
+q.top();//è¿”å›ä¼˜å…ˆé˜Ÿåˆ—å¯¹é¡¶å…ƒç´ 
 
-///set,ºìºÚÊ÷µÄÆ½ºâ¶ş²æ¼ìË÷Ê÷½¨Á¢£¬ÓÃÓÚ¿ìËÙ¼ìË÷
+///set,çº¢é»‘æ ‘çš„å¹³è¡¡äºŒå‰æ£€ç´¢æ ‘å»ºç«‹ï¼Œç”¨äºå¿«é€Ÿæ£€ç´¢
 #include<set>
 struct cmp
 {
     bool operator()( const int &a, const int &b ) const
-    {   return a>b;  }//½µĞò
+    {   return a>b;  }//é™åº
 };
 set<int,cmp> st;
-set<int> s;//Ä¬ÈÏÉıĞò
+set<int> s;//é»˜è®¤å‡åº
 bool operator<(const node &a, const node &b)
-{   return a.y > b.y; }//½µĞò
+{   return a.y > b.y; }//é™åº
 struct node
 {
     int x, y;
     friend bool operator < (node a, node b)
     {
-//        if(a.y==b.y)return a.x > b.x;//¶şÎ¬ÅĞ¶Ï£¬°´x½µĞò
-        return a.y > b.y;//°´y½µĞò
+//        if(a.y==b.y)return a.x > b.x;//äºŒç»´åˆ¤æ–­ï¼ŒæŒ‰xé™åº
+        return a.y > b.y;//æŒ‰yé™åº
     }
 } t;
 set<node> st;
-multiset<int> st;//Óëset²»Í¬£¬ÔÊĞíÏàÍ¬ÔªËØ
-multiset<int>::iterator it;//È¡Ö¸Õë
+multiset<int> st;//ä¸setä¸åŒï¼Œå…è®¸ç›¸åŒå…ƒç´ 
+multiset<int>::iterator it;//å–æŒ‡é’ˆ
 it=st.begin();
-//Èç¹ûÊÇ:st.erase(*it);É¾³ıÔªËØµÄ»°£¬ËùÓĞµÄÏàÍ¬ÔªËØ¶¼»á±»É¾³ı
+//å¦‚æœæ˜¯:st.erase(*it);åˆ é™¤å…ƒç´ çš„è¯ï¼Œæ‰€æœ‰çš„ç›¸åŒå…ƒç´ éƒ½ä¼šè¢«åˆ é™¤
 st.erase(it);   st.clear();
 st.begin(); st.end(); st.rbegin();
 st.insert();
 st.count(); st.empty(); st.size();  st.find();
-st.equal_range();//·µ»Ø¼¯ºÏÖĞÓë¸ø¶¨ÖµÏàµÈµÄÉÏÏÂÏŞµÄÁ½¸öµü´úÆ÷;
+st.equal_range();//è¿”å›é›†åˆä¸­ä¸ç»™å®šå€¼ç›¸ç­‰çš„ä¸Šä¸‹é™çš„ä¸¤ä¸ªè¿­ä»£å™¨;
 st.swap();
-st.lower_bound();//·µ»ØÖ¸Ïò(ÉıĞòÊ±)´óÓÚ£¨»òµÈÓÚ£©Ä³ÖµµÄµÚÒ»¸öÔªËØµÄµü´úÆ÷
-//½á¹¹Ìå£ºit = st.lower_bound(tn); printf("%d\n",(*it).x);
-st.upper_bound();//·µ»Ø´óÓÚÄ³¸öÖµÔªËØµÄµü´úÆ÷
+st.lower_bound();//è¿”å›æŒ‡å‘(å‡åºæ—¶)å¤§äºï¼ˆæˆ–ç­‰äºï¼‰æŸå€¼çš„ç¬¬ä¸€ä¸ªå…ƒç´ çš„è¿­ä»£å™¨
+//ç»“æ„ä½“ï¼šit = st.lower_bound(tn); printf("%d\n",(*it).x);
+st.upper_bound();//è¿”å›å¤§äºæŸä¸ªå€¼å…ƒç´ çš„è¿­ä»£å™¨
 
 ///bitset
 #include<bitset>
@@ -334,44 +334,44 @@ bitset<N> bit(str);
 bitset<N> bit(str,pos);
 bitset<N> bit(str,pos,num);
 bit.set();  bit.set(pos);   bit.reset();    bit.reset(pos);
-bit.flip(); bit.flip(pos); //°´Î»È¡·´
-bit.size(); bit.count();//1µÄ¸öÊı
-bit.any();  bit.none(); //ÓĞ1£¬ÎŞ1£»return bool
-bit.test(pos) == bit[pos]; //pos´¦Îª1£¿
+bit.flip(); bit.flip(pos); //æŒ‰ä½å–å
+bit.size(); bit.count();//1çš„ä¸ªæ•°
+bit.any();  bit.none(); //æœ‰1ï¼Œæ— 1ï¼›return bool
+bit.test(pos) == bit[pos]; //poså¤„ä¸º1ï¼Ÿ
 u = bit.to_ulong();
 str = bit.to_string(); //str[n-i-i]==bit[i]
 
 ///algorithm;
 #include<algorithm>
-sort(begin,end);//ÉıĞòÅÅÁĞ£»
+sort(begin,end);//å‡åºæ’åˆ—ï¼›
 bool cmp(int a,int b)
-{   return a>b; }//½µĞò
+{   return a>b; }//é™åº
 bool cmp(node a,node b)
 {
-//    if(a.y == b.y)return a.x > b.x;//½µĞò
-    return a.y > b.y;//½µĞò
+//    if(a.y == b.y)return a.x > b.x;//é™åº
+    return a.y > b.y;//é™åº
 }
 struct node
 {
     int x,y;
     friend bool operator < (node a, node b)
     {
-//        if(a.y==b.y)return a.x < b.x;//¶şÎ¬ÅĞ¶Ï£¬½µĞò
-        return a.y > b.y;//½µĞò
+//        if(a.y==b.y)return a.x < b.x;//äºŒç»´åˆ¤æ–­ï¼Œé™åº
+        return a.y > b.y;//é™åº
     }
 };
 sort(begin,end,cmp);
-sort(begin,end);//½á¹¹ÌåÖĞÓÑÔª¶¨ÒåÅÅĞò¹æÔò
-stable_sort(begin,end,cmp);//ÎÈ¶¨ÅÅĞò
-//È¥³ıÏàÁÚµÄÖØ¸´Öµ(°ÑÖØ¸´µÄ·Åµ½×îºó)£¬È»ºó·µ»ØÈ¥ÖØºóµÄ×îºóÒ»¸öÔªËØµÄµØÖ·£»
+sort(begin,end);//ç»“æ„ä½“ä¸­å‹å…ƒå®šä¹‰æ’åºè§„åˆ™
+stable_sort(begin,end,cmp);//ç¨³å®šæ’åº
+//å»é™¤ç›¸é‚»çš„é‡å¤å€¼(æŠŠé‡å¤çš„æ”¾åˆ°æœ€å)ï¼Œç„¶åè¿”å›å»é‡åçš„æœ€åä¸€ä¸ªå…ƒç´ çš„åœ°å€ï¼›
 unique(begin,end);
-//ÔÚ[begin,end)ÖĞ²éÕÒval£¬·µ»ØµÚÒ»¸ö·ûºÏÌõ¼şµÄÔªËØµÄµü´úÆ÷£¬·ñÔò·µ»ØendÖ¸Õë
+//åœ¨[begin,end)ä¸­æŸ¥æ‰¾valï¼Œè¿”å›ç¬¬ä¸€ä¸ªç¬¦åˆæ¡ä»¶çš„å…ƒç´ çš„è¿­ä»£å™¨ï¼Œå¦åˆ™è¿”å›endæŒ‡é’ˆ
 find(begin,end,val);
-//count£¬½«·µ»Ø´Óstartµ½end ·¶Î§Ö®ÄÚµÄĞòÁĞÖĞÄ³¸öÔªËØµÄÊıÁ¿¡£
+//countï¼Œå°†è¿”å›ä»startåˆ°end èŒƒå›´ä¹‹å†…çš„åºåˆ—ä¸­æŸä¸ªå…ƒç´ çš„æ•°é‡ã€‚
 n = count(begin,end,val);
-next_permutation(begin,end);//·µ»Ø¸Ã¶ÎĞòÁĞµÄ×ÖµäĞòÏÂÒ»ÖÖÅÅÁĞ
+next_permutation(begin,end);//è¿”å›è¯¥æ®µåºåˆ—çš„å­—å…¸åºä¸‹ä¸€ç§æ’åˆ—
 
-///ÊäÈëÊä³öÍâ¹Ò
+///è¾“å…¥è¾“å‡ºå¤–æŒ‚
 int Scan()
 {
     int res=0,ch,flag=0;
@@ -389,8 +389,8 @@ void Out(int a)
     putchar(a%10+'0');
 }
 
-///´óÊı´¦Àí
-///´óÊı¼Ó·¨
+///å¤§æ•°å¤„ç†
+///å¤§æ•°åŠ æ³•
 void bigAdd(char a[], char b[], char ans[])
 {
     int lena = strlen(a), lenb = strlen(b);
@@ -410,7 +410,7 @@ void bigAdd(char a[], char b[], char ans[])
     }
 }
 
-///´óÊı¼õ·¨
+///å¤§æ•°å‡æ³•
 char * bigSub(char *str1,char *str2)
 {
     int la=strlen(str1),lb=strlen(str2),flag=0,cp=0,i,j;
@@ -444,7 +444,7 @@ char * bigSub(char *str1,char *str2)
     if(flag)printf("-");
     return str1;
 }
-///´óÊı³Ë·¨
+///å¤§æ•°ä¹˜æ³•
 char * bigMul(char *str1,char *str2)
 {
     int l1=strlen(str1),l2=strlen(str2);
@@ -469,7 +469,7 @@ char * bigMul(char *str1,char *str2)
     str1[len+1]='\0';
     return str1;
 }
-///´óÊı±È½Ï
+///å¤§æ•°æ¯”è¾ƒ
 int bigCmp(char *str1,char *str2)
 {
     int len1=strlen(str1),len2=strlen(str2);
@@ -513,7 +513,7 @@ public class Main {
             n = cin.nextInt();
             a = BigInteger.valueOf(n);
             b = cin.nextBigInteger();
-            c = cin.nextBigInteger(2);//¶ş½øÖÆ
+            c = cin.nextBigInteger(2);//äºŒè¿›åˆ¶
             System.out.println(c.toString(2));
             aa = cin.nextBigDecimal();
             System.out.println(a+" "+aa);
@@ -536,10 +536,10 @@ public class Main {
 }
 
 /*
-* ÍêÈ«´óÊıÄ£°å
-* Êä³öcin>>a
-* Êä³öa.print();
-* ×¢ÒâÕâ¸öÊäÈë²»ÄÜ×Ô¶¯È¥µôÇ°µ¼0µÄ£¬¿ÉÒÔÏÈ¶ÁÈëµ½charÊı×é£¬È¥µôÇ°µ¼0£¬ÔÙÓÃ¹¹Ôìº¯Êı¡£
+* å®Œå…¨å¤§æ•°æ¨¡æ¿
+* è¾“å‡ºcin>>a
+* è¾“å‡ºa.print();
+* æ³¨æ„è¿™ä¸ªè¾“å…¥ä¸èƒ½è‡ªåŠ¨å»æ‰å‰å¯¼0çš„ï¼Œå¯ä»¥å…ˆè¯»å…¥åˆ°charæ•°ç»„ï¼Œå»æ‰å‰å¯¼0ï¼Œå†ç”¨æ„é€ å‡½æ•°ã€‚
 */
 #define MAXN 9999
 #define MAXSIZE 1010
@@ -547,31 +547,31 @@ public class Main {
 class BigNum
 {
 private:
-    int a[500]; //¿ÉÒÔ¿ØÖÆ´óÊıµÄÎ»Êı
+    int a[500]; //å¯ä»¥æ§åˆ¶å¤§æ•°çš„ä½æ•°
     int len;
 public:
     BigNum()
     {
-        len=1;    //¹¹Ôìº¯Êı
+        len=1;    //æ„é€ å‡½æ•°
         memset(a,0,sizeof(a));
     }
-    BigNum(const int); //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯³É´óÊı
-    BigNum(const char*); //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
-    BigNum(const BigNum &); //¿½±´¹¹Ôìº¯Êı
-    BigNum &operator=(const BigNum &); //ÖØÔØ¸³ÖµÔËËã·û£¬´óÊıÖ®¼ä½øĞĞ¸³ÖµÔËËã
-    friend istream& operator>>(istream&,BigNum&); //ÖØÔØÊäÈëÔËËã·û
-    friend ostream& operator<<(ostream&,BigNum&); //ÖØÔØÊä³öÔËËã·û
-    BigNum operator+(const BigNum &)const; //ÖØÔØ¼Ó·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã
-    BigNum operator-(const BigNum &)const; //ÖØÔØ¼õ·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã
-    BigNum operator*(const BigNum &)const; //ÖØÔØ³Ë·¨ÔËËã·û£¬Á½¸ö´óÊıÖ®¼äµÄÏà³ËÔËËã
-    BigNum operator/(const int &)const; //ÖØÔØ³ı·¨ÔËËã·û£¬´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
-    BigNum operator^(const int &)const; //´óÊıµÄn´Î·½ÔËËã
-    int operator%(const int &)const; //´óÊı¶ÔÒ»¸öintÀàĞÍµÄ±äÁ¿½øĞĞÈ¡Ä£ÔËËã
-    bool operator>(const BigNum &T)const; //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
-    bool operator>(const int &t)const; //´óÊıºÍÒ»¸öintÀàĞÍµÄ±äÁ¿µÄ´óĞ¡±È½Ï
-    void print(); //Êä³ö´óÊı
+    BigNum(const int); //å°†ä¸€ä¸ªintç±»å‹çš„å˜é‡è½¬åŒ–æˆå¤§æ•°
+    BigNum(const char*); //å°†ä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
+    BigNum(const BigNum &); //æ‹·è´æ„é€ å‡½æ•°
+    BigNum &operator=(const BigNum &); //é‡è½½èµ‹å€¼è¿ç®—ç¬¦ï¼Œå¤§æ•°ä¹‹é—´è¿›è¡Œèµ‹å€¼è¿ç®—
+    friend istream& operator>>(istream&,BigNum&); //é‡è½½è¾“å…¥è¿ç®—ç¬¦
+    friend ostream& operator<<(ostream&,BigNum&); //é‡è½½è¾“å‡ºè¿ç®—ç¬¦
+    BigNum operator+(const BigNum &)const; //é‡è½½åŠ æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸åŠ è¿ç®—
+    BigNum operator-(const BigNum &)const; //é‡è½½å‡æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸å‡è¿ç®—
+    BigNum operator*(const BigNum &)const; //é‡è½½ä¹˜æ³•è¿ç®—ç¬¦ï¼Œä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸ä¹˜è¿ç®—
+    BigNum operator/(const int &)const; //é‡è½½é™¤æ³•è¿ç®—ç¬¦ï¼Œå¤§æ•°å¯¹ä¸€ä¸ªæ•´æ•°è¿›è¡Œç›¸é™¤è¿ç®—
+    BigNum operator^(const int &)const; //å¤§æ•°çš„næ¬¡æ–¹è¿ç®—
+    int operator%(const int &)const; //å¤§æ•°å¯¹ä¸€ä¸ªintç±»å‹çš„å˜é‡è¿›è¡Œå–æ¨¡è¿ç®—
+    bool operator>(const BigNum &T)const; //å¤§æ•°å’Œå¦ä¸€ä¸ªå¤§æ•°çš„å¤§å°æ¯”è¾ƒ
+    bool operator>(const int &t)const; //å¤§æ•°å’Œä¸€ä¸ªintç±»å‹çš„å˜é‡çš„å¤§å°æ¯”è¾ƒ
+    void print(); //è¾“å‡ºå¤§æ•°
 };
-BigNum::BigNum(const int b) //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
+BigNum::BigNum(const int b) //å°†ä¸€ä¸ªintç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
 {
     int c,d=b;
     len=0;
@@ -584,7 +584,7 @@ BigNum::BigNum(const int b) //½«Ò»¸öintÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
     }
     a[len++]=d;
 }
-BigNum::BigNum(const char *s) //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
+BigNum::BigNum(const char *s) //å°†ä¸€ä¸ªå­—ç¬¦ä¸²ç±»å‹çš„å˜é‡è½¬åŒ–ä¸ºå¤§æ•°
 {
     int t,k,index,L,i;
     memset(a,0,sizeof(a));
@@ -602,14 +602,14 @@ BigNum::BigNum(const char *s) //½«Ò»¸ö×Ö·û´®ÀàĞÍµÄ±äÁ¿×ª»¯Îª´óÊı
         a[index++]=t;
     }
 }
-BigNum::BigNum(const BigNum &T):len(T.len) //¿½±´¹¹Ôìº¯Êı
+BigNum::BigNum(const BigNum &T):len(T.len) //æ‹·è´æ„é€ å‡½æ•°
 {
     int i;
     memset(a,0,sizeof(a));
     for(i=0; i<len; i++)
         a[i]=T.a[i];
 }
-BigNum & BigNum::operator=(const BigNum &n) //ÖØÔØ¸³ÖµÔËËã·û£¬´óÊıÖ®¼ä¸³ÖµÔËËã
+BigNum & BigNum::operator=(const BigNum &n) //é‡è½½èµ‹å€¼è¿ç®—ç¬¦ï¼Œå¤§æ•°ä¹‹é—´èµ‹å€¼è¿ç®—
 {
     int i;
     len=n.len;
@@ -639,7 +639,7 @@ istream& operator>>(istream &in,BigNum &b)
     b.len=count++;
     return in;
 }
-ostream& operator<<(ostream& out,BigNum& b) //ÖØÔØÊä³öÔËËã·û
+ostream& operator<<(ostream& out,BigNum& b) //é‡è½½è¾“å‡ºè¿ç®—ç¬¦
 {
     int i;
     cout<<b.a[b.len-1];
@@ -649,7 +649,7 @@ ostream& operator<<(ostream& out,BigNum& b) //ÖØÔØÊä³öÔËËã·û
     }
     return out;
 }
-BigNum BigNum::operator+(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã
+BigNum BigNum::operator+(const BigNum &T)const //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸åŠ è¿ç®—
 {
     BigNum t(*this);
     int i,big;
@@ -668,7 +668,7 @@ BigNum BigNum::operator+(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà¼ÓÔËËã
     else t.len=big;
     return t;
 }
-BigNum BigNum::operator-(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã
+BigNum BigNum::operator-(const BigNum &T)const //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸å‡è¿ç®—
 {
     int i,j,big;
     bool flag;
@@ -710,7 +710,7 @@ BigNum BigNum::operator-(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà¼õÔËËã
         t1.a[big-1]=0-t1.a[big-1];
     return t1;
 }
-BigNum BigNum::operator*(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà³Ë
+BigNum BigNum::operator*(const BigNum &T)const //ä¸¤ä¸ªå¤§æ•°ä¹‹é—´çš„ç›¸ä¹˜
 {
     BigNum ret;
     int i,j,up;
@@ -740,7 +740,7 @@ BigNum BigNum::operator*(const BigNum &T)const //Á½¸ö´óÊıÖ®¼äµÄÏà³Ë
     while(ret.a[ret.len-1]==0 && ret.len>1)ret.len--;
     return ret;
 }
-BigNum BigNum::operator/(const int &b)const //´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
+BigNum BigNum::operator/(const int &b)const //å¤§æ•°å¯¹ä¸€ä¸ªæ•´æ•°è¿›è¡Œç›¸é™¤è¿ç®—
 {
     BigNum ret;
     int i,down=0;
@@ -754,14 +754,14 @@ BigNum BigNum::operator/(const int &b)const //´óÊı¶ÔÒ»¸öÕûÊı½øĞĞÏà³ıÔËËã
         ret.len--;
     return ret;
 }
-int BigNum::operator%(const int &b)const //´óÊı¶ÔÒ»¸ö intÀàĞÍµÄ±äÁ¿½øĞĞÈ¡Ä£
+int BigNum::operator%(const int &b)const //å¤§æ•°å¯¹ä¸€ä¸ª intç±»å‹çš„å˜é‡è¿›è¡Œå–æ¨¡
 {
     int i,d=0;
     for(i=len-1; i>=0; i--)
         d=((d*(MAXN+1))%b+a[i])%b;
     return d;
 }
-BigNum BigNum::operator^(const int &n)const //´óÊıµÄn´Î·½ÔËËã
+BigNum BigNum::operator^(const int &n)const //å¤§æ•°çš„næ¬¡æ–¹è¿ç®—
 {
     BigNum t,ret(1);
     int i;
@@ -780,7 +780,7 @@ BigNum BigNum::operator^(const int &n)const //´óÊıµÄn´Î·½ÔËËã
     }
     return ret;
 }
-bool BigNum::operator>(const BigNum &T)const //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
+bool BigNum::operator>(const BigNum &T)const //å¤§æ•°å’Œå¦ä¸€ä¸ªå¤§æ•°çš„å¤§å°æ¯”è¾ƒ
 {
     int ln;
     if(len>T.len)return true;
@@ -797,12 +797,12 @@ bool BigNum::operator>(const BigNum &T)const //´óÊıºÍÁíÒ»¸ö´óÊıµÄ´óĞ¡±È½Ï
     else
         return false;
 }
-bool BigNum::operator>(const int &t)const //´óÊıºÍÒ»¸öintÀàĞÍµÄ±äÁ¿µÄ´óĞ¡±È½Ï
+bool BigNum::operator>(const int &t)const //å¤§æ•°å’Œä¸€ä¸ªintç±»å‹çš„å˜é‡çš„å¤§å°æ¯”è¾ƒ
 {
     BigNum b(t);
     return *this>b;
 }
-void BigNum::print() //Êä³ö´óÊı
+void BigNum::print() //è¾“å‡ºå¤§æ•°
 {
     int i;
     printf("%d",a[len-1]);
@@ -812,31 +812,31 @@ void BigNum::print() //Êä³ö´óÊı
 }
 
 
-///DP£¡£¡£¡£¡£¡
-///±³°üÎÊÌâ
-///01±³°ü
+///DPï¼ï¼ï¼ï¼ï¼
+///èƒŒåŒ…é—®é¢˜
+///01èƒŒåŒ…
 //O(n*m)
-//×ªÒÆ·½³Ì£ºdp[i][v]=max{dp[i-1][v],dp[i-1][v-c[i]]+w[i]}
+//è½¬ç§»æ–¹ç¨‹ï¼šdp[i][v]=max{dp[i-1][v],dp[i-1][v-c[i]]+w[i]}
 
-memset(dp,0,sizeof(dp));//ÒªÇó±³°ü²»Ò»¶¨È«Âú
-for(dp[0]=0,i=1;i<n;i++)dp[i]=-INF;//ÒªÇó±³°ü±ØĞëÈ«Âú
+memset(dp,0,sizeof(dp));//è¦æ±‚èƒŒåŒ…ä¸ä¸€å®šå…¨æ»¡
+for(dp[0]=0,i=1;i<n;i++)dp[i]=-INF;//è¦æ±‚èƒŒåŒ…å¿…é¡»å…¨æ»¡
 
 for(i=0;i<n;i++)
     for(j=m;j>=w[i];j--)
         dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 return dp[n][m];
 
-///ÍêÈ«±³°ü
+///å®Œå…¨èƒŒåŒ…
 //O(n*m)
-//×ªÒÆ·½³Ì£ºdp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
+//è½¬ç§»æ–¹ç¨‹ï¼šdp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 for(i=0;i<n;i++)
     for(j=w[i];j>=m;j--)
         dp[j]=max{dp[j],dp[j-w[i]]+v[i]};
 
-///¶àÖØ±³°ü
+///å¤šé‡èƒŒåŒ…
 //O(n*m)
-//×ªÒÆ·½³Ì£ºdp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
+//è½¬ç§»æ–¹ç¨‹ï¼šdp[i][v]=max{dp[i-1][v-k*c[i]]+k*w[i]};
 
 memset(dp,0,sizeof(dp));
 for(i=0;i<n;i++)
@@ -847,36 +847,36 @@ for(i=0;i<n;i++)
             dp[j]=dp[j-w[i]]+v[i], counts[j]=counts[j-w[i]]+1;
 }
 
-///¶àÖØ±³°ü(µ¥µ÷¶ÓÁĞÓÅ»¯)
+///å¤šé‡èƒŒåŒ…(å•è°ƒé˜Ÿåˆ—ä¼˜åŒ–)
 //O(n*m)
 //dp[i][j*w[i]+k]=max{dp[i-1][jj*w[i]+k]+(j-jj)*v[i]};
 //  =max{(dp[i-1][jj*w[i]+k]-jj*v[i]) + j*v[i]};
-//µ¥µ÷¶ÓÁĞÓÅ»¯ĞÎÈçÏÂÊ½µÄDP:
-//dp[i]=max/min(f[k]) + g[i];(k<i && f[k]ÓëjÎŞ¹Ø£¬g[i]ÓëkÎŞ¹Ø)
+//å•è°ƒé˜Ÿåˆ—ä¼˜åŒ–å½¢å¦‚ä¸‹å¼çš„DP:
+//dp[i]=max/min(f[k]) + g[i];(k<i && f[k]ä¸jæ— å…³ï¼Œg[i]ä¸kæ— å…³)
 memset(dp,0,sizeof(dp));
 for(i=1;i<=n;i++)
 {
     num[i] = min(num[i],m/w[i]);
-    for(k=0;k<w[i];k++)//·Ö³Éw[i]·İ×ªÒÆ
+    for(k=0;k<w[i];k++)//åˆ†æˆw[i]ä»½è½¬ç§»
     {
         int head=0,tail=0;
         for(j=0;j<=(m-k)/w[i];j++)
         {
-            int t=dp[j*w[i]+k]-j*v[i];//µ±Ç°Öµ½ø¶ÓÁĞ
+            int t=dp[j*w[i]+k]-j*v[i];//å½“å‰å€¼è¿›é˜Ÿåˆ—
             while(head<tail && t>=f[tail-1].f)
-                tail--;//µ¥µ÷¶ÓÁĞ½µĞò
+                tail--;//å•è°ƒé˜Ÿåˆ—é™åº
             f[tail].f=t;f[tail++].pos=j;
             while(head<tail && f[head].pos+num[i]<j)
-                head++;//±£Ö¤num[i]×ã¹»
+                head++;//ä¿è¯num[i]è¶³å¤Ÿ
             dp[j*w[i]+k] = f[head].f+j*v[i];
         }
     }
 }
 
-///¶şÎ¬·ÑÓÃ±³°ü
-//×ªÒÆ·½³Ì£ºdp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
+///äºŒç»´è´¹ç”¨èƒŒåŒ…
+//è½¬ç§»æ–¹ç¨‹ï¼šdp[i][v][u]=max{dp[i-1][v][u],dp[i-1][v-a[i]][u-b[i]]+w[i]};
 
-///Ğ±ÂÊÓÅ»¯DP
+///æ–œç‡ä¼˜åŒ–DP
 //dp[i] = min{dp[j]+m+(sum[i]-sum[j])^2};
 int n,m,res,flag;
 int a[N],q[N];
@@ -918,8 +918,8 @@ int main()
     return 0;
 }
 
-///³¤¶ÈDP
-///×î´óÁ¬Ğø×ÓĞòÁĞÖ®ºÍ
+///é•¿åº¦DP
+///æœ€å¤§è¿ç»­å­åºåˆ—ä¹‹å’Œ
 //O(n)
 int solve(int a[],int n)
 {
@@ -931,7 +931,7 @@ int solve(int a[],int n)
     return sum[i-1];
 }
 
-///×î´ó×Ó¾ØÕóºÍ
+///æœ€å¤§å­çŸ©é˜µå’Œ
 //O(n*n*m)
 int n,m,g[N][N],a[N];
 int maxSumLen()
@@ -966,9 +966,9 @@ void solve()
     printf("%d\n",maxSum());
 }
 
-///×î³¤µİÔö×ÓĞòÁĞ(LIS)
+///æœ€é•¿é€’å¢å­åºåˆ—(LIS)
 //O(n^2)
-//×ªÒÆ·½³Ì£ºb[k]=max(max(b[j]|a[j]<a[k],j<k)+1,1);
+//è½¬ç§»æ–¹ç¨‹ï¼šb[k]=max(max(b[j]|a[j]<a[k],j<k)+1,1);
 int LIS(int *a,int len)
 {
     int i,j,maxx=0;
@@ -986,7 +986,7 @@ int LIS(int *a,int len)
     return maxx;
 }
 
-//¶ş·ÖO(n*logn);
+//äºŒåˆ†O(n*logn);
 int fen(int num,int l,int r,int b[])
 {
     int mid;
@@ -1011,7 +1011,7 @@ int LIS(int a[],int b[],int len)
     return lenn;
 }
 
-///×î³¤¹«¹²×ÓĞòÁĞ(LCS)
+///æœ€é•¿å…¬å…±å­åºåˆ—(LCS)
 //O(n*m)
 int dp[N][N],n,m;
 int LCS(char *a, char *b)
@@ -1028,10 +1028,10 @@ int LCS(char *a, char *b)
     return dp[n][m];
 }
 
-///ÊıÎ»dp
-//ÊÇ13µÄ±¶Êı°üº¬13µÄ¸öÊı
-///Ô¤´¦Àí
-//dp[i][j][k]µÚiÎ»ÓàÊıÎªjµÄÊÇ·ñ°üº¬13µÄÊıµÄ¸öÊı£¬k==0²»°üº¬£¬k==1Ê×Î»Îª3£¬k==2°üº¬13
+///æ•°ä½dp
+//æ˜¯13çš„å€æ•°åŒ…å«13çš„ä¸ªæ•°
+///é¢„å¤„ç†
+//dp[i][j][k]ç¬¬iä½ä½™æ•°ä¸ºjçš„æ˜¯å¦åŒ…å«13çš„æ•°çš„ä¸ªæ•°ï¼Œk==0ä¸åŒ…å«ï¼Œk==1é¦–ä½ä¸º3ï¼Œk==2åŒ…å«13
 int dp[N][13][3],a[N];
 void init()
 {
@@ -1062,22 +1062,22 @@ int solve(int x)
     int flag=0,ans=0,mod=0;
     for(int i=len-1;i>=0;i--)
     {
-//Ã¶¾Ùµ±Ç°Î»Îªj£¬µÃµ½Ç°ÃæµÄÓàÊıÎª(mod+j*a[i])%13£¬
-//ºóÃæÎ»ÊıÖĞÓàÊıÊÇ(13-(mod+j*a[i])%13)%13µÄ¸öÊı¶¼ÊÇ´ğ°¸¡£
+//æšä¸¾å½“å‰ä½ä¸ºjï¼Œå¾—åˆ°å‰é¢çš„ä½™æ•°ä¸º(mod+j*a[i])%13ï¼Œ
+//åé¢ä½æ•°ä¸­ä½™æ•°æ˜¯(13-(mod+j*a[i])%13)%13çš„ä¸ªæ•°éƒ½æ˜¯ç­”æ¡ˆã€‚
         for(int j=0;j<dig[i];j++)
             ans+=dp[i][(13-(mod+j*a[i])%13)%13][2];
         if(flag)
         {
-//Ç°ÃæÒÑ¾­ÓĞÁË13£¬Ö»ÒªÊÇÇ°ÃæºÍºóÃæËùÓĞÎ»ÊıµÄÓàÊıÎª0µÄ¾ÍÊÇ´ğ°¸¡£
+//å‰é¢å·²ç»æœ‰äº†13ï¼Œåªè¦æ˜¯å‰é¢å’Œåé¢æ‰€æœ‰ä½æ•°çš„ä½™æ•°ä¸º0çš„å°±æ˜¯ç­”æ¡ˆã€‚
             for(int j=0;j<dig[i];j++)
                 ans+=dp[i][(13-(mod+j*a[i])%13)%13][0];
         }
         else
         {
-            //Ê×Î»ÊÇ3µÄÓàÊıºÍÎª0¾ÍÊÇ´ğ°¸¡£
+            //é¦–ä½æ˜¯3çš„ä½™æ•°å’Œä¸º0å°±æ˜¯ç­”æ¡ˆã€‚
             if(dig[i+1]==1&&dig[i]>3)
                 ans+=dp[i+1][(13-mod)%13][1];
-            //È¡µ±Ç°Î»Îª1ºóÃæÊ×Î»Îª3µÄÊÇ´ğ°¸¡£
+            //å–å½“å‰ä½ä¸º1åé¢é¦–ä½ä¸º3çš„æ˜¯ç­”æ¡ˆã€‚
             if(dig[i]>1)
                 ans+=dp[i][(13-(mod+a[i])%13)%13][1];
         }
@@ -1089,7 +1089,7 @@ int solve(int x)
 
 ///dfs
 long long dp[N][13][3],dig[N];
-//len:µ±Ç°Î»£¬mod:Ç°ÃæÁôÏÂµÄÓàÊı´óĞ¡,k:Ç°ÃæÊÇ·ñ³öÏÖ13£¬flag:Ç°ÃæÃ¿Ò»Î»ÊÇ·ñ¶¼ÊÇÉÏÏŞ¡£
+//len:å½“å‰ä½ï¼Œmod:å‰é¢ç•™ä¸‹çš„ä½™æ•°å¤§å°,k:å‰é¢æ˜¯å¦å‡ºç°13ï¼Œflag:å‰é¢æ¯ä¸€ä½æ˜¯å¦éƒ½æ˜¯ä¸Šé™ã€‚
 long long dfs(int len, long long mod, int k, int flag)
 {
     if(len<=0)return (!mod && k==2);
@@ -1120,10 +1120,10 @@ void init()
     memset(dp,-1,sizeof(dp));
 }
 
-///Ê÷dp
+///æ ‘dp
 //O(n*m*m)
-//n½Úµã¼¼ÄÜÊ÷µãm¸ö¼¼ÄÜ»ñµÃ×î´óÈ¨ÖµµÄ°ì·¨
-//dp[k][i] ÔÚÒÔk½ÚµãÎª¸ù½ÚµãµÄ×ÓÊ÷ÖĞÑ¡ÔñiÈ¨ÖµµÄ×î´óvalue, w[i] i½ÚµãËùĞèÈ¨Öµ
+//nèŠ‚ç‚¹æŠ€èƒ½æ ‘ç‚¹mä¸ªæŠ€èƒ½è·å¾—æœ€å¤§æƒå€¼çš„åŠæ³•
+//dp[k][i] åœ¨ä»¥kèŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹çš„å­æ ‘ä¸­é€‰æ‹©iæƒå€¼çš„æœ€å¤§value, w[i] ièŠ‚ç‚¹æ‰€éœ€æƒå€¼
 vector<int>g[N];
 int dp[N][N],w[N];
 void init(int n, int m)
@@ -1138,16 +1138,16 @@ void dfs(int pos,int fa)
     for(k=0,i=0;i<=m;i++)k=max(k,dp[pos][i]),dp[pos][i]=k;
     for(i=0;i<g[pos].size();i++)
         if(g[pos][i]!=fa)
-            for(j=m;j>=w[pos];j--)//½µĞò¸üĞÂ£¬·ÀÖ¹ÖØ¸´¼ÓÉÏ×ÓÊ÷µÄÈ¨Öµ
+            for(j=m;j>=w[pos];j--)//é™åºæ›´æ–°ï¼Œé˜²æ­¢é‡å¤åŠ ä¸Šå­æ ‘çš„æƒå€¼
                 for(k=1;j+k<=m;k++)
                     dp[pos][j+k] = max(dp[pos][j+k], dp[pos][j]+dp[g[pos][i]][k]);
 }
 
-///Çø¼äDP
-///×îĞ¡´ú¼Û¹¹Ôì»ØÎÄ´®£»
+///åŒºé—´DP
+///æœ€å°ä»£ä»·æ„é€ å›æ–‡ä¸²ï¼›
 //O(n^2)
-//w[]´¢´æÔöÌí»òÉ¾³ı²»Í¬×Ö·ûËùĞè´ú¼Û£¬S[]´¢´æÔ­Ê¼´®£»
-//f[i][j] ½«iµ½j¹¹ÔìÎª»ØÎÄ´®ËùĞèµÄ´ú¼Û¡£
+//w[]å‚¨å­˜å¢æ·»æˆ–åˆ é™¤ä¸åŒå­—ç¬¦æ‰€éœ€ä»£ä»·ï¼ŒS[]å‚¨å­˜åŸå§‹ä¸²ï¼›
+//f[i][j] å°†iåˆ°jæ„é€ ä¸ºå›æ–‡ä¸²æ‰€éœ€çš„ä»£ä»·ã€‚
 int getRes(int w[],char s[])
 {
     int i,j,len = strlen(s);
@@ -1162,9 +1162,9 @@ int getRes(int w[],char s[])
     return f[0][len-1];
 }
 
-///À¨ºÅÆ¥Åä
+///æ‹¬å·åŒ¹é…
 //O(n^3)
-//Çó×î´óÀ¨ºÅÆ¥ÅäÊı
+//æ±‚æœ€å¤§æ‹¬å·åŒ¹é…æ•°
 bool is(char a,char b)
 {
     return a=='('&&b==')' || a=='['&&b==']' || a=='{'&&b=='}';
@@ -1186,13 +1186,13 @@ int getRes(char s[])
 }
 
 ///Sparse Table
-///Ò»Î¬RMQ
-//ST(n)³õÊ¼»¯£ºO(n*logn),²éÑ¯ÊÇO(1)
-//dp[i][j] ´Óiµ½i+2^j -1ÖĞ×îĞ¡µÄÒ»¸öÖµ(´Ói¿ªÊ¼³ÖĞø2^j¸öÊı)
+///ä¸€ç»´RMQ
+//ST(n)åˆå§‹åŒ–ï¼šO(n*logn),æŸ¥è¯¢æ˜¯O(1)
+//dp[i][j] ä»iåˆ°i+2^j -1ä¸­æœ€å°çš„ä¸€ä¸ªå€¼(ä»iå¼€å§‹æŒç»­2^jä¸ªæ•°)
 //dp[i][j]=min{dp[i][j-1],dp[i+2^(j-1)][j-1]}
-//RMQ(i,j)²éÑ¯
-//½«i-j ·Ö³ÉÁ½¸ö2^kµÄÇø¼ä k=(int)log2(i-j+1)
-//²éÑ¯½á¹ûÓ¦¸ÃÎª min(dp[i][k],dp[j-2^k+1][k])
+//RMQ(i,j)æŸ¥è¯¢
+//å°†i-j åˆ†æˆä¸¤ä¸ª2^kçš„åŒºé—´ k=(int)log2(i-j+1)
+//æŸ¥è¯¢ç»“æœåº”è¯¥ä¸º min(dp[i][k],dp[j-2^k+1][k])
 int dp[N][35],num[N];
 void ST(int n)
 {
@@ -1204,7 +1204,7 @@ void ST(int n)
         for(int i=0;i+(1<<j)-1<n;i++)
             dp[i][j] = max(dp[i][j-1], dp[i+(1<<(j-1))][j-1]);
 }
-//²éÑ¯iºÍjÖ®¼äµÄ×îÖµ,×¢ÒâiÊÇ´Ó0¿ªÊ¼µÄ
+//æŸ¥è¯¢iå’Œjä¹‹é—´çš„æœ€å€¼,æ³¨æ„iæ˜¯ä»0å¼€å§‹çš„
 int RMQ(int l,int r)
 {
     int mid = (int)(log((double)(r-l+1)) / log(2.0));
@@ -1212,12 +1212,12 @@ int RMQ(int l,int r)
     return t;
 }
 
-///¶şÎ¬RMQ
-//Ô¤´¦Àí O(n*m*logn*logm)
-//Êı×éÏÂ±ê´Ó1¿ªÊ¼
+///äºŒç»´RMQ
+//é¢„å¤„ç† O(n*m*logn*logm)
+//æ•°ç»„ä¸‹æ ‡ä»1å¼€å§‹
 int val[N][N];
 int dp[N][N][9][9];
-int mm[N];//¶ş½øÖÆÎ»Êı¼õÒ»£¬Ê¹ÓÃÇ°³õÊ¼»¯
+int mm[N];//äºŒè¿›åˆ¶ä½æ•°å‡ä¸€ï¼Œä½¿ç”¨å‰åˆå§‹åŒ–
 void initRMQ(int n,int m)
 {
     for(int i = 1; i <= n; i++)
@@ -1233,7 +1233,7 @@ void initRMQ(int n,int m)
                         else dp[i][j][ii][jj] = max(dp[i][j][ii][jj-1],dp[i][j+(1<<(jj-1))][ii][jj-1]);
                     }
 }
-//²éÑ¯¾ØĞÎÄÚµÄ×î´óÖµ(x1<=x2,y1<=y2)
+//æŸ¥è¯¢çŸ©å½¢å†…çš„æœ€å¤§å€¼(x1<=x2,y1<=y2)
 int rmq(int x1,int y1,int x2,int y2)
 {
     int k1 = mm[x2-x1+1];
@@ -1244,7 +1244,7 @@ int rmq(int x1,int y1,int x2,int y2)
 }
 int main()
 {
-    //ÔÚÍâÃæ¶ÔmmÊı×é½øĞĞ³õÊ¼»¯
+    //åœ¨å¤–é¢å¯¹mmæ•°ç»„è¿›è¡Œåˆå§‹åŒ–
     mm[0] = -1;
     for(int i = 1; i < N; i++)
         mm[i] = ((i&(i-1))==0)?mm[i-1]+1:mm[i-1];
@@ -1270,17 +1270,17 @@ int main()
     return 0;
 }
 
-///ËÑË÷£¡£¡£¡£¡£¡
+///æœç´¢ï¼ï¼ï¼ï¼ï¼
 ///DFS
 ///BFS
-///A*Æô·¢Ê½ËÑË÷Ëã·¨(Âü¹ş¶ÙËã·¨´¦Àí¹À¼Ûº¯Êı)
-//´øÓĞ¹À¼Ûº¯ÊıµÄ¹ãËÑ
-///IDA*µü´úÉî»¯A*ËÑË÷
-//¾ÍÊÇÉîËÑ£¬²»¶Ï¼Ó´óÉîËÑÉÏÏŞ£¬¼ÓÉÏÒ»¸ö¹À¼Ûº¯Êı£¬
-//Èç¹ı¹À¼ÛÖµ¼ÓÉÏµ±Ç°ËÑË÷Éî¶È´óÓÚËÑË÷Éî¶ÈÉÏÏŞµÄ»°¾Í¼ôÖ¦
+///A*å¯å‘å¼æœç´¢ç®—æ³•(æ›¼å“ˆé¡¿ç®—æ³•å¤„ç†ä¼°ä»·å‡½æ•°)
+//å¸¦æœ‰ä¼°ä»·å‡½æ•°çš„å¹¿æœ
+///IDA*è¿­ä»£æ·±åŒ–A*æœç´¢
+//å°±æ˜¯æ·±æœï¼Œä¸æ–­åŠ å¤§æ·±æœä¸Šé™ï¼ŒåŠ ä¸Šä¸€ä¸ªä¼°ä»·å‡½æ•°ï¼Œ
+//å¦‚è¿‡ä¼°ä»·å€¼åŠ ä¸Šå½“å‰æœç´¢æ·±åº¦å¤§äºæœç´¢æ·±åº¦ä¸Šé™çš„è¯å°±å‰ªæ
 
 ///Dancing Link
-//ÓÃÓÚÇó¾«È·¸²¸ÇÎÊÌâ£¬Êı¶ÀµÄÃ¿¸öÎ»ÖÃ×ª»»Îª¸²¸Ç¾ØÕóµÄ4¸öÎ»ÖÃ
+//ç”¨äºæ±‚ç²¾ç¡®è¦†ç›–é—®é¢˜ï¼Œæ•°ç‹¬çš„æ¯ä¸ªä½ç½®è½¬æ¢ä¸ºè¦†ç›–çŸ©é˜µçš„4ä¸ªä½ç½®
 #define N 9
 const int MaxN = N*N*N + 10;
 const int MaxM = N*N*4 + 10;
@@ -1400,8 +1400,8 @@ int main()
     return 0;
 }
 
-///Êı¾İ½á¹¹£¡£¡£¡£¡£¡
-///²¢²é¼¯
+///æ•°æ®ç»“æ„ï¼ï¼ï¼ï¼ï¼
+///å¹¶æŸ¥é›†
 void init(int n)
 {
     for(int i=1;i<=n;i++)f[i]=i;
@@ -1423,7 +1423,7 @@ void unions(int x,int y)
     f[y] = x;
 }
 
-///Ïß¶ÎÊ÷
+///çº¿æ®µæ ‘
 #define root 1 , n , 1
 #define lson l , m , rt << 1
 #define rson m + 1 , r , rt << 1 | 1
@@ -1497,15 +1497,15 @@ node query(int l,int r,int rt,int ql,int qr)
     return query(lson,ql,qr)+query(rson,ql,qr);
 }
 
-///»®·ÖÊ÷
-//ÇóÇø¼äµÚK´óÖµ£¬Çø¼äÄÚ´óÓÚĞ¡ÓÚk´óÖµµÄÊıµÄºÍ
+///åˆ’åˆ†æ ‘
+//æ±‚åŒºé—´ç¬¬Kå¤§å€¼ï¼ŒåŒºé—´å†…å¤§äºå°äºkå¤§å€¼çš„æ•°çš„å’Œ
 #define N 123456
-int sorted[N]={0};    //¶ÔÔ­¼¯ºÏÖĞÔªËØÅÅĞòºóµÄÖµ
-int val[20][N]={0};  //val¼ÇÂ¼µÚk²ãµ±Ç°Î»ÖÃµÄÖµ
-int num[20][N]={0}; //¼ÇÂ¼ÔªËØËùÔÚÇø¼äµ±Ç°Î»ÖÃÇ°µÄÔªËØ½øÈëµ½×ó×ÓÊ÷µÄ¸öÊı
-int lnum, rnum;    //Ñ¯ÎÊÇø¼äÀïÃæk-thÊı×ó²àºÍÓÒ²àµÄÊıµÄ¸öÊı
-long long sum[20][N]={0};//¼ÇÂ¼±Èµ±Ç°ÔªËØĞ¡µÄÔªËØµÄºÍ
-long long lsum, rsum;   //Ñ¯ÎÊÇø¼äÀïÃæk-thÊı×ó²àÊıÖ®ºÍÓëÓÒ²àÊıÖ®ºÍ
+int sorted[N]={0};    //å¯¹åŸé›†åˆä¸­å…ƒç´ æ’åºåçš„å€¼
+int val[20][N]={0};  //valè®°å½•ç¬¬kå±‚å½“å‰ä½ç½®çš„å€¼
+int num[20][N]={0}; //è®°å½•å…ƒç´ æ‰€åœ¨åŒºé—´å½“å‰ä½ç½®å‰çš„å…ƒç´ è¿›å…¥åˆ°å·¦å­æ ‘çš„ä¸ªæ•°
+int lnum, rnum;    //è¯¢é—®åŒºé—´é‡Œé¢k-thæ•°å·¦ä¾§å’Œå³ä¾§çš„æ•°çš„ä¸ªæ•°
+long long sum[20][N]={0};//è®°å½•æ¯”å½“å‰å…ƒç´ å°çš„å…ƒç´ çš„å’Œ
+long long lsum, rsum;   //è¯¢é—®åŒºé—´é‡Œé¢k-thæ•°å·¦ä¾§æ•°ä¹‹å’Œä¸å³ä¾§æ•°ä¹‹å’Œ
 void build(int l, int r, int d)
 {
     if (l == r) return ;
@@ -1591,14 +1591,14 @@ void solve(int n,int m)
         scanf("%d%d%d",&x,&y,&k);
         lsum = lnum = 0;
         res = query(x,y,k,1,n,0);
-        printf("%d ",res);  //Êä³öµÚk´óÖµ
+        printf("%d ",res);  //è¾“å‡ºç¬¬kå¤§å€¼
         rnum = y-x+1 - lnum;
         rsum = s[y] - s[x-1] - lsum - res;
-        printf("%lld %lld\n",lsum,rsum);    //Çø¼äÄÚ±ÈµÚk´óÖµĞ¡µÄºÍ´óµÄÖµµÄºÍ£»
+        printf("%lld %lld\n",lsum,rsum);    //åŒºé—´å†…æ¯”ç¬¬kå¤§å€¼å°çš„å’Œå¤§çš„å€¼çš„å’Œï¼›
     }
 }
 
-///Ê÷×´Êı×é
+///æ ‘çŠ¶æ•°ç»„
 #define N 1010000
 int inverse[N];
 void init()
@@ -1607,7 +1607,7 @@ void init()
 }
 int lowbit(int t)
 {
-    return t & (t^(t-1));//2^k(kÊÇtÄ©Î²ÁãµÄ¸öÊı)
+    return t & (t^(t-1));//2^k(kæ˜¯tæœ«å°¾é›¶çš„ä¸ªæ•°)
         //return t & (-t);
 }
 void add(int pos,int num)
@@ -1629,11 +1629,11 @@ int getSum(int now)
     return sum;
 }
 
-///Ê÷Á´ÆÊ·Ö
+///æ ‘é“¾å‰–åˆ†
 #define root 1 , tot , 1
 #define lson l , m , rt << 1
 #define rson m + 1 , r , rt << 1 | 1
-//dep½ÚµãÉî¶È,siz½Úµã×ÓÊ÷´óĞ¡,fa½Úµã¸¸Ç×,id½ÚµãÔÚÏß¶ÎÊ÷ÖĞÎ»ÖÃĞòºÅ,top½ÚµãËùÔÚÖØÁ´µÄ¶¥¶Ë,val½ÚµãĞÂ±àºÅ¶ÔÓ¦¸¸±ßÈ¨Öµ
+//depèŠ‚ç‚¹æ·±åº¦,sizèŠ‚ç‚¹å­æ ‘å¤§å°,faèŠ‚ç‚¹çˆ¶äº²,idèŠ‚ç‚¹åœ¨çº¿æ®µæ ‘ä¸­ä½ç½®åºå·,topèŠ‚ç‚¹æ‰€åœ¨é‡é“¾çš„é¡¶ç«¯,valèŠ‚ç‚¹æ–°ç¼–å·å¯¹åº”çˆ¶è¾¹æƒå€¼
 int dep[N],siz[N],fa[N],id[N],son[N],top[N],val[N];
 int tot,n;
 vector<int>v[N];
@@ -1641,7 +1641,7 @@ struct tree
 {
     int x,y,val;
 }e[N];
-//ÖØ¶ù×Ó
+//é‡å„¿å­
 void dfs1(int u,int f,int d)
 {
     dep[u]=d;siz[u]=1;son[u]=0;fa[u]=f;
@@ -1654,7 +1654,7 @@ void dfs1(int u,int f,int d)
         if(siz[son[u]]<siz[ff])son[u]=ff;
     }
 }
-//ÖØÁ´
+//é‡é“¾
 void dfs2(int u,int tp)
 {
     top[u]=tp;id[u]=++tot;
@@ -1712,7 +1712,7 @@ int query(int l,int r,int rt,int ql,int qr)
     int m = l+r>>1;
     return max(query(l,m,rt<<1,ql,qr),query(m+1,r,rt<<1|1,ql,qr));
 }
-//Ñ°ÕÒx,yÖ®¼äµÄ×î´óÈ¨Öµ±ß
+//å¯»æ‰¾x,yä¹‹é—´çš„æœ€å¤§æƒå€¼è¾¹
 int solve(int x,int y)
 {
     int xx=top[x],yy=top[y];
@@ -1763,7 +1763,7 @@ int main()
     return 0;
 }
 
-///×ÖµäÊ÷
+///å­—å…¸æ ‘
 int sum=0,res=0;
 struct node
 {
@@ -1789,7 +1789,7 @@ void insert_tree(char *str)
             tree[j].next[t] = sum++;
         }
         j = tree[j].next[t];
-        tree[j].r++;//¼ÇÂ¼ÒÔ´ËÎªÇ°×ºµÄµ¥´ÊµÄÊıÁ¿
+        tree[j].r++;//è®°å½•ä»¥æ­¤ä¸ºå‰ç¼€çš„å•è¯çš„æ•°é‡
         i++;
     }
 }
@@ -1808,11 +1808,11 @@ void query_tree(char *str)
         j=tree[j].next[t];
         i++;
     }
-    res=tree[j].r;//ÒÔ´ËÎªÇ°×ºµÄµ¥´ÊµÄÊıÁ¿
+    res=tree[j].r;//ä»¥æ­¤ä¸ºå‰ç¼€çš„å•è¯çš„æ•°é‡
 }
 
 ///Treap
-//ÇóµÚK´óÊı Óë xµÄ´óĞ¡ÅÅÃû
+//æ±‚ç¬¬Kå¤§æ•° ä¸ xçš„å¤§å°æ’å
 struct Treap
 {
     int size;
@@ -1842,7 +1842,7 @@ void Rotate(Treap* &t,int d)
     Treap *k=t->ch[d^1];
     t->ch[d^1]=k->ch[d];
     k->ch[d]=t;
-    t->Maintain();  //±ØĞëÏÈÎ¬»¤t£¬ÔÙÎ¬»¤k£¬ÒòÎª´ËÊ±tÊÇkµÄ×Ó½Úµã
+    t->Maintain();  //å¿…é¡»å…ˆç»´æŠ¤tï¼Œå†ç»´æŠ¤kï¼Œå› ä¸ºæ­¤æ—¶tæ˜¯kçš„å­èŠ‚ç‚¹
     k->Maintain();
     t=k;
 }
@@ -1851,15 +1851,15 @@ void Insert(Treap* &t,int x)
     if(t==NULL) t=new Treap(x);
     else
     {
-        //int d=t->compare(x);   //Èç¹ûÖµÏàµÈµÄÔªËØÖ»²åÈëÒ»¸ö
-        int d=x < t->key ? 0:1;  //Èç¹ûÖµÏàµÈµÄÔªËØ¶¼²åÈë
+        //int d=t->compare(x);   //å¦‚æœå€¼ç›¸ç­‰çš„å…ƒç´ åªæ’å…¥ä¸€ä¸ª
+        int d=x < t->key ? 0:1;  //å¦‚æœå€¼ç›¸ç­‰çš„å…ƒç´ éƒ½æ’å…¥
         Insert(t->ch[d],x);
         if(t->ch[d]->fix > t->fix)
             Rotate(t,d^1);
     }
     t->Maintain();
 }
-//Ò»°ãÀ´Ëµ£¬ÔÚµ÷ÓÃÉ¾³ıº¯ÊıÖ®Ç°ÒªÏÈÓÃFind()º¯ÊıÅĞ¶Ï¸ÃÔªËØÊÇ·ñ´æÔÚ
+//ä¸€èˆ¬æ¥è¯´ï¼Œåœ¨è°ƒç”¨åˆ é™¤å‡½æ•°ä¹‹å‰è¦å…ˆç”¨Find()å‡½æ•°åˆ¤æ–­è¯¥å…ƒç´ æ˜¯å¦å­˜åœ¨
 void Delete(Treap* &t,int x)
 {
     int d=t->compare(x);
@@ -1898,7 +1898,7 @@ bool Find(Treap *t,int x)
     }
     return false;
 }
-//ÇóµÚk´óµÄÊı
+//æ±‚ç¬¬kå¤§çš„æ•°
 int Kth(Treap *t,int k)
 {
     if(t==NULL||k<=0||k>t->size)
@@ -1913,7 +1913,7 @@ int Kth(Treap *t,int k)
         return t->key;
     return Kth(t->ch[1],k-1-t->ch[0]->size);
 }
-//ÇóxÊÇÉıĞòÅÅÁĞµÄµÚ¼¸¸öµÄÊı
+//æ±‚xæ˜¯å‡åºæ’åˆ—çš„ç¬¬å‡ ä¸ªçš„æ•°
 int Rank(Treap *t,int x)
 {
     int r;
@@ -1941,8 +1941,8 @@ void Print(Treap *t)
 }
 Treap *root=NULL;
 
-///ÉìÕ¹Ê÷(splay tree)
-//ÊıÁĞµÄ²åÈë£¬É¾³ı£¬ĞŞ¸Ä£¬·­×ª£¬Ñ­»·£¬Çó¼«Öµ£¬ÇóºÍ
+///ä¼¸å±•æ ‘(splay tree)
+//æ•°åˆ—çš„æ’å…¥ï¼Œåˆ é™¤ï¼Œä¿®æ”¹ï¼Œç¿»è½¬ï¼Œå¾ªç¯ï¼Œæ±‚æå€¼ï¼Œæ±‚å’Œ
 class SplayTree
 {
 private:
@@ -2132,7 +2132,7 @@ public:
         nil.rchild = &nil;
         nil.parent = &nil;
     }
-    //½¨Ê÷£¬ÊıÁĞ1 ~ n-2
+    //å»ºæ ‘ï¼Œæ•°åˆ—1 ~ n-2
     void make(int arrays[], int n)
     {
         nodeNumber = 0;
@@ -2142,21 +2142,21 @@ public:
         root->rchild = make(mid + 1, n - 1, root, arrays);
         update(root);
     }
-    //Çø¼ä¼ÓºÍ
+    //åŒºé—´åŠ å’Œ
     void ADD(int x, int y, int D)
     {
         finds(x, &nil);
         finds(y + 2, root);
         root->rchild->lchild->lazy += D;
     }
-    //Çø¼ä·´×ª
+    //åŒºé—´åè½¬
     void REVERSE(int x, int y)
     {
         finds(x, &nil);
         finds(y + 2, root);
         root->rchild->lchild->isReverse ^= true;
     }
-    //Çø¼äÑ­»·Î»ÒÆT´Î
+    //åŒºé—´å¾ªç¯ä½ç§»Tæ¬¡
     void REVOLVE(int x, int y, int T)
     {
         int len = y - x + 1;
@@ -2173,21 +2173,21 @@ public:
             d->parent = root->rchild;
         }
     }
-    //xÎ»ÖÃºóÃæ²åÉÏP
+    //xä½ç½®åé¢æ’ä¸ŠP
     void INSERT(int x, int P)
     {
         finds(x + 1, &nil);
         finds(x + 2, root);
         root->rchild->lchild = newNode(root->rchild, P);
     }
-    //É¾³ıxÎ»ÖÃ
+    //åˆ é™¤xä½ç½®
     void DELETE(int x)
     {
         finds(x, &nil);
         finds(x + 2, root);
         root->rchild->lchild = &nil;
     }
-    //Çø¼ä×îĞ¡Öµ
+    //åŒºé—´æœ€å°å€¼
     int MIN(int x, int y)
     {
         finds(x, &nil);
@@ -2215,10 +2215,10 @@ int main()
     return 0;
 }
 
-///Ö÷Ï¯Ê÷
-//¿É³ÖĞø»¯¼ÇÂ¼ÀúÊ·£¬¾ÍÊÇ½¨Á¢ÀúÊ·ÉÏËùÓĞ¸üĞÂµÄÏß¶ÎÊ÷
-//¶ÔÓÚÃ¿´ÎÑ¯ÎÊ´ÓT[l]ºÍT[r+1]Í¬Ê±¿ªÊ¼²éÕÒ£¬²îÖµÎªÇø¼äÄÚ½á¹û
-///¾²Ì¬Çø¼äk´ó
+///ä¸»å¸­æ ‘
+//å¯æŒç»­åŒ–è®°å½•å†å²ï¼Œå°±æ˜¯å»ºç«‹å†å²ä¸Šæ‰€æœ‰æ›´æ–°çš„çº¿æ®µæ ‘
+//å¯¹äºæ¯æ¬¡è¯¢é—®ä»T[l]å’ŒT[r+1]åŒæ—¶å¼€å§‹æŸ¥æ‰¾ï¼Œå·®å€¼ä¸ºåŒºé—´å†…ç»“æœ
+///é™æ€åŒºé—´kå¤§
 #define N 112345
 #define M N*3
 int n,q,m,tot;
@@ -2322,7 +2322,7 @@ int main()
     return 0;
 }
 
-///¶¯Ì¬Çø¼äk´ó
+///åŠ¨æ€åŒºé—´kå¤§
 #define N 60010
 #define M 2500010
 int n,q,m,tot;
@@ -2500,7 +2500,7 @@ int main()
     return 0;
 }
 
-///Çø¼ä²»ÏàÍ¬ÊıÊıÁ¿
+///åŒºé—´ä¸ç›¸åŒæ•°æ•°é‡
 #define N 30010
 #define M 100*N
 int n,q,tot;
@@ -2600,10 +2600,10 @@ int main()
     return 0;
 }
 
-///Ê÷ÉÏÂ·¾¶µãÈ¨µÚk´ó
+///æ ‘ä¸Šè·¯å¾„ç‚¹æƒç¬¬kå¤§
 #define N 200010
 #define M 40*N
-//Ö÷Ï¯Ê÷:
+//ä¸»å¸­æ ‘:
 int n,q,m,TOT;
 int a[N], t[N];
 int T[N], lson[M], rson[M], c[M];
@@ -2685,8 +2685,8 @@ int query(int left_root,int right_root,int LCA,int k)
     }
     return l;
 }
-//LCA²¿·Ö:
-//rmqÊı×é£¬¾ÍÊÇÅ·À­ĞòÁĞ¶ÔÓ¦µÄÉî¶ÈĞòÁĞ
+//LCAéƒ¨åˆ†:
+//rmqæ•°ç»„ï¼Œå°±æ˜¯æ¬§æ‹‰åºåˆ—å¯¹åº”çš„æ·±åº¦åºåˆ—
 int rmq[2*N];
 struct ST
 {
@@ -2717,8 +2717,8 @@ struct Edge
 };
 Edge edge[N*2];
 int tot,head[N];
-int F[N*2];//Å·À­ĞòÁĞ£¬¾ÍÊÇdfs±éÀúµÄË³Ğò£¬³¤¶ÈÎª2*n-1,ÏÂ±ê´Ó1¿ªÊ¼
-int P[N];//P[i]±íÊ¾µãiÔÚFÖĞµÚÒ»´Î³öÏÖµÄÎ»ÖÃ
+int F[N*2];//æ¬§æ‹‰åºåˆ—ï¼Œå°±æ˜¯dfséå†çš„é¡ºåºï¼Œé•¿åº¦ä¸º2*n-1,ä¸‹æ ‡ä»1å¼€å§‹
+int P[N];//P[i]è¡¨ç¤ºç‚¹iåœ¨Fä¸­ç¬¬ä¸€æ¬¡å‡ºç°çš„ä½ç½®
 int cnt;
 ST st;
 void init()
@@ -2797,34 +2797,34 @@ int main()
     return 0;
 }
 
-///¹şÏ£±í
-///ELFhash£¨×Ö·û´®¹şÏ£º¯Êı£©
+///å“ˆå¸Œè¡¨
+///ELFhashï¼ˆå­—ç¬¦ä¸²å“ˆå¸Œå‡½æ•°ï¼‰
 const int MAXhash = 149993;
 typedef struct
 {
-    char e[11];//Êä³ö×Ö·û
-    char f[11];//ÊäÈë×Ö·û
+    char e[11];//è¾“å‡ºå­—ç¬¦
+    char f[11];//è¾“å…¥å­—ç¬¦
     int next;
 }Entry;
 Entry entry[MAXhash];
-int i = 1;      //´Êµä×ÜÌõÊı
+int i = 1;      //è¯å…¸æ€»æ¡æ•°
 int hashIndex[MAXhash];
 int ELFHash(char *key)
 {
     unsigned long h=0;
     while(*key)
     {
-        //h×óÒÆ4Î»£¬°Ñµ±Ç°×Ö·ûASCII´æÈëhµÍËÄÎ»¡£
+        //hå·¦ç§»4ä½ï¼ŒæŠŠå½“å‰å­—ç¬¦ASCIIå­˜å…¥hä½å››ä½ã€‚
         h=(h<<4)+(*key++);
         unsigned long g=h&0Xf0000000L;
-        //Èç¹û×î¸ßµÄËÄÎ»²»Îª0£¬ÔòËµÃ÷×Ö·û¶àÓà7¸ö£¬ÏÖÔÚÕıÔÚ´æµÚ7¸ö×Ö·û£¬Èç¹û²»´¦Àí£¬ÔÙ¼ÓÏÂÒ»¸ö×Ö·ûÊ±£¬µÚÒ»¸ö×Ö·û»á±»ÒÆ³ö£¬Òò´ËÒªÓĞÈçÏÂ´¦Àí¡£
-        //¸Ã´¦Àí£¬Èç¹û×î¸ßÎ»Îª0£¬¾Í»á½ö½öÓ°Ïì5-8Î»£¬·ñÔò»áÓ°Ïì5-31Î»£¬ÒòÎªCÓïÑÔÊ¹ÓÃµÄËãÊıÒÆÎ»
-        //ÒòÎª1-4Î»¸Õ¸Õ´æ´¢ÁËĞÂ¼ÓÈëµ½×Ö·û£¬ËùÒÔ²»ÄÜ>>28
+        //å¦‚æœæœ€é«˜çš„å››ä½ä¸ä¸º0ï¼Œåˆ™è¯´æ˜å­—ç¬¦å¤šä½™7ä¸ªï¼Œç°åœ¨æ­£åœ¨å­˜ç¬¬7ä¸ªå­—ç¬¦ï¼Œå¦‚æœä¸å¤„ç†ï¼Œå†åŠ ä¸‹ä¸€ä¸ªå­—ç¬¦æ—¶ï¼Œç¬¬ä¸€ä¸ªå­—ç¬¦ä¼šè¢«ç§»å‡ºï¼Œå› æ­¤è¦æœ‰å¦‚ä¸‹å¤„ç†ã€‚
+        //è¯¥å¤„ç†ï¼Œå¦‚æœæœ€é«˜ä½ä¸º0ï¼Œå°±ä¼šä»…ä»…å½±å“5-8ä½ï¼Œå¦åˆ™ä¼šå½±å“5-31ä½ï¼Œå› ä¸ºCè¯­è¨€ä½¿ç”¨çš„ç®—æ•°ç§»ä½
+        //å› ä¸º1-4ä½åˆšåˆšå­˜å‚¨äº†æ–°åŠ å…¥åˆ°å­—ç¬¦ï¼Œæ‰€ä»¥ä¸èƒ½>>28
         if(g) h^=g>>24;
-        //ÉÏÃæÕâĞĞ´úÂë²¢²»»á¶ÔgÓĞÓ°Ïì£¬±¾ÉígºÍhµÄ¸ß4Î»ÏàÍ¬£¬ÏÂÃæÕâĞĞ´úÂë&~¼´¶Ô28-31(¸ß4Î»)Î»ÇåÁã¡£
+        //ä¸Šé¢è¿™è¡Œä»£ç å¹¶ä¸ä¼šå¯¹gæœ‰å½±å“ï¼Œæœ¬èº«gå’Œhçš„é«˜4ä½ç›¸åŒï¼Œä¸‹é¢è¿™è¡Œä»£ç &~å³å¯¹28-31(é«˜4ä½)ä½æ¸…é›¶ã€‚
         h&=~g;
     }
-    //·µ»ØÒ»¸ö·ûºÅÎ»Îª0µÄÊı£¬¼´¶ªÆú×î¸ßÎ»£¬ÒÔÃâº¯ÊıÍâ²úÉúÓ°Ïì¡£(ÎÒÃÇ¿ÉÒÔ¿¼ÂÇ£¬Èç¹ûÖ»ÓĞ×Ö·û£¬·ûºÅÎ»²»¿ÉÄÜÎª¸º)
+    //è¿”å›ä¸€ä¸ªç¬¦å·ä½ä¸º0çš„æ•°ï¼Œå³ä¸¢å¼ƒæœ€é«˜ä½ï¼Œä»¥å…å‡½æ•°å¤–äº§ç”Ÿå½±å“ã€‚(æˆ‘ä»¬å¯ä»¥è€ƒè™‘ï¼Œå¦‚æœåªæœ‰å­—ç¬¦ï¼Œç¬¦å·ä½ä¸å¯èƒ½ä¸ºè´Ÿ)
 //    return h&0x7FFFFFFF;
     return h%MAXhash;
 }
@@ -2846,20 +2846,20 @@ int main()
     char str[22];
     while(gets(str))
     {
-        if(str[0] == '\0')//ÅĞ¶Ï¿ÕĞĞ£¬½áÊø×ÖµäÊäÈë
+        if(str[0] == '\0')//åˆ¤æ–­ç©ºè¡Œï¼Œç»“æŸå­—å…¸è¾“å…¥
             break;
-        sscanf(str,"%s %s",entry[i].e,entry[i].f);//×Öµä´¦Àí
-        int hashs = ELFHash(entry[i].f);//elfhash´¦Àí×Ö·û´®ÕÒkey
-        entry[i].next = hashIndex[hashs];//Á´±í·¨´¦Àí³åÍ»
+        sscanf(str,"%s %s",entry[i].e,entry[i].f);//å­—å…¸å¤„ç†
+        int hashs = ELFHash(entry[i].f);//elfhashå¤„ç†å­—ç¬¦ä¸²æ‰¾key
+        entry[i].next = hashIndex[hashs];//é“¾è¡¨æ³•å¤„ç†å†²çª
         hashIndex[hashs] = i;
         i++;
     }
     while(gets(str))
-        finds(str);//¿ªÊ¼ÊäÈë²éÕÒ×Ö·û´®
+        finds(str);//å¼€å§‹è¾“å…¥æŸ¥æ‰¾å­—ç¬¦ä¸²
     return 0;
 }
-///Äª¶ÓËã·¨
-///·Ö¿éÓĞĞò±©Á¦Ã¶¾Ù
+///è«é˜Ÿç®—æ³•
+///åˆ†å—æœ‰åºæš´åŠ›æšä¸¾
 long long n,m,sum,res,flag;
 long long num[N],ans[N],col[N];
 struct node
@@ -2871,7 +2871,7 @@ struct node
         return a.pl < b.pl;
     }
 }q[N];
-//Çø¼ä²Ù×÷,Çø¼ä²»ÏàÍ¬Êı¸öÊı
+//åŒºé—´æ“ä½œ,åŒºé—´ä¸ç›¸åŒæ•°ä¸ªæ•°
 void updata(long long pos, int flag)
 {
     res-=num[col[pos]];
@@ -2908,9 +2908,9 @@ int main()
     return 0;
 }
 
-///×Ö·û´®£¡£¡£¡£¡£¡
-///×Ö·û´®×îĞ¡±íÊ¾·¨
-//Ñ­»·´®×ÖµäĞò×îĞ¡±íÊ¾£¬O(n)
+///å­—ç¬¦ä¸²ï¼ï¼ï¼ï¼ï¼
+///å­—ç¬¦ä¸²æœ€å°è¡¨ç¤ºæ³•
+//å¾ªç¯ä¸²å­—å…¸åºæœ€å°è¡¨ç¤ºï¼ŒO(n)
 int minString(char *s)
 {
     int i=0,j=1,k=0;
@@ -2929,7 +2929,7 @@ int minString(char *s)
     return i<j?i:j;
 }
 
-///Manacher×î³¤»ØÎÄ×Ó´®
+///Manacheræœ€é•¿å›æ–‡å­ä¸²
 //O(n)
 int p[N*2];
 int Manacher(char *str)
@@ -2956,7 +2956,7 @@ int Manacher(char *str)
 }
 
 ///KMP
-//O(n+m),n%(n-next[n])==0µÃµ½Ñ­»·½Ú
+//O(n+m),n%(n-next[n])==0å¾—åˆ°å¾ªç¯èŠ‚
 void getNext(char *pre, int len, int *next)
 {
     int i = 0,j = -1;
@@ -2983,15 +2983,15 @@ int kmp(char *str, char *pre)
     {
         if(j == -1 || str[i] == pre[j]) i++, j++;
         else j = next[j];
-//        if(j == lenp) sum++;//¼ÇÊı(È¥µôwhile()ÖĞµÄj<lenp);
+//        if(j == lenp) sum++;//è®°æ•°(å»æ‰while()ä¸­çš„j<lenp);
     }
     if(j >= lenp) return i - lenp;
     else return -1;
 }
 
-///À©Õ¹kmp
-//next[i]:pre[i...lenp-1]Óëpre[0...lenp-1]µÄ×î³¤¹«¹²Ç°×º
-//extend[i]:str[i...lens-1]Óëpre[0...lenp-1]µÄ×î³¤¹«¹²Ç°×º
+///æ‰©å±•kmp
+//next[i]:pre[i...lenp-1]ä¸pre[0...lenp-1]çš„æœ€é•¿å…¬å…±å‰ç¼€
+//extend[i]:str[i...lens-1]ä¸pre[0...lenp-1]çš„æœ€é•¿å…¬å…±å‰ç¼€
 void getEnext(char pre[],int len,int next[])
 {
     next[0]=len;
@@ -3036,7 +3036,7 @@ void ekmp(char pre[],char str[],int next[],int extend[])
     }
 }
 
-///AC×Ô¶¯»ú
+///ACè‡ªåŠ¨æœº
 #define N 100010
 #define M 201
 #define ZIFU 128
@@ -3140,10 +3140,10 @@ int main()
     return 0;
 }
 
-///ºó×ºÊı×é
-//´¦Àí×Ó´®ÖØ¸´»ò²»ÏàÍ¬µÄÎÊÌâ
-//seq[]Ô­Ê¼´®£¬sa[i]ÅÅÔÚiÎ»µÄºó×º×Ó´®µÄÆğÊ¼Î»ÖÃ£¬ranks[i]iÎ»¿ªÊ¼µÄºó×º×Ó´®µÄÅÅĞòÎ»ÖÃ£¬height[i]ÅÅÔÚiÓëi-1Î»µÄºó×º×Ó´®µÄÏàÍ¬Ç°×º³¤¶È¡£
-///DA±¶ÔöËã·¨ O(n*logn)
+///åç¼€æ•°ç»„
+//å¤„ç†å­ä¸²é‡å¤æˆ–ä¸ç›¸åŒçš„é—®é¢˜
+//seq[]åŸå§‹ä¸²ï¼Œsa[i]æ’åœ¨iä½çš„åç¼€å­ä¸²çš„èµ·å§‹ä½ç½®ï¼Œranks[i]iä½å¼€å§‹çš„åç¼€å­ä¸²çš„æ’åºä½ç½®ï¼Œheight[i]æ’åœ¨iä¸i-1ä½çš„åç¼€å­ä¸²çš„ç›¸åŒå‰ç¼€é•¿åº¦ã€‚
+///DAå€å¢ç®—æ³• O(n*logn)
 int seq[N], sa[N], ranks[N], height[N];
 int wwa[N], wwb[N], wws[N], wwv[N];
 bool cmp(int r[], int a, int b, int l)
@@ -3179,12 +3179,12 @@ void calheight(int r[], int n)
 }
 void solve()
 {
-    //³õÊ¼Ğò0~n£¬×Ö·ûÊıÖµ1~m-1¡£
+    //åˆå§‹åº0~nï¼Œå­—ç¬¦æ•°å€¼1~m-1ã€‚
     seq[n]=0;
     da(seq,n+1,m);
     calheight(seq,n);
 }
-//Çó²»ÖØ¸´×î³¤ÏàÍ¬×Ó´®
+//æ±‚ä¸é‡å¤æœ€é•¿ç›¸åŒå­ä¸²
 int longestString()
 {
     solve();
@@ -3207,7 +3207,7 @@ int longestString()
     return res;
 }
 
-///DC3Ëã·¨ O(N)
+///DC3ç®—æ³• O(N)
 int seq[3*N], sa[3*N], ranks[3*N], height[3*N];
 int wwa[3*N], wwb[3*N], wws[3*N], wwv[3*N];
 int c0(int *r,int a,int b)
@@ -3256,19 +3256,19 @@ void calheight(int r[], int n)
 }
 void solve()
 {
-    //³õÊ¼Ğò0~n£¬×Ö·ûÊıÖµ1~m-1¡£
+    //åˆå§‹åº0~nï¼Œå­—ç¬¦æ•°å€¼1~m-1ã€‚
     seq[n]=0;
     dc3(seq,sa,n+1,m);
     calheight(seq,n);
 }
 
-///ºó×º×Ô¶¯»úSAM
+///åç¼€è‡ªåŠ¨æœºSAM
 struct SAM
 {
     struct Node
     {
         int ch[26];
-        //Ê§°ÜÖ¸Õë,µ±Ç°Æ¥ÅäÎ»ÖÃµÄ³¤¶È
+        //å¤±è´¥æŒ‡é’ˆ,å½“å‰åŒ¹é…ä½ç½®çš„é•¿åº¦
         int f, len;
         void init()
         {
@@ -3314,7 +3314,7 @@ struct SAM
     }
 };
 SAM sam;
-//×î³¤¹«¹²×Ó´®
+//æœ€é•¿å…¬å…±å­ä¸²
 int n,m,sum,res,flag;
 char s[N];
 int main()
@@ -3351,8 +3351,8 @@ int main()
     return 0;
 }
 
-///Í¼ÂÛ£¡£¡£¡£¡£¡£¡
-///×îĞ¡Éú³ÉÊ÷
+///å›¾è®ºï¼ï¼ï¼ï¼ï¼ï¼
+///æœ€å°ç”Ÿæˆæ ‘
 ///prim
 //O(n^2)
 bool vis[N];
@@ -3376,7 +3376,7 @@ int prim(int n)
         if(minn==INF)return -1;
         res+=minn;
         vis[pos]=true;
-        //¸üĞÂÈ¨Öµ£¬Óëdijkstra²»Í¬µÄµØ·½(ÆğµãÎªËùÓĞ¼ÓÈëÉú³ÉÊ÷µÄ½Úµã£¬ÕÒµ½Ê÷×î½üµÄµã)
+        //æ›´æ–°æƒå€¼ï¼Œä¸dijkstraä¸åŒçš„åœ°æ–¹(èµ·ç‚¹ä¸ºæ‰€æœ‰åŠ å…¥ç”Ÿæˆæ ‘çš„èŠ‚ç‚¹ï¼Œæ‰¾åˆ°æ ‘æœ€è¿‘çš„ç‚¹)
         for(j=1; j<=n; j++)
             if(!vis[j]&&dist[j]>g[pos][j])
                 dist[j]=g[pos][j];
@@ -3392,7 +3392,7 @@ struct node
 {
     int u,v;
     int r;
-    //ÉıĞòÅÅÁĞ
+    //å‡åºæ’åˆ—
     friend bool operator < (node a, node b)
     {
         return a.r < b.r;
@@ -3435,7 +3435,7 @@ int kruskal(int n,int m)
     while(k<n-1)
     {
         if(i == m)break;
-        //²¢²é¼¯ÅĞ¶Ï²»ĞÎ³É»·£¬Ôò¸Ã±ß¼ÓÈëÉú³ÉÊ÷ÖĞ
+        //å¹¶æŸ¥é›†åˆ¤æ–­ä¸å½¢æˆç¯ï¼Œåˆ™è¯¥è¾¹åŠ å…¥ç”Ÿæˆæ ‘ä¸­
         if(!unions(edge[i].u,edge[i].v))
         {
             k++;
@@ -3447,17 +3447,17 @@ int kruskal(int n,int m)
     return res;
 }
 
-///´ÎĞ¡Éú³ÉÊ÷
+///æ¬¡å°ç”Ÿæˆæ ‘
 /*
-* ´ÎĞ¡Éú³ÉÊ÷
-* Çó×îĞ¡Éú³ÉÊ÷Ê±£¬ÓÃÊı×éMax[i][j]À´±íÊ¾MSTÖĞiµ½j×î´ó±ßÈ¨
-* ÇóÍêºó£¬Ö±½ÓÃ¶¾ÙËùÓĞ²»ÔÚMSTÖĞµÄ±ß£¬Ìæ»»µô×î´ó±ßÈ¨µÄ±ß£¬¸üĞÂ´ğ°¸
-* µãµÄ±àºÅ´Ó0¿ªÊ¼
+* æ¬¡å°ç”Ÿæˆæ ‘
+* æ±‚æœ€å°ç”Ÿæˆæ ‘æ—¶ï¼Œç”¨æ•°ç»„Max[i][j]æ¥è¡¨ç¤ºMSTä¸­iåˆ°jæœ€å¤§è¾¹æƒ
+* æ±‚å®Œåï¼Œç›´æ¥æšä¸¾æ‰€æœ‰ä¸åœ¨MSTä¸­çš„è¾¹ï¼Œæ›¿æ¢æ‰æœ€å¤§è¾¹æƒçš„è¾¹ï¼Œæ›´æ–°ç­”æ¡ˆ
+* ç‚¹çš„ç¼–å·ä»0å¼€å§‹
 */
 bool vis[N];
 int lowc[N];
 int pre[N];
-int Max[N][N];//Max[i][j]±íÊ¾ÔÚ×îĞ¡Éú³ÉÊ÷ÖĞ´Óiµ½jµÄÂ·¾¶ÖĞµÄ×î´ó±ßÈ¨
+int Max[N][N];//Max[i][j]è¡¨ç¤ºåœ¨æœ€å°ç”Ÿæˆæ ‘ä¸­ä»iåˆ°jçš„è·¯å¾„ä¸­çš„æœ€å¤§è¾¹æƒ
 bool used[N][N];
 int Prim(int cost[][N],int n)
 {
@@ -3500,9 +3500,9 @@ int Prim(int cost[][N],int n)
     return ans;
 }
 
-///µ¥Ô´×î¶Ì¾àÀë
+///å•æºæœ€çŸ­è·ç¦»
 ///Dijkstra
-//ÁÚ½Ó¾ØÕó´æÍ¼£¬È¨Öµ·Ç¸º£¬O(n^2), ÏÂ±ê´Ó1¿ªÊ¼
+//é‚»æ¥çŸ©é˜µå­˜å›¾ï¼Œæƒå€¼éè´Ÿï¼ŒO(n^2), ä¸‹æ ‡ä»1å¼€å§‹
 int g[N][N],dist[N];
 bool vis[N];
 int dijkstra(int n,int u,int v)
@@ -3523,7 +3523,7 @@ int dijkstra(int n,int u,int v)
             }
         if(minn==INF)break;
         vis[pos]=true;
-        //¸üĞÂÈ¨Öµ,Óëprim²»Í¬µÄµØ·½(Æğµã²»±ä£¬¸üĞÂ×î¶Ì¾àÀë)
+        //æ›´æ–°æƒå€¼,ä¸primä¸åŒçš„åœ°æ–¹(èµ·ç‚¹ä¸å˜ï¼Œæ›´æ–°æœ€çŸ­è·ç¦»)
         for(j=1; j<=n; j++)
             if(!vis[j]&&dist[j]>dist[pos]+g[pos][j])
                 dist[j]=dist[pos]+g[pos][j];
@@ -3531,7 +3531,7 @@ int dijkstra(int n,int u,int v)
     return dist[v];
 }
 
-///¶ÑÓÅ»¯Dijkstra
+///å †ä¼˜åŒ–Dijkstra
 //O(E+VlogV)
 struct node
 {
@@ -3555,7 +3555,7 @@ void addedge(int u,int v,int w)
 {
     E[u].push_back(edge(v,w));
 }
-//µãµÄ±àºÅ´Ó1¿ªÊ¼
+//ç‚¹çš„ç¼–å·ä»1å¼€å§‹
 void Dijkstra(int n,int start)
 {
     memset(vis,false,sizeof(vis));
@@ -3604,7 +3604,7 @@ void putRoad(int x,int y)
 }
 
 ///Bellman-Ford
-//ÄÜÅĞ¸ºÈ¨±ß£¬Ö±½Ó´æ±ß£¬O(n*m);
+//èƒ½åˆ¤è´Ÿæƒè¾¹ï¼Œç›´æ¥å­˜è¾¹ï¼ŒO(n*m);
 struct node
 {
     int x,y;
@@ -3635,7 +3635,7 @@ int bellman(int n,int m,int u)
     dist[u]=0;
     for(int i=1;i<n;i++)
     {
-        // ÓÅ»¯£¬ºó¼Ì½Úµã¶¼ÒÑ¾­±éÀú¹ıÎŞĞèÔÙËÉ³Ú
+        // ä¼˜åŒ–ï¼Œåç»§èŠ‚ç‚¹éƒ½å·²ç»éå†è¿‡æ— éœ€å†æ¾å¼›
         flag = false;
         for(int j=0;j<m;j++)
             if(relax(edge[j].x,edge[j].y,edge[j].r))
@@ -3643,7 +3643,7 @@ int bellman(int n,int m,int u)
         if(!flag)
             break;
     }
-    // ÅĞ¸ºÈ¦
+    // åˆ¤è´Ÿåœˆ
     for(int i=0;i<m;i++)
         if(relax(edge[i].x,edge[i].y,edge[i].r))
             return 0;
@@ -3702,7 +3702,7 @@ void SPFA(int u)
     }
 }
 
-///È«Í¼×î¶ÌÂ·
+///å…¨å›¾æœ€çŸ­è·¯
 ///Floyd
 int g[N][N];
 void init(int n)
@@ -3719,7 +3719,7 @@ void floyd(int n)
                 g[i][j] = min(g[i][j],g[i][k]+g[k][j]);
 }
 
-///Å·À­»ØÂ·
+///æ¬§æ‹‰å›è·¯
 ///fleury
 int n,m;
 int g[N][N];
@@ -3772,13 +3772,13 @@ void solve()
     printf("\n");
 }
 
-///ÍøÂçÁ÷
-///×î´óÁ÷
+///ç½‘ç»œæµ
+///æœ€å¤§æµ
 ///EdmondsKarp
 //O(V*E^2)
-//±ê¼ÇÔÚÕâÌõÂ·¾¶ÉÏµ±Ç°½ÚµãµÄÇ°Çı,Í¬Ê±±ê¼Ç¸Ã½ÚµãÊÇ·ñÔÚ¶ÓÁĞÖĞ
+//æ ‡è®°åœ¨è¿™æ¡è·¯å¾„ä¸Šå½“å‰èŠ‚ç‚¹çš„å‰é©±,åŒæ—¶æ ‡è®°è¯¥èŠ‚ç‚¹æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­
 int pre[N];
-//¼ÇÂ¼²ĞÁôÍøÂçµÄÈİÁ¿
+//è®°å½•æ®‹ç•™ç½‘ç»œçš„å®¹é‡
 int g[N][N],flow[N];
 int BFS(int src,int des,int n)
 {
@@ -3838,7 +3838,7 @@ int main()
         g[x[i]][y[i]]=g[y[i]][x[i]]=z;
     }
     maxFlow(1,2,n);
-    //Êä³ö¸î±ß
+    //è¾“å‡ºå‰²è¾¹
     for(i=0;i<m;i++)
         if(flow[x[i]]&&!flow[y[i]] || flow[y[i]]&&!flow[x[i]])
             printf("%d %d\n",x[i],y[i]);
@@ -3866,7 +3866,7 @@ int maxFlow(int src,int des,int n)
     int i,j,k,l,r,top;
     while(1)
     {
-        //·Ö²ã±êºÅ
+        //åˆ†å±‚æ ‡å·
         memset(dep,-1,sizeof(dep));
         for(l=dep[ps[0]=src]=0,r=1;l!=r;)
         {
@@ -3878,7 +3878,7 @@ int maxFlow(int src,int des,int n)
                 }
         }
         if(dep[des]==-1)break;
-        //ÉîËÑÕÒÔö¹ãÂ·
+        //æ·±æœæ‰¾å¢å¹¿è·¯
         for(i=src,top=0;;)
         {
             if(i==des)
@@ -4069,12 +4069,12 @@ int maxFlow(int start,int ends,int sum)
     return ans;
 }
 
-///×îĞ¡·ÑÓÃ×î´óÁ÷
+///æœ€å°è´¹ç”¨æœ€å¤§æµ
 struct Edge
 {
     int to,next,cap,flow,cost;
 } edge[M];
-int head[N],tol,tot;//tot×Ü½ÚµãÊı£¬0~tot-1
+int head[N],tol,tot;//totæ€»èŠ‚ç‚¹æ•°ï¼Œ0~tot-1
 int pre[N],dis[N];
 bool vis[N];
 void init()
@@ -4133,7 +4133,7 @@ bool spfa(int s,int t)
     if(pre[t] == -1)return false;
     else return true;
 }
-//·µ»ØµÄÊÇ×î´óÁ÷£¬cost´æµÄÊÇ×îĞ¡·ÑÓÃ
+//è¿”å›çš„æ˜¯æœ€å¤§æµï¼Œcostå­˜çš„æ˜¯æœ€å°è´¹ç”¨
 int minCostMaxflow(int s,int t,int &cost)
 {
     int flow = 0;
@@ -4157,12 +4157,12 @@ int minCostMaxflow(int s,int t,int &cost)
     return flow;
 }
 
-///¶ş·ÖÍ¼Æ¥Åä
-///ĞÙÑÀÀûËã·¨£¬dfsÊµÏÖ
-//¶ş·ÖÍ¼Æ¥Åä£º¶ş·ÖÍ¼×î´óÅä¶ÔÊı
-//×îĞ¡µã¸²¸Ç£ºÑ¡È¡×îÉÙµÄµã¸²¸ÇËùÓĞ±ß
-//×î´ó¶ÀÁ¢¼¯£ºÑ¡È¡×î¶àµÄµã£¬¼¯ºÏÖĞµãÖ®¼äÎŞÁ¬½Ó
-//¶ş·ÖÍ¼×î´óÆ¥Åä==×îĞ¡µã¸²¸Ç==×ÜµãÊı-×î´ó¶ÀÁ¢¼¯
+///äºŒåˆ†å›¾åŒ¹é…
+///åŒˆç‰™åˆ©ç®—æ³•ï¼Œdfså®ç°
+//äºŒåˆ†å›¾åŒ¹é…ï¼šäºŒåˆ†å›¾æœ€å¤§é…å¯¹æ•°
+//æœ€å°ç‚¹è¦†ç›–ï¼šé€‰å–æœ€å°‘çš„ç‚¹è¦†ç›–æ‰€æœ‰è¾¹
+//æœ€å¤§ç‹¬ç«‹é›†ï¼šé€‰å–æœ€å¤šçš„ç‚¹ï¼Œé›†åˆä¸­ç‚¹ä¹‹é—´æ— è¿æ¥
+//äºŒåˆ†å›¾æœ€å¤§åŒ¹é…==æœ€å°ç‚¹è¦†ç›–==æ€»ç‚¹æ•°-æœ€å¤§ç‹¬ç«‹é›†
 int n,m,cnt;
 int f[N];
 int vm[N],um[N];
@@ -4191,7 +4191,7 @@ int dfs(int u)
         if(vis[v])
             continue;
         vis[v] = 1;
-        //ÄÜÖ±½ÓÕÒµ½Ôö¹ãÂ·¾¶»òÕßÁ¬½Ó¸Ã½ÚµãµÄ½ÚµãÓĞÆäËûÔö¹ãÂ·¾¶
+        //èƒ½ç›´æ¥æ‰¾åˆ°å¢å¹¿è·¯å¾„æˆ–è€…è¿æ¥è¯¥èŠ‚ç‚¹çš„èŠ‚ç‚¹æœ‰å…¶ä»–å¢å¹¿è·¯å¾„
         if(vm[v] == -1 || dfs(vm[v])!=-1)
         {
             vm[v] = u; um[u] = v;
@@ -4200,7 +4200,7 @@ int dfs(int u)
     }
     return -1;
 }
-//È¾É«
+//æŸ“è‰²
 bool dye(int u)
 {
     int v;
@@ -4238,13 +4238,13 @@ int maxMatch()
             if(dfs(i)!=-1)
                 res++;
         }
-    //È¡µÃ×î´óµã¼¯¸²¸Ç
+    //å–å¾—æœ€å¤§ç‚¹é›†è¦†ç›–
     return res;
 }
 
-///Hopcroft-KarpËã·¨
+///Hopcroft-Karpç®—æ³•
 //O(E*sqrt(V))
-//Ö»ÓĞuÖ¸ÏòvµÄ±ß
+//åªæœ‰uæŒ‡å‘vçš„è¾¹
 vector<int>g[N];
 int um[N],vm[N],n;
 int dx[N],dy[N],dis;
@@ -4318,14 +4318,14 @@ int maxMatch()
     return res;
 }
 
-/// KMËã·¨
-//¸´ÔÓ¶ÈO(nx*nx*ny)
-//Çó×î´óÈ¨Æ¥Åä
-//ÈôÇó×îĞ¡È¨Æ¥Åä£¬¿É½«È¨ÖµÈ¡Ïà·´Êı£¬½á¹ûÈ¡Ïà·´Êı
+/// KMç®—æ³•
+//å¤æ‚åº¦O(nx*nx*ny)
+//æ±‚æœ€å¤§æƒåŒ¹é…
+//è‹¥æ±‚æœ€å°æƒåŒ¹é…ï¼Œå¯å°†æƒå€¼å–ç›¸åæ•°ï¼Œç»“æœå–ç›¸åæ•°
 const int N = 500;
-int nx,ny;//Á½±ßµÄµãÊı
-int g[N][N];//¶ş·ÖÍ¼ÃèÊö
-int linker[N],lx[N],ly[N];//yÖĞ¸÷µãÆ¥Åä×´Ì¬£¬x,yÖĞµÄµã±êºÅ
+int nx,ny;//ä¸¤è¾¹çš„ç‚¹æ•°
+int g[N][N];//äºŒåˆ†å›¾æè¿°
+int linker[N],lx[N],ly[N];//yä¸­å„ç‚¹åŒ¹é…çŠ¶æ€ï¼Œx,yä¸­çš„ç‚¹æ ‡å·
 int slack[N];
 bool visx[N],visy[N];
 bool DFS(int x)
@@ -4397,16 +4397,16 @@ void init()
             g[i][j]=-INF;
 }
 
-///Ç¿Á¬Í¨·ÖÁ¿
+///å¼ºè¿é€šåˆ†é‡
 ///tarjan
 //O(n+m)
 vector<int>g[N];
 stack<int>st;
-// Éî¶ÈÓÅÏÈËÑË÷·ÃÎÊ´ÎĞò, ÄÜ×·Ëİµ½µÄ×îÔçµÄ´ÎĞò
+// æ·±åº¦ä¼˜å…ˆæœç´¢è®¿é—®æ¬¡åº, èƒ½è¿½æº¯åˆ°çš„æœ€æ—©çš„æ¬¡åº
 int dfn[N],low[N];
-// ¼ì²éÊÇ·ñÔÚÕ»ÖĞ, ¼ÇÂ¼Ã¿¸öµãÔÚµÚ¼¸ºÅÇ¿Á¬Í¨·ÖÁ¿Àï
+// æ£€æŸ¥æ˜¯å¦åœ¨æ ˆä¸­, è®°å½•æ¯ä¸ªç‚¹åœ¨ç¬¬å‡ å·å¼ºè¿é€šåˆ†é‡é‡Œ
 int inStack[N],belong[N];
-// Ë÷ÒıºÅ£¬Ç¿Á¬Í¨·ÖÁ¿¸öÊı
+// ç´¢å¼•å·ï¼Œå¼ºè¿é€šåˆ†é‡ä¸ªæ•°
 int index,cnt;
 int n,m;
 void init()
@@ -4455,7 +4455,7 @@ void tarjan(int x,int fa)
         cnt++;
     }
 }
-// tarjanµÄ³É¹ûÊÇµÃµ½ÁËÒ»¸öbelongÊı×é£¬¼ÇÂ¼Ã¿¸ö½Úµã·Ö±ğÊôÓÚÄÄ¸öÇ¿ÁªÍ¨·ÖÁ¿
+// tarjançš„æˆæœæ˜¯å¾—åˆ°äº†ä¸€ä¸ªbelongæ•°ç»„ï¼Œè®°å½•æ¯ä¸ªèŠ‚ç‚¹åˆ†åˆ«å±äºå“ªä¸ªå¼ºè”é€šåˆ†é‡
 int solve()
 {
     for(int i = 1; i <= n; i++)
@@ -4464,16 +4464,16 @@ int solve()
     return cnt;
 }
 
-///Ë«Á¬Í¨·ÖÁ¿
-///±ßË«Á¬Í¨·ÖÁ¿
-//Á¬Í¨·ÖÁ¿ÖĞ²»º¬ÓĞÇÅ£¬O(n+m);
+///åŒè¿é€šåˆ†é‡
+///è¾¹åŒè¿é€šåˆ†é‡
+//è¿é€šåˆ†é‡ä¸­ä¸å«æœ‰æ¡¥ï¼ŒO(n+m);
 vector<int>g[N];
 stack<int>st;
-// Éî¶ÈÓÅÏÈËÑË÷·ÃÎÊ´ÎĞò, ÄÜ×·Ëİµ½µÄ×îÔçµÄ´ÎĞò
+// æ·±åº¦ä¼˜å…ˆæœç´¢è®¿é—®æ¬¡åº, èƒ½è¿½æº¯åˆ°çš„æœ€æ—©çš„æ¬¡åº
 int dfn[N],low[N];
-// ¼ì²éÊÇ·ñÔÚÕ»ÖĞ, ¼ÇÂ¼Ã¿¸öµãÔÚµÚ¼¸ºÅÇ¿Á¬Í¨·ÖÁ¿Àï
+// æ£€æŸ¥æ˜¯å¦åœ¨æ ˆä¸­, è®°å½•æ¯ä¸ªç‚¹åœ¨ç¬¬å‡ å·å¼ºè¿é€šåˆ†é‡é‡Œ
 int inStack[N],belong[N];
-// Ë÷ÒıºÅ£¬Ë«Á¬Í¨·ÖÁ¿¸öÊı
+// ç´¢å¼•å·ï¼ŒåŒè¿é€šåˆ†é‡ä¸ªæ•°
 int index,cnt;
 int n,m;
 void init()
@@ -4536,8 +4536,8 @@ int solve()
     return cnt;
 }
 
-///µãË«Á¬Í¨·ÖÁ¿
-//ÄÚ²¿²»º¬ÓĞ¸îµãµÄµã¼¯£¬¸îµãÊôÓÚËùÓĞ°üº¬ËüµÄÁªÍ¨·ÖÁ¿£¬
+///ç‚¹åŒè¿é€šåˆ†é‡
+//å†…éƒ¨ä¸å«æœ‰å‰²ç‚¹çš„ç‚¹é›†ï¼Œå‰²ç‚¹å±äºæ‰€æœ‰åŒ…å«å®ƒçš„è”é€šåˆ†é‡ï¼Œ
 struct node
 {
     int x,y;
@@ -4546,14 +4546,14 @@ struct node
         x=a;y=b;
     }
 }tn;
-//blocks[]´æÃ¿¸ö¿é°üº¬µÄµã£¬bridge´æÊÇÇÅµÄ±ß
+//blocks[]å­˜æ¯ä¸ªå—åŒ…å«çš„ç‚¹ï¼Œbridgeå­˜æ˜¯æ¡¥çš„è¾¹
 vector<int>g[N],blocks[N];
 vector<node>bridge;
 stack<node>st;
-// Éî¶ÈÓÅÏÈËÑË÷·ÃÎÊ´ÎĞò, ÄÜ×·Ëİµ½µÄ×îÔçµÄ´ÎĞò
+// æ·±åº¦ä¼˜å…ˆæœç´¢è®¿é—®æ¬¡åº, èƒ½è¿½æº¯åˆ°çš„æœ€æ—©çš„æ¬¡åº
 int dfn[N],low[N];
 bool vis[N];
-// Ë÷ÒıºÅ£¬¿éµÄ¸öÊı
+// ç´¢å¼•å·ï¼Œå—çš„ä¸ªæ•°
 int index,cnt;
 int n,m;
 void init()
@@ -4592,7 +4592,7 @@ void tarjan(int x,int fa)
             continue;
         if(!dfn[t] && dfn[t]<dfn[x])
         {
-            //¼ÓÈëÊ÷Ö¦±ß
+            //åŠ å…¥æ ‘æè¾¹
             st.push(node(x,t));
             tarjan(t,x);
             low[x] = min(low[x], low[t]);
@@ -4603,7 +4603,7 @@ void tarjan(int x,int fa)
         }
         else if(dfn[t] < dfn[x])
         {
-            //¼ÓÈëºóÏò±ß
+            //åŠ å…¥åå‘è¾¹
             st.push(node(x,t));
             low[x] = min(low[x], dfn[t]);
         }
@@ -4617,13 +4617,13 @@ int solve()
     return cnt;
 }
 
-///×î½ü¹«¹²×æÏÈ(LCA)
+///æœ€è¿‘å…¬å…±ç¥–å…ˆ(LCA)
 ///tarjan
 struct Tree{
-    int head[MAXN];//Ç°ÏòĞÇ´æÍ¼
+    int head[MAXN];//å‰å‘æ˜Ÿå­˜å›¾
     int next[MAXM];
     int to[MAXM];
-    int val[MAXM];//È¨Öµ
+    int val[MAXM];//æƒå€¼
     int pos;
     Tree()
     {
@@ -4644,9 +4644,9 @@ struct Tree{
     }
 }tree;
 bool v[MAXN];
-int in[MAXN];//Èë¶È
-int dist[MAXN];//Óë¸ù½Úµã¾àÀë
-int father[MAXN];//²¢²é¼¯´¦Àí
+int in[MAXN];//å…¥åº¦
+int dist[MAXN];//ä¸æ ¹èŠ‚ç‚¹è·ç¦»
+int father[MAXN];//å¹¶æŸ¥é›†å¤„ç†
 int n,m,q;
 vector<int>query[MAXQ],num[MAXQ];
 int ans[MAXQ];
@@ -4669,7 +4669,7 @@ int Find(int x)
         father[x] = Find(father[x]);
     return father[x];
 }
-void getDist(int u)//¼ÆËã½Úµãµ½¸ù¾àÀë
+void getDist(int u)//è®¡ç®—èŠ‚ç‚¹åˆ°æ ¹è·ç¦»
 {
     for(int i = tree.head[u];i!=-1;i=tree.next[i])
     {
@@ -4679,14 +4679,14 @@ void getDist(int u)//¼ÆËã½Úµãµ½¸ù¾àÀë
 }
 void Tarjan(int u)
 {
-    father[u] = u;//µ±·ÃÎÊµ½Ò»¸ö½ÚµãµÄÊ±ºò£¬ÏÈ½«Æä×Ô¼ºĞÎ³ÉÒ»¸ö¼¯ºÏ
-    v[u] = true;//±ê¼Ç·ÃÎÊ
+    father[u] = u;//å½“è®¿é—®åˆ°ä¸€ä¸ªèŠ‚ç‚¹çš„æ—¶å€™ï¼Œå…ˆå°†å…¶è‡ªå·±å½¢æˆä¸€ä¸ªé›†åˆ
+    v[u] = true;//æ ‡è®°è®¿é—®
     for(int i = tree.head[u];i!=-1;i=tree.next[i])
     {
-        Tarjan(tree.to[i]);//µİ¹é´¦Àí
-        father[tree.to[i]] = u;//´¦Àí½áÊøºó£¬½«×Ó½Úµã¼¯ºÏ¼Óµ½¸¸½Úµã
+        Tarjan(tree.to[i]);//é€’å½’å¤„ç†
+        father[tree.to[i]] = u;//å¤„ç†ç»“æŸåï¼Œå°†å­èŠ‚ç‚¹é›†åˆåŠ åˆ°çˆ¶èŠ‚ç‚¹
     }
-    for(int i = 0; i < query[u].size(); i++)//±ãÀûÑ¯ÎÊ
+    for(int i = 0; i < query[u].size(); i++)//ä¾¿åˆ©è¯¢é—®
     {
         if(v[query[u][i]])
         {
@@ -4722,13 +4722,13 @@ int main()
             Tarjan(i);
             break;
         }
-    //ansÖĞµÃµ½µÄÊÇ×î½ü¹«¹²×æÏÈµÄ½Úµã£¬×î½ü¾àÀë¾ÍÊÇdist[x]+dist[y]-2*dist[ans[i]];
+    //ansä¸­å¾—åˆ°çš„æ˜¯æœ€è¿‘å…¬å…±ç¥–å…ˆçš„èŠ‚ç‚¹ï¼Œæœ€è¿‘è·ç¦»å°±æ˜¯dist[x]+dist[y]-2*dist[ans[i]];
     for(int i=0;i<q;i++)
         printf("%d\n",ans[i]);
     return 0;
 }
 
-///ST-RMQÔÚÏßËã·¨
+///ST-RMQåœ¨çº¿ç®—æ³•
 #define N 40010
 #define M 25
 int n,m;
@@ -4748,7 +4748,7 @@ inline void add(int u ,int v ,int w )
     e[num].next = head[u]; head[u] = num++;
 }
 int ver[2*N],R[2*N],first[N],dir[N];
-//ver:½Úµã±àºÅ R£ºÉî¶È first£ºµã±àºÅÎ»ÖÃ dir£º¾àÀë
+//ver:èŠ‚ç‚¹ç¼–å· Rï¼šæ·±åº¦ firstï¼šç‚¹ç¼–å·ä½ç½® dirï¼šè·ç¦»
 void Init()
 {
     num = 0;  sum = 0; dir[1] = 0;
@@ -4780,13 +4780,13 @@ void ST(int n)
         }
     }
 }
-//ÖĞ¼ä²¿·ÖÊÇ½»²æµÄ¡£
+//ä¸­é—´éƒ¨åˆ†æ˜¯äº¤å‰çš„ã€‚
 int RMQ(int l,int r)
 {
     int k=0;
     while((1<<(k+1))<=r-l+1)
         k++;
-    int a = dp[l][k], b = dp[r-(1<<k)+1][k]; //±£´æµÄÊÇ±àºÅ
+    int a = dp[l][k], b = dp[r-(1<<k)+1][k]; //ä¿å­˜çš„æ˜¯ç¼–å·
     return R[a]<R[b]?a:b;
 }
 
@@ -4819,13 +4819,13 @@ int main()
     return 0;
 }
 
-///ÊıÂÛ£¡£¡£¡£¡£¡
+///æ•°è®ºï¼ï¼ï¼ï¼ï¼
 ///Fibonacci Number
 int a[10]={0,1,1,2,3,5,8,13,21,34}
 a[i]=a[i-1]+a[i-2];
 a[n]=(pow((1+sqrt(5)),n)-pow((1-sqrt(5)),n))/(pow(2,n)*sqrt(5));
 
-///Greatest Common Divisor ×î´ó¹«Ô¼Êı,Å·¼¸ÀïµÂËã·¨
+///Greatest Common Divisor æœ€å¤§å…¬çº¦æ•°,æ¬§å‡ é‡Œå¾·ç®—æ³•
 long long gcd(long long x,long long y)
 {   return y?gcd(y,x%y):x;  }
 long long gcd(long long x,long long y)
@@ -4837,13 +4837,13 @@ long long gcd(long long x,long long y)
     return x;
 }
 
-///Lowest Common Multiple ×îĞ¡¹«±¶Êı
+///Lowest Common Multiple æœ€å°å…¬å€æ•°
 long long lcm(long long x,long long y)
 {   return x/gcd(x,y)*y;    }
 
-///À©Õ¹Å·¼¸ÀïµÂËã·¨
-//À©Õ¹Å·¼¸ÀïµÂÇó³öa*x+b*y=gcd(a,b)µÄÒ»×é½â,x0,y0£¬
-//x=x2+b/gcd(a,b)*t,y=y2-a/gcd(a,b)*t,(tÎªÕûÊı)£¬¼´Îªax+by=cµÄËùÓĞ½â¡£
+///æ‰©å±•æ¬§å‡ é‡Œå¾·ç®—æ³•
+//æ‰©å±•æ¬§å‡ é‡Œå¾·æ±‚å‡ºa*x+b*y=gcd(a,b)çš„ä¸€ç»„è§£,x0,y0ï¼Œ
+//x=x2+b/gcd(a,b)*t,y=y2-a/gcd(a,b)*t,(tä¸ºæ•´æ•°)ï¼Œå³ä¸ºax+by=cçš„æ‰€æœ‰è§£ã€‚
 long long exgcd(long long a, long long b,long long &x,long long &y)
 {
     if (b == 0)
@@ -4859,15 +4859,15 @@ long long solve(long long  a,long long b,long long c)
 {
     long long x,y,x0,y0,x1,y1,t = exgcd(a,b,x0,y0);
     if(c%t!=0)return 0;// NO solution;
-//    x = x0+b/t; y = y0-a/t; //Í¨½â
-    x1 = (x*c/t);  y1 = (y*c/t);//ÇóÔ­·½³ÌµÄ½â
-//    x1 = (x0*c/t)%b;   x1 = (x1%(b/t)+b/t)%(b/t);//È¡xµÄ×îĞ¡ÕûÊı½â;
+//    x = x0+b/t; y = y0-a/t; //é€šè§£
+    x1 = (x*c/t);  y1 = (y*c/t);//æ±‚åŸæ–¹ç¨‹çš„è§£
+//    x1 = (x0*c/t)%b;   x1 = (x1%(b/t)+b/t)%(b/t);//å–xçš„æœ€å°æ•´æ•°è§£;
     printf("%lld %lld\n",x1,y1);
     return 0;
 }
 
-///ÄæÔª
-//À©Õ¹Å·¼¸ÀïµÃ½â·¨
+///é€†å…ƒ
+//æ‰©å±•æ¬§å‡ é‡Œå¾—è§£æ³•
 long long exgcd(long long l,long long r,long long &x,long long &y)
 {
     if(r==0){x=1;y=0;return l;}
@@ -4883,15 +4883,15 @@ long long mod_inverse(long long a,long long m)
     long long x,y;
     if(exgcd(a,m,x,y)==1)//ax+my=1
         return (x%m+m)%m;
-    return -1;//²»´æÔÚ
+    return -1;//ä¸å­˜åœ¨
 }
-//·ÑÂíĞ¡¶¨Àí½â·¨
+//è´¹é©¬å°å®šç†è§£æ³•
 long long mod_inverse(long long a,long long m)
 {
     return power(a,m-2,m);
 }
 
-///¿ìËÙÃİÔËËã
+///å¿«é€Ÿå¹‚è¿ç®—
 //eg:x^22==x^16+x^4+x^2;
 ////22==10110
 long long power(long long x,long long k,long long mod)
@@ -4906,9 +4906,9 @@ long long power(long long x,long long k,long long mod)
     return ans;
 }
 
-///³Ë»ıÇóÄ£
+///ä¹˜ç§¯æ±‚æ¨¡
 // a * b % n
-//ÀıÈç: b = 1011101ÄÇÃ´a * b mod n = (a * 1000000 mod n + a * 10000 mod n + a * 1000 mod n + a * 100 mod n + a * 1 mod n) mod n
+//ä¾‹å¦‚: b = 1011101é‚£ä¹ˆa * b mod n = (a * 1000000 mod n + a * 10000 mod n + a * 1000 mod n + a * 100 mod n + a * 1 mod n) mod n
 long long mod_mul(long long a,long long b,long long n)
 {
     long long res = 0;
@@ -4921,7 +4921,7 @@ long long mod_mul(long long a,long long b,long long n)
     return res;
 }
 
-///´Î·½ÇóÄ£
+///æ¬¡æ–¹æ±‚æ¨¡
 //1:
 //a^b % n
 long long mod_exp(long long a,long long b,long long n)
@@ -4936,22 +4936,22 @@ long long mod_exp(long long a,long long b,long long n)
     return res;
 }
 //2:
-//a^b mod c=(a mod c)^b mod cºÜÈİÒ×Éè¼Æ³öÒ»¸ö»ùÓÚ¶ş·ÖµÄµİ¹éËã·¨¡£
-//¿ìËÙÃİËã·¨£¬ÊıÂÛ¶ş·Ö
+//a^b mod c=(a mod c)^b mod cå¾ˆå®¹æ˜“è®¾è®¡å‡ºä¸€ä¸ªåŸºäºäºŒåˆ†çš„é€’å½’ç®—æ³•ã€‚
+//å¿«é€Ÿå¹‚ç®—æ³•ï¼Œæ•°è®ºäºŒåˆ†
 long long mod_exp(long long a,long long b,long long c)
 {
     long long res;
     if(b==0)  return 1%c;
     if(b==1)  return a%c;
-    //µİ¹éµ÷ÓÃ£¬²ÉÓÃ¶ş·Öµİ¹éËã·¨£¬,×¢ÒâÕâÀïn/2»á´øÀ´ÆæÅ¼ĞÔÎÊÌâ
+    //é€’å½’è°ƒç”¨ï¼Œé‡‡ç”¨äºŒåˆ†é€’å½’ç®—æ³•ï¼Œ,æ³¨æ„è¿™é‡Œn/2ä¼šå¸¦æ¥å¥‡å¶æ€§é—®é¢˜
     t = mod_exp(a,b/2,c);
-    t = t*t%c;//¶ş·Ö£¬³ËÉÏÁíÒ»°ëÔÙÇóÄ£
-    if(b&1)  t=t*a%c;//nÊÇÆæÊı£¬ÒòÎªn/2»¹ÉÙ³ËÁËÒ»´Îa
+    t = t*t%c;//äºŒåˆ†ï¼Œä¹˜ä¸Šå¦ä¸€åŠå†æ±‚æ¨¡
+    if(b&1)  t=t*a%c;//næ˜¯å¥‡æ•°ï¼Œå› ä¸ºn/2è¿˜å°‘ä¹˜äº†ä¸€æ¬¡a
     return t;
 }
 
-///ÖÊÊıÅĞ¶Ï
-///¼òµ¥PrimeÅĞ¶Ï
+///è´¨æ•°åˆ¤æ–­
+///ç®€å•Primeåˆ¤æ–­
 bool prime(int a)
 {
     if(a==0||a==1)return false;
@@ -4962,7 +4962,7 @@ bool prime(int a)
     return true;
 }
 
-///Sieve PrimeËØÊıÉ¸Ñ¡·¨
+///Sieve Primeç´ æ•°ç­›é€‰æ³•
 #define N 11234567
 bool mark[N];
 int pri[N/10],cnt;
@@ -4984,10 +4984,10 @@ void SP()
     }
 }
 
-///Ë«É¸
+///åŒç­›
 #define N 101000
 long long  a[N],sum,n,m;
-bool mark[N],num[N];//num[i]´æn+iÊÇ·ñËØÊı£¬
+bool mark[N],num[N];//num[i]å­˜n+iæ˜¯å¦ç´ æ•°ï¼Œ
 void SP()
 {
     sum = 0;
@@ -5016,11 +5016,11 @@ void solve()
     }
 }
 
-///Miller-RabinËØÊı²âÊÔËã·¨
-//·ÑÂíĞ¡¶¨Àí£ºgcd(a,n)==1,a^(n-1)==1(mod n)£¬nÎªËØÊı.
-//Carmichael£ºÂú×ã·ÑĞ¡µÄºÏÊı£¬341,561,1105,1729¡­¡­1e9·¶Î§ÄÚ255¸ö¡£
-//¶ş´ÎÌ½²â¶¨Àí£ºx^2==1(mod n),nÎªËØÊı,x==1||x==n-1.
-#define T 10//Ëæ»úËã·¨ÅĞ¶¨´ÎÊı£¬NÔ½´ó£¬ÅĞ´í¸ÅÂÊÔ½Ğ¡
+///Miller-Rabinç´ æ•°æµ‹è¯•ç®—æ³•
+//è´¹é©¬å°å®šç†ï¼šgcd(a,n)==1,a^(n-1)==1(mod n)ï¼Œnä¸ºç´ æ•°.
+//Carmichaelï¼šæ»¡è¶³è´¹å°çš„åˆæ•°ï¼Œ341,561,1105,1729â€¦â€¦1e9èŒƒå›´å†…255ä¸ªã€‚
+//äºŒæ¬¡æ¢æµ‹å®šç†ï¼šx^2==1(mod n),nä¸ºç´ æ•°,x==1||x==n-1.
+#define T 10//éšæœºç®—æ³•åˆ¤å®šæ¬¡æ•°ï¼ŒNè¶Šå¤§ï¼Œåˆ¤é”™æ¦‚ç‡è¶Šå°
 long long modMul(long long a,long long b,long long n)
 {
     long long res = 0;
@@ -5069,22 +5069,22 @@ bool millerRabin(long long n)
         for(j = 0; j < k; ++j)
         {
             x = modMul(x,x,n);
-            //¶ş´ÎÌ½²âÅĞ¶Ï
+            //äºŒæ¬¡æ¢æµ‹åˆ¤æ–­
             if(x == 1 && pre != 1 && pre != n-1)
                 return false;
             pre = x;
         }
-        //·ÑĞ¡ÅĞ¶Ï
+        //è´¹å°åˆ¤æ–­
         if(x != 1)
             return false;
     }
     return true;
 }
 
-///Òò×Ó
-///Î¨Ò»·Ö½â¶¨Àí(Òò×Ó¸öÊı)
-//sum=(s[0]+1)*(s[1]+1)*(s[2]+1)¡­¡­
-//s[i]ÎªaµÄÒ»¸öËØÒò×ÓµÄ¸öÊı¡£
+///å› å­
+///å”¯ä¸€åˆ†è§£å®šç†(å› å­ä¸ªæ•°)
+//sum=(s[0]+1)*(s[1]+1)*(s[2]+1)â€¦â€¦
+//s[i]ä¸ºaçš„ä¸€ä¸ªç´ å› å­çš„ä¸ªæ•°ã€‚
 long long getFactor(long long x)
 {
     long long sum=1;
@@ -5098,9 +5098,9 @@ long long getFactor(long long x)
         sum*=2;
     return sum;
 }
-///Òò×ÓºÍ
-//sum = (p[0]^(e[0]+1)-1)/(p[0]-1)*(p[1]^(e[1]+1)-1)/(p[1]-1)*¡­¡­
-//xÓĞe[i]¸öËØÒò×Óp[i];
+///å› å­å’Œ
+//sum = (p[0]^(e[0]+1)-1)/(p[0]-1)*(p[1]^(e[1]+1)-1)/(p[1]-1)*â€¦â€¦
+//xæœ‰e[i]ä¸ªç´ å› å­p[i];
 long long getFactorSum(long long x)
 {
     long long sum=1;
@@ -5114,7 +5114,7 @@ long long getFactorSum(long long x)
         sum*=x;
     return sum;
 }
-///ÖÊÒòÊı·Ö½â
+///è´¨å› æ•°åˆ†è§£
 int num[N],now,all;
 void solve(int t)
 {
@@ -5129,9 +5129,9 @@ void solve(int t)
     }
     if(tt>1)num[now++] = tt, all++;
 }
-///pollard_rho Ëã·¨
-long long factor[1000];//ÖÊÒòÊı·Ö½â½á¹û£¨¸Õ·µ»ØÊ±ÊÇÎŞĞòµÄ£©
-int sum;//ÖÊÒòÊıµÄ¸öÊı¡£Êı×éĞ¡±ê´Ó0¿ªÊ¼
+///pollard_rho ç®—æ³•
+long long factor[1000];//è´¨å› æ•°åˆ†è§£ç»“æœï¼ˆåˆšè¿”å›æ—¶æ˜¯æ— åºçš„ï¼‰
+int sum;//è´¨å› æ•°çš„ä¸ªæ•°ã€‚æ•°ç»„å°æ ‡ä»0å¼€å§‹
 long long gcd(long long a,long long b)
 {
     if(a==0)return 1;
@@ -5159,11 +5159,11 @@ long long pollardRho(long long x,long long c)
         if(i==k){y=x0;k+=k;}
     }
 }
-//¶Ôn½øĞĞËØÒò×Ó·Ö½â
+//å¯¹nè¿›è¡Œç´ å› å­åˆ†è§£
 void findFac(long long x)
 {
     srand((long long)time(0));
-    if(millerRabin(x))//ËØÊı
+    if(millerRabin(x))//ç´ æ•°
     {
         factor[sum++]=x;
         return;
@@ -5175,10 +5175,10 @@ void findFac(long long x)
     findFac(x/p);
 }
 
-///Å·À­º¯Êı
-//ÔÚÊıÂÛ£¬¶ÔÕıÕûÊın£¬Å·À­º¯ÊıÊÇÉÙÓÚ»òµÈÓÚnµÄÊıÖĞÓën»¥ÖÊµÄÊıµÄÊıÄ¿¡£
-//Å·À­¶¨Àí£ºaÓëp»¥ÖÊ£¬a^x==1(mod p)Ôòx==euler[p];
-///Ö±½ÓÇó½âÅ·À­º¯Êı
+///æ¬§æ‹‰å‡½æ•°
+//åœ¨æ•°è®ºï¼Œå¯¹æ­£æ•´æ•°nï¼Œæ¬§æ‹‰å‡½æ•°æ˜¯å°‘äºæˆ–ç­‰äºnçš„æ•°ä¸­ä¸näº’è´¨çš„æ•°çš„æ•°ç›®ã€‚
+//æ¬§æ‹‰å®šç†ï¼šaä¸päº’è´¨ï¼Œa^x==1(mod p)åˆ™x==euler[p];
+///ç›´æ¥æ±‚è§£æ¬§æ‹‰å‡½æ•°
 long long euler(long long n)
 {
      long long res=n,a=n;
@@ -5192,7 +5192,7 @@ long long euler(long long n)
      return res;
 }
 
-///É¸Ñ¡·¨´òÅ·À­º¯Êı±í
+///ç­›é€‰æ³•æ‰“æ¬§æ‹‰å‡½æ•°è¡¨
 int eul[N];
 void init()
 {
@@ -5203,13 +5203,13 @@ void init()
                 eul[j] = eul[j]/i*(i-1);
 }
 
-///Ô¼Éª·ò»·
-//¾ÍÊÇ³¤¶ÈÎªnµÄ»·Ã¿Êım¸ö¾ÍÉ¾È¥£¬×îºóÁôÏÂÒ»¸ö¡£
-//ÕÒ×îºóÒ»µã
+///çº¦ç‘Ÿå¤«ç¯
+//å°±æ˜¯é•¿åº¦ä¸ºnçš„ç¯æ¯æ•°mä¸ªå°±åˆ å»ï¼Œæœ€åç•™ä¸‹ä¸€ä¸ªã€‚
+//æ‰¾æœ€åä¸€ç‚¹
 for(i=2,res=0;i<=n;i++)
     res=(res+m)%i;
 
-//ÕÒ±£ÁôÇø¼äµÄ²½³¤Ñ¡Ôñ
+//æ‰¾ä¿ç•™åŒºé—´çš„æ­¥é•¿é€‰æ‹©
 res=0;k=1;
 for(i=0;i<n;i++)
 {
@@ -5218,59 +5218,59 @@ for(i=0;i<n;i++)
         i=-1,res=0,k++;
 }
 
-///¸ßË¹ÏûÔª
-int a[N][N];//Ôö¹ã¾ØÕó
-int x[N];//½â¼¯
-bool free_x[N];//±ê¼ÇÊÇ·ñÊÇ²»È·¶¨µÄ±äÔª
+///é«˜æ–¯æ¶ˆå…ƒ
+int a[N][N];//å¢å¹¿çŸ©é˜µ
+int x[N];//è§£é›†
+bool free_x[N];//æ ‡è®°æ˜¯å¦æ˜¯ä¸ç¡®å®šçš„å˜å…ƒ
 int  gcd(int x,int y)
 {   return y?gcd(y,x%y):x;  }
 int lcm(int a,int b)
 {   return a/gcd(a,b)*b;    }
-// ¸ßË¹ÏûÔª·¨½â·½³Ì×é(Gauss-Jordan elimination).(-2±íÊ¾ÓĞ¸¡µãÊı½â£¬µ«ÎŞÕûÊı½â£¬
-//-1±íÊ¾ÎŞ½â£¬0±íÊ¾Î¨Ò»½â£¬´óÓÚ0±íÊ¾ÎŞÇî½â£¬²¢·µ»Ø×ÔÓÉ±äÔªµÄ¸öÊı)
-//ÓĞequ¸ö·½³Ì£¬var¸ö±äÔª¡£Ôö¹ã¾ØÕóĞĞÊıÎªequ,·Ö±ğÎª0µ½equ-1,ÁĞÊıÎªvar+1,·Ö±ğÎª0µ½var.
+// é«˜æ–¯æ¶ˆå…ƒæ³•è§£æ–¹ç¨‹ç»„(Gauss-Jordan elimination).(-2è¡¨ç¤ºæœ‰æµ®ç‚¹æ•°è§£ï¼Œä½†æ— æ•´æ•°è§£ï¼Œ
+//-1è¡¨ç¤ºæ— è§£ï¼Œ0è¡¨ç¤ºå”¯ä¸€è§£ï¼Œå¤§äº0è¡¨ç¤ºæ— ç©·è§£ï¼Œå¹¶è¿”å›è‡ªç”±å˜å…ƒçš„ä¸ªæ•°)
+//æœ‰equä¸ªæ–¹ç¨‹ï¼Œvarä¸ªå˜å…ƒã€‚å¢å¹¿çŸ©é˜µè¡Œæ•°ä¸ºequ,åˆ†åˆ«ä¸º0åˆ°equ-1,åˆ—æ•°ä¸ºvar+1,åˆ†åˆ«ä¸º0åˆ°var.
 int Gauss(int equ,int var)
-{   // max_rµ±Ç°ÕâÁĞ¾ø¶ÔÖµ×î´óµÄĞĞ.
+{   // max_rå½“å‰è¿™åˆ—ç»å¯¹å€¼æœ€å¤§çš„è¡Œ.
     int i,j,k,max_r,col,ta,tb,LCM,temp,free_x_num,free_index;
     for(int i=0;i<=var;i++)
     {
         x[i]=0;
         free_x[i]=true;
     }
-    //×ª»»ÎªÉÏ½×ÌİÕó.
-    col=0; // µ±Ç°´¦ÀíµÄÁĞ
+    //è½¬æ¢ä¸ºä¸Šé˜¶æ¢¯é˜µ.
+    col=0; // å½“å‰å¤„ç†çš„åˆ—
     for(k = 0;k < equ && col < var;k++,col++)
-    {   // Ã¶¾Ùµ±Ç°´¦ÀíµÄĞĞ.
-        // ÕÒµ½¸ÃcolÁĞÔªËØ¾ø¶ÔÖµ×î´óµÄÄÇĞĞÓëµÚkĞĞ½»»».(ÎªÁËÔÚ³ı·¨Ê±¼õĞ¡Îó²î)
+    {   // æšä¸¾å½“å‰å¤„ç†çš„è¡Œ.
+        // æ‰¾åˆ°è¯¥colåˆ—å…ƒç´ ç»å¯¹å€¼æœ€å¤§çš„é‚£è¡Œä¸ç¬¬kè¡Œäº¤æ¢.(ä¸ºäº†åœ¨é™¤æ³•æ—¶å‡å°è¯¯å·®)
         max_r=k;
         for(i=k+1;i<equ;i++)
         {
             if(abs(a[i][col])>abs(a[max_r][col])) max_r=i;
         }
         if(max_r!=k)
-        {   // ÓëµÚkĞĞ½»»».
+        {   // ä¸ç¬¬kè¡Œäº¤æ¢.
             for(j=k;j<var+1;j++) swap(a[k][j],a[max_r][j]);
         }
         if(a[k][col]==0)
-        {   // ËµÃ÷¸ÃcolÁĞµÚkĞĞÒÔÏÂÈ«ÊÇ0ÁË£¬Ôò´¦Àíµ±Ç°ĞĞµÄÏÂÒ»ÁĞ.
+        {   // è¯´æ˜è¯¥colåˆ—ç¬¬kè¡Œä»¥ä¸‹å…¨æ˜¯0äº†ï¼Œåˆ™å¤„ç†å½“å‰è¡Œçš„ä¸‹ä¸€åˆ—.
             k--;
-//            free_x[free_x_num++] = col;//×ÔÓÉ±äÔª
+//            free_x[free_x_num++] = col;//è‡ªç”±å˜å…ƒ
             continue;
         }
         for(i=k+1;i<equ;i++)
-        {   // Ã¶¾ÙÏÂÃæÒª»¯Îª0µÄĞĞ
+        {   // æšä¸¾ä¸‹é¢è¦åŒ–ä¸º0çš„è¡Œ
             if(a[i][col]!=0)
             {
                 LCM = lcm(abs(a[i][col]),abs(a[k][col]));
                 ta = LCM/abs(a[i][col]);
                 tb = LCM/abs(a[k][col]);
-                if(a[i][col]*a[k][col]<0)tb=-tb;//ÒìºÅµÄÇé¿öÊÇÏà¼Ó
+                if(a[i][col]*a[k][col]<0)tb=-tb;//å¼‚å·çš„æƒ…å†µæ˜¯ç›¸åŠ 
                 for(j=col;j<var+1;j++)
                 {
                     a[i][j] = a[i][j]*ta-a[k][j]*tb;
                 }
             }
-            //0/1×ª»»
+            //0/1è½¬æ¢
 //            if(a[i][col] != 0)
 //            {
 //                for(int j = col;j < var+1;j++)
@@ -5278,49 +5278,49 @@ int Gauss(int equ,int var)
 //            }
         }
     }
-    // 1. ÎŞ½âµÄÇé¿ö: »¯¼òµÄÔö¹ãÕóÖĞ´æÔÚ(0, 0, ..., a)ÕâÑùµÄĞĞ(a != 0).
+    // 1. æ— è§£çš„æƒ…å†µ: åŒ–ç®€çš„å¢å¹¿é˜µä¸­å­˜åœ¨(0, 0, ..., a)è¿™æ ·çš„è¡Œ(a != 0).
     for (i = k; i < equ; i++)
-    { // ¶ÔÓÚÎŞÇî½âÀ´Ëµ£¬Èç¹ûÒªÅĞ¶ÏÄÄĞ©ÊÇ×ÔÓÉ±äÔª£¬ÄÇÃ´³õµÈĞĞ±ä»»ÖĞµÄ½»»»¾Í»áÓ°Ïì£¬ÔòÒª¼ÇÂ¼½»»».
+    { // å¯¹äºæ— ç©·è§£æ¥è¯´ï¼Œå¦‚æœè¦åˆ¤æ–­å“ªäº›æ˜¯è‡ªç”±å˜å…ƒï¼Œé‚£ä¹ˆåˆç­‰è¡Œå˜æ¢ä¸­çš„äº¤æ¢å°±ä¼šå½±å“ï¼Œåˆ™è¦è®°å½•äº¤æ¢.
         if (a[i][col] != 0) return -1;
     }
-    // 2. ÎŞÇî½âµÄÇé¿ö: ÔÚvar * (var + 1)µÄÔö¹ãÕóÖĞ³öÏÖ(0, 0, ..., 0)ÕâÑùµÄĞĞ£¬¼´ËµÃ÷Ã»ÓĞĞÎ³ÉÑÏ¸ñµÄÉÏÈı½ÇÕó.
-    // ÇÒ³öÏÖµÄĞĞÊı¼´Îª×ÔÓÉ±äÔªµÄ¸öÊı.
+    // 2. æ— ç©·è§£çš„æƒ…å†µ: åœ¨var * (var + 1)çš„å¢å¹¿é˜µä¸­å‡ºç°(0, 0, ..., 0)è¿™æ ·çš„è¡Œï¼Œå³è¯´æ˜æ²¡æœ‰å½¢æˆä¸¥æ ¼çš„ä¸Šä¸‰è§’é˜µ.
+    // ä¸”å‡ºç°çš„è¡Œæ•°å³ä¸ºè‡ªç”±å˜å…ƒçš„ä¸ªæ•°.
     if (k < var)
     {
-        // Ê×ÏÈ£¬×ÔÓÉ±äÔªÓĞvar - k¸ö£¬¼´²»È·¶¨µÄ±äÔªÖÁÉÙÓĞvar - k¸ö.
-        //È·¶¨×ÔÓÉ±äÔª
+        // é¦–å…ˆï¼Œè‡ªç”±å˜å…ƒæœ‰var - kä¸ªï¼Œå³ä¸ç¡®å®šçš„å˜å…ƒè‡³å°‘æœ‰var - kä¸ª.
+        //ç¡®å®šè‡ªç”±å˜å…ƒ
         for (i = k - 1; i >= 0; i--)
         {
-            // µÚiĞĞÒ»¶¨²»»áÊÇ(0, 0, ..., 0)µÄÇé¿ö£¬ÒòÎªÕâÑùµÄĞĞÊÇÔÚµÚkĞĞµ½µÚequĞĞ.
-            // Í¬Ñù£¬µÚiĞĞÒ»¶¨²»»áÊÇ(0, 0, ..., a), a != 0µÄÇé¿ö£¬ÕâÑùµÄÎŞ½âµÄ.
-            free_x_num = 0; // ÓÃÓÚÅĞ¶Ï¸ÃĞĞÖĞµÄ²»È·¶¨µÄ±äÔªµÄ¸öÊı£¬Èç¹û³¬¹ı1¸ö£¬ÔòÎŞ·¨Çó½â£¬ËüÃÇÈÔÈ»Îª²»È·¶¨µÄ±äÔª.
+            // ç¬¬iè¡Œä¸€å®šä¸ä¼šæ˜¯(0, 0, ..., 0)çš„æƒ…å†µï¼Œå› ä¸ºè¿™æ ·çš„è¡Œæ˜¯åœ¨ç¬¬kè¡Œåˆ°ç¬¬equè¡Œ.
+            // åŒæ ·ï¼Œç¬¬iè¡Œä¸€å®šä¸ä¼šæ˜¯(0, 0, ..., a), a != 0çš„æƒ…å†µï¼Œè¿™æ ·çš„æ— è§£çš„.
+            free_x_num = 0; // ç”¨äºåˆ¤æ–­è¯¥è¡Œä¸­çš„ä¸ç¡®å®šçš„å˜å…ƒçš„ä¸ªæ•°ï¼Œå¦‚æœè¶…è¿‡1ä¸ªï¼Œåˆ™æ— æ³•æ±‚è§£ï¼Œå®ƒä»¬ä»ç„¶ä¸ºä¸ç¡®å®šçš„å˜å…ƒ.
             for (j = 0; j < var; j++)
             {
                 if (a[i][j] != 0 && free_x[j]) free_x_num++, free_index = j;
             }
-            if (free_x_num > 1) continue; // ÎŞ·¨Çó½â³öÈ·¶¨µÄ±äÔª.
-            // ËµÃ÷¾ÍÖ»ÓĞÒ»¸ö²»È·¶¨µÄ±äÔªfree_index£¬ÄÇÃ´¿ÉÒÔÇó½â³ö¸Ã±äÔª£¬ÇÒ¸Ã±äÔªÊÇÈ·¶¨µÄ.
+            if (free_x_num > 1) continue; // æ— æ³•æ±‚è§£å‡ºç¡®å®šçš„å˜å…ƒ.
+            // è¯´æ˜å°±åªæœ‰ä¸€ä¸ªä¸ç¡®å®šçš„å˜å…ƒfree_indexï¼Œé‚£ä¹ˆå¯ä»¥æ±‚è§£å‡ºè¯¥å˜å…ƒï¼Œä¸”è¯¥å˜å…ƒæ˜¯ç¡®å®šçš„.
             temp = a[i][var];
             for (j = 0; j < var; j++)
             {
                 if (a[i][j] != 0 && j != free_index) temp -= a[i][j] * x[j];
             }
-            x[free_index] = temp / a[i][free_index]; // Çó³ö¸Ã±äÔª.
-            free_x[free_index] = 0; // ¸Ã±äÔªÊÇÈ·¶¨µÄ.
+            x[free_index] = temp / a[i][free_index]; // æ±‚å‡ºè¯¥å˜å…ƒ.
+            free_x[free_index] = 0; // è¯¥å˜å…ƒæ˜¯ç¡®å®šçš„.
         }
-        return var - k; // ×ÔÓÉ±äÔªÓĞvar - k¸ö.
+        return var - k; // è‡ªç”±å˜å…ƒæœ‰var - kä¸ª.
     }
-    // 3. Î¨Ò»½âµÄÇé¿ö: ÔÚvar * (var + 1)µÄÔö¹ãÕóÖĞĞÎ³ÉÑÏ¸ñµÄÉÏÈı½ÇÕó.
-    // ¼ÆËã³öXn-1, Xn-2 ... X0.
+    // 3. å”¯ä¸€è§£çš„æƒ…å†µ: åœ¨var * (var + 1)çš„å¢å¹¿é˜µä¸­å½¢æˆä¸¥æ ¼çš„ä¸Šä¸‰è§’é˜µ.
+    // è®¡ç®—å‡ºXn-1, Xn-2 ... X0.
     for (i = var - 1; i >= 0; i--)
     {
         temp = a[i][var];
         for (j = i + 1; j < var; j++)
             if (a[i][j] != 0)
                 temp -= a[i][j] * x[j];
-        if (temp % a[i][i] != 0) return -2; // ËµÃ÷ÓĞ¸¡µãÊı½â£¬µ«ÎŞÕûÊı½â.
+        if (temp % a[i][i] != 0) return -2; // è¯´æ˜æœ‰æµ®ç‚¹æ•°è§£ï¼Œä½†æ— æ•´æ•°è§£.
         x[i] = temp / a[i][i];
-        //0/1×ª»»
+        //0/1è½¬æ¢
 //        x[i] = a[i][var];
 //        for(int j = i+1;j < var;j++)
 //            x[i] ^= (a[i][j] && x[j]);
@@ -5341,14 +5341,14 @@ int main()
             }
         }
         int free_num = Gauss(equ,var);
-        if (free_num == -1) printf("ÎŞ½â!\n");
-        else if (free_num == -2) printf("ÓĞ¸¡µãÊı½â£¬ÎŞÕûÊı½â!\n");
+        if (free_num == -1) printf("æ— è§£!\n");
+        else if (free_num == -2) printf("æœ‰æµ®ç‚¹æ•°è§£ï¼Œæ— æ•´æ•°è§£!\n");
         else if (free_num > 0)
         {
-            printf("ÎŞÇî¶à½â! ×ÔÓÉ±äÔª¸öÊıÎª%d\n", free_num);
+            printf("æ— ç©·å¤šè§£! è‡ªç”±å˜å…ƒä¸ªæ•°ä¸º%d\n", free_num);
             for (i = 0; i < var; i++)
             {
-                if (free_x[i]) printf("x%d ÊÇ²»È·¶¨µÄ\n", i + 1);
+                if (free_x[i]) printf("x%d æ˜¯ä¸ç¡®å®šçš„\n", i + 1);
                 else printf("x%d: %d\n", i + 1, x[i]);
             }
         }
@@ -5364,8 +5364,8 @@ int main()
     return 0;
 }
 
-///¸ßË¹ÏûÔª´¦Àí¿ª¹ØÎÊÌâ
-//Ò»Î¬¿ª¹ØÖ®¼ä»¥ÏàÓĞÓ°Ïì£¬ÇóÊ¼Ä©×´Ì¬Ö®¼ä¸Ä±äµÄ·½·¨Êı£»
+///é«˜æ–¯æ¶ˆå…ƒå¤„ç†å¼€å…³é—®é¢˜
+//ä¸€ç»´å¼€å…³ä¹‹é—´äº’ç›¸æœ‰å½±å“ï¼Œæ±‚å§‹æœ«çŠ¶æ€ä¹‹é—´æ”¹å˜çš„æ–¹æ³•æ•°ï¼›
 int main()
 {
     int i,j,equ,var;
@@ -5376,20 +5376,20 @@ int main()
         scanf("%d",&equ);
         var=equ;
         memset(a, 0, sizeof(a));
-        for (i = 0; i < equ; i++)//ÊäÈëÔ­Ê¼×´Ì¬
+        for (i = 0; i < equ; i++)//è¾“å…¥åŸå§‹çŠ¶æ€
             scanf("%d", &b[i]);
         for(i=0;i<equ;i++)
         {
             int t;
             scanf("%d",&t);
-            if((t+2+b[i])%2)//¸ÃĞĞ×´Ì¬ÊÇ·ñĞèÒª¸Ä±ä
+            if((t+2+b[i])%2)//è¯¥è¡ŒçŠ¶æ€æ˜¯å¦éœ€è¦æ”¹å˜
                 a[i][equ]=1;
         }
         while(scanf("%d%d",&xx,&yy)&&(xx!=0||yy!=0))
-            a[yy-1][xx-1] = 1;//yyµÄ×´Ì¬»á±»xx¸Ä±ä
+            a[yy-1][xx-1] = 1;//yyçš„çŠ¶æ€ä¼šè¢«xxæ”¹å˜
         for(i=0;i<equ;i++)
-            a[i][i]=1;//Ñ¡Ôñ×Ô¼ºÒ»¶¨»á¸Ä±ä×Ô¼ºµÄ×´Ì¬
-        int free_num = Gauss(equ,var);//Ä£°æÇó³ö×ÔÓÉ±äÔªÊıÁ¿
+            a[i][i]=1;//é€‰æ‹©è‡ªå·±ä¸€å®šä¼šæ”¹å˜è‡ªå·±çš„çŠ¶æ€
+        int free_num = Gauss(equ,var);//æ¨¡ç‰ˆæ±‚å‡ºè‡ªç”±å˜å…ƒæ•°é‡
         if (free_num == -1) printf("Oh,it's impossible~!!\n");
         else if (free_num > 0)
             printf("%.0lf\n", pow(2.0,free_num));
@@ -5399,9 +5399,9 @@ int main()
     return 0;
 }
 
-///×éºÏÊıÑ§£¡£¡£¡£¡£¡
-///ÅÅÁĞ×éºÏ
-//ÇóC(x,y),(x>=y);
+///ç»„åˆæ•°å­¦ï¼ï¼ï¼ï¼ï¼
+///æ’åˆ—ç»„åˆ
+//æ±‚C(x,y),(x>=y);
 long long gcd(long long a,long long b)
 {    return b?gcd(b,a%b):a;     }
 long long solve(long long x,long long y)
@@ -5426,8 +5426,8 @@ long long solve(long long x,long long y)
     return res;
 }
 
-///Lucas¶¨Àí
-//ÇóC(n,m)%p;
+///Lucaså®šç†
+//æ±‚C(n,m)%p;
 long long fac[100005];
 long long  getFact(long long  p){
     fac[0]=1;
@@ -5457,7 +5457,7 @@ long long  Lucas(long long  n,long long  m,long long  p){
     return ret;
 }
 
-///È«ÅÅÁĞ
+///å…¨æ’åˆ—
 int len;int sum=0;
 char a[1000001][101];
 void Swap(char *a, char *b)
@@ -5466,7 +5466,7 @@ void Swap(char *a, char *b)
     *a = *b;
     *b = t;
 }
-//k±íÊ¾µ±Ç°Ñ¡È¡µ½µÚ¼¸¸öÊı,m±íÊ¾¹²ÓĞ¶àÉÙÊı.
+//kè¡¨ç¤ºå½“å‰é€‰å–åˆ°ç¬¬å‡ ä¸ªæ•°,mè¡¨ç¤ºå…±æœ‰å¤šå°‘æ•°.
 void AllRange(char *pszStr, int k)
 {
     if (k == len)
@@ -5476,7 +5476,7 @@ void AllRange(char *pszStr, int k)
     }
     else
     {
-        for (int i = k; i <= len; i++) //µÚi¸öÊı·Ö±ğÓëËüºóÃæµÄÊı×Ö½»»»¾ÍÄÜµÃµ½ĞÂµÄÅÅÁĞ
+        for (int i = k; i <= len; i++) //ç¬¬iä¸ªæ•°åˆ†åˆ«ä¸å®ƒåé¢çš„æ•°å­—äº¤æ¢å°±èƒ½å¾—åˆ°æ–°çš„æ’åˆ—
         {
             Swap(pszStr + k, pszStr + i);
             AllRange(pszStr, k + 1);
@@ -5494,12 +5494,12 @@ int main()
     return 0;
 }
 
-///´íÅÅ¹«Ê½
-a[n]=(n-1)*(a[n-1]+a[n-2]);//n·âĞÅÈ«²¿×°´íµÄ¿ÉÄÜ
+///é”™æ’å…¬å¼
+a[n]=(n-1)*(a[n-1]+a[n-2]);//nå°ä¿¡å…¨éƒ¨è£…é”™çš„å¯èƒ½
 
-///Ä¸º¯Êı£º
-///ÕûÊı»®·Ö
-//½«ÕûÊın ·Ö³É×î¶àn ·İ, ÇÒÃ¿·İ²»ÄÜÎª¿Õ, ÈÎÒâÁ½ÖÖ·Ö·¨²»ÄÜÏàÍ¬
+///æ¯å‡½æ•°ï¼š
+///æ•´æ•°åˆ’åˆ†
+//å°†æ•´æ•°n åˆ†æˆæœ€å¤šn ä»½, ä¸”æ¯ä»½ä¸èƒ½ä¸ºç©º, ä»»æ„ä¸¤ç§åˆ†æ³•ä¸èƒ½ç›¸åŒ
 #define N 130
 long long a[N],b[N],c[N];
 void Init()
@@ -5509,21 +5509,21 @@ void Init()
     int i,j,k;
     c[1]=1;
     for(i=0;i<=N;i++)
-        a[i] = 1;   /*µÚÒ»¸ö¶àÏîÊ½£ºg(x, 1) = x^0 + x^1 + x^2 + x^3 +  */
+        a[i] = 1;   /*ç¬¬ä¸€ä¸ªå¤šé¡¹å¼ï¼šg(x, 1) = x^0 + x^1 + x^2 + x^3 +  */
     for(i=2;i<=N;i++)
     {
         memset(b,0,sizeof(b));
-        for(j=0;j<=N;j++) // °ÑµÚk¸ö¶àÏîÊ½ÒÀ´Î³Ëµ½Ö®Ç°½á¹ûµÄÃ¿Ò»Î»ÉÏ
-            for(k=0;k+j<=N;k+=i)/*µÚk¸ö¶àÏîÊ½£ºg(x, k) = x^0 + x^(k) + x^(2k) + x^(3k) +  */
+        for(j=0;j<=N;j++) // æŠŠç¬¬kä¸ªå¤šé¡¹å¼ä¾æ¬¡ä¹˜åˆ°ä¹‹å‰ç»“æœçš„æ¯ä¸€ä½ä¸Š
+            for(k=0;k+j<=N;k+=i)/*ç¬¬kä¸ªå¤šé¡¹å¼ï¼šg(x, k) = x^0 + x^(k) + x^(2k) + x^(3k) +  */
                 b[j+k]+=a[j];
         c[i] = b[i];
         memcpy(a,b,sizeof(b));
     }
 }
 
-///¿µÍĞÕ¹¿ª
-int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //iµÄ½×³ËÎªfac[i]
-/*  ¿µÍĞÕ¹¿ª.{1...n}µÄÈ«ÅÅÁĞÓÉĞ¡µ½´óÓĞĞò£¬s[]ÎªµÚ¼¸¸öÊı  */
+///åº·æ‰˜å±•å¼€
+int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //içš„é˜¶ä¹˜ä¸ºfac[i]
+/*  åº·æ‰˜å±•å¼€.{1...n}çš„å…¨æ’åˆ—ç”±å°åˆ°å¤§æœ‰åºï¼Œs[]ä¸ºç¬¬å‡ ä¸ªæ•°  */
 int KT(int n, int s[])
 {
     int i, j, t, sum;
@@ -5539,9 +5539,9 @@ int KT(int n, int s[])
     return sum+1;
 }
 
-///Äæ¿µÍĞÕ¹¿ª
-int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //iµÄ½×³ËÎªfac[i]
-/*  ¿µÍĞÕ¹¿ªµÄÄæÔËËã. {1...n}µÄÈ«ÅÅÁĞ£¬ÖĞµÄµÚk¸öÊıÎªs[]  */
+///é€†åº·æ‰˜å±•å¼€
+int  fac[] = {1,1,2,6,24,120,720,5040,40320}; //içš„é˜¶ä¹˜ä¸ºfac[i]
+/*  åº·æ‰˜å±•å¼€çš„é€†è¿ç®—. {1...n}çš„å…¨æ’åˆ—ï¼Œä¸­çš„ç¬¬kä¸ªæ•°ä¸ºs[]  */
 void invKT(int n, int k, int s[])
 {
     int i, j, t, vst[8]={0};
@@ -5573,23 +5573,23 @@ void Init()
             num[i] += num[j]*num[i-j-1];
 }
 /*Application:
-1) ½«n + 2 ±ßĞÎÑØÏÒÇĞ¸î³Én ¸öÈı½ÇĞÎµÄ²»Í¬ÇĞ¸îÊı
-2) n + 1 ¸öÊıÏà³Ë, ¼ÓÂúÀ¨ºÅµÄ²»Í¬·½·¨Êı
-3) n ¸ö½ÚµãµÄ²»Í¬ĞÎ×´µÄ¶ş²æÊ÷Êı
-4) ´Ón * n ·½¸ñµÄ×óÉÏ½ÇÒÆ¶¯µ½ÓÒÏÂ½Ç²»ÉıÂ·¾¶ÊıµÄÒ»°ë
-5) »¹ÓĞ2n¸öÈËÂòÆ±µÄÎÊÌâ£¬ÓĞn¸öÈËÓĞ5ÔªÇ®£¬n¸öÈËÓĞ10ÔªÇ®£¬Æ±¼ÛÎª5Ôª
-   Çó¹²ÓĞ¶àÉÙÖÖÅÅ¶Ó·½Ê½¿ÉÒÔ±£Ö¤¶ÔÃ¿Ò»¸öÄÃÊ®ÔªµÄÈË¶¼ÓĞ5ÔªÇ®ÄÜÕÒ¸øËû
-6) n¸öÊıÒÀ´ÎÈëÕ»£¬Ã¿¸öÊıÖ»ÄÜÈëÕ»³öÕ»Ò»´Î£¬ÓĞ¶àÉÙÖÖ³öÕ»ĞòÁĞ
+1) å°†n + 2 è¾¹å½¢æ²¿å¼¦åˆ‡å‰²æˆn ä¸ªä¸‰è§’å½¢çš„ä¸åŒåˆ‡å‰²æ•°
+2) n + 1 ä¸ªæ•°ç›¸ä¹˜, åŠ æ»¡æ‹¬å·çš„ä¸åŒæ–¹æ³•æ•°
+3) n ä¸ªèŠ‚ç‚¹çš„ä¸åŒå½¢çŠ¶çš„äºŒå‰æ ‘æ•°
+4) ä»n * n æ–¹æ ¼çš„å·¦ä¸Šè§’ç§»åŠ¨åˆ°å³ä¸‹è§’ä¸å‡è·¯å¾„æ•°çš„ä¸€åŠ
+5) è¿˜æœ‰2nä¸ªäººä¹°ç¥¨çš„é—®é¢˜ï¼Œæœ‰nä¸ªäººæœ‰5å…ƒé’±ï¼Œnä¸ªäººæœ‰10å…ƒé’±ï¼Œç¥¨ä»·ä¸º5å…ƒ
+   æ±‚å…±æœ‰å¤šå°‘ç§æ’é˜Ÿæ–¹å¼å¯ä»¥ä¿è¯å¯¹æ¯ä¸€ä¸ªæ‹¿åå…ƒçš„äººéƒ½æœ‰5å…ƒé’±èƒ½æ‰¾ç»™ä»–
+6) nä¸ªæ•°ä¾æ¬¡å…¥æ ˆï¼Œæ¯ä¸ªæ•°åªèƒ½å…¥æ ˆå‡ºæ ˆä¸€æ¬¡ï¼Œæœ‰å¤šå°‘ç§å‡ºæ ˆåºåˆ—
 */
 
 ///Stirling Number(Second Kind)
-//1) S(n, m)±íÊ¾º¬n ¸öÔªËØµÄ¼¯ºÏ»®·ÖÎªm ¸ö¼¯ºÏµÄÇé¿öÊı
-//2) ÊÇn ¸öÓĞ±êºÅµÄÇò·Åµ½m ¸öÎŞ±êºÅµÄºĞ×ÓÖĞ, ÒªÇóÎŞÒ»Îª¿Õ, Æä²»Í¬µÄ·½°¸Êı
+//1) S(n, m)è¡¨ç¤ºå«n ä¸ªå…ƒç´ çš„é›†åˆåˆ’åˆ†ä¸ºm ä¸ªé›†åˆçš„æƒ…å†µæ•°
+//2) æ˜¯n ä¸ªæœ‰æ ‡å·çš„çƒæ”¾åˆ°m ä¸ªæ— æ ‡å·çš„ç›’å­ä¸­, è¦æ±‚æ— ä¸€ä¸ºç©º, å…¶ä¸åŒçš„æ–¹æ¡ˆæ•°
 a[n][m]=a[n-1][m-1]+m*a[n-1][m];
 
-///Èİ³âÔ­Àí
-//´óĞ¡Îªn1,n2,n3µÄÈı¸ö¼¯ºÏ£¬ÓĞ¶àÉÙÖÖ×éºÏ
-//¶ş¼¯ºÏÖĞµÚi¸ö²»ÄÜÓëa[i]¸öÒ»¼¯ºÏµÄÏî×éºÏ£¬²»ÄÜÓëb[i]¸öÈı¼¯ºÏµÄÏî×éºÏ
+///å®¹æ–¥åŸç†
+//å¤§å°ä¸ºn1,n2,n3çš„ä¸‰ä¸ªé›†åˆï¼Œæœ‰å¤šå°‘ç§ç»„åˆ
+//äºŒé›†åˆä¸­ç¬¬iä¸ªä¸èƒ½ä¸a[i]ä¸ªä¸€é›†åˆçš„é¡¹ç»„åˆï¼Œä¸èƒ½ä¸b[i]ä¸ªä¸‰é›†åˆçš„é¡¹ç»„åˆ
 int a[N],b[N];
 long long solve(int n2,int n2,int n3)
 {
@@ -5598,11 +5598,11 @@ long long solve(int n2,int n2,int n3)
     {
         sum-=a[i]*n3;
         sum-=b[i]*n1;
-        sum+=(a[i]*b[i]);//Èİ³âÔ­Àí
+        sum+=(a[i]*b[i]);//å®¹æ–¥åŸç†
     }
     return sum;
 }
-//ÇóĞ¡ÓÚnµÄÊıÖĞÄÜ¹»Õû³ıaÊı×éÖĞÄ³¸öÊıµÄÊıÓĞ¶àÉÙ¸ö¡£
+//æ±‚å°äºnçš„æ•°ä¸­èƒ½å¤Ÿæ•´é™¤aæ•°ç»„ä¸­æŸä¸ªæ•°çš„æ•°æœ‰å¤šå°‘ä¸ªã€‚
 void dfs(int now,int step,int flag)
 {
     sum+=(n/step)*flag;
@@ -5610,7 +5610,7 @@ void dfs(int now,int step,int flag)
         dfs(i,lcm(step,a[i]),-flag);
 }
 
-///¾ØÕó¿ìËÙÃİ
+///çŸ©é˜µå¿«é€Ÿå¹‚
 struct Matrix
 {
     long long ma[N][N];
@@ -5643,7 +5643,7 @@ Matrix matPow(Matrix m1, long long k, long long mod)
     return ans;
 }
 
-///¼ÆËã¼¸ºÎ£¡£¡£¡£¡£¡
+///è®¡ç®—å‡ ä½•ï¼ï¼ï¼ï¼ï¼
 const double eps = 1e-8;
 const double PI = acos(-1.0);
 int sgn(double x)
@@ -5666,31 +5666,31 @@ struct Point
     {
         return x==b.x && y==b.y;
     }
-    //Á½µã¼ä¾àÀë
+    //ä¸¤ç‚¹é—´è·ç¦»
     double operator &(const Point & b)const
     {
         return sqrt((*this-b)*(*this-b));
     }
-    //*²æ»ı
-    //1.ÅĞ¶ÏÏòÁ¿·½Ïò, >0 PÔÚQË³Ê±Õë·½Ïò ==0 Í¬Ïò»ò·´Ïò
-    //2.ÇóÃæ»ı, ²æ»ıµÄ³¤¶È |a¡Áb| ¿ÉÒÔ½âÊÍ³ÉÒÔaºÍbÎªÁÚ±ßµÄÆ½ĞĞËÄ±ßĞÎµÄÃæ»ı
+    //*å‰ç§¯
+    //1.åˆ¤æ–­å‘é‡æ–¹å‘, >0 Påœ¨Qé¡ºæ—¶é’ˆæ–¹å‘ ==0 åŒå‘æˆ–åå‘
+    //2.æ±‚é¢ç§¯, å‰ç§¯çš„é•¿åº¦ |aÃ—b| å¯ä»¥è§£é‡Šæˆä»¥aå’Œbä¸ºé‚»è¾¹çš„å¹³è¡Œå››è¾¹å½¢çš„é¢ç§¯
     double operator ^(const Point & b)const
     {
         return x*b.y - y*b.x;
     }
-    //*µã»ı
+    //*ç‚¹ç§¯
     //a*b = |a|*|b|*cos<a,b> (0<= (<a,b>) <= PI)
     double operator *(const Point & b)const
     {
         return x*b.x + y*b.y;
     }
-    //*±È½Ï(ÏÈxºóy) //¼«½ÇÅÅĞòĞèÒª×îµÍµÄÒ»µã(¸ÄÎªÏÈyºóx)
+    //*æ¯”è¾ƒ(å…ˆxåy) //æè§’æ’åºéœ€è¦æœ€ä½çš„ä¸€ç‚¹(æ”¹ä¸ºå…ˆyåx)
     bool operator < (const Point & b) const
     {
         if(x!=b.x)  return x<b.x;
         if(y!=b.y)  return y<b.y;
     }
-    //*ÈÆÔ­µãĞı×ª½Ç¶ÈB£¨»¡¶ÈÖµ£©ºóx,yµÄÖµ
+    //*ç»•åŸç‚¹æ—‹è½¬è§’åº¦Bï¼ˆå¼§åº¦å€¼ï¼‰åx,yçš„å€¼
     void transXY(double B)
     {
         double tx = x,ty = y;
@@ -5708,28 +5708,28 @@ struct Line
     {
         return s==b.s && e==b.e;
     }
-    //*»ñÈ¡LineµÄÏòÁ¿
+    //*è·å–Lineçš„å‘é‡
     Point getV()
     {
         return e-s;
     }
-    //Á½Ö±ÏßÏà½»Çó½»µã
-    //·µ»ØÎª£¨INF£¬INF£©±íÊ¾Ö±ÏßÖØºÏ, (-INF,-INF) ±íÊ¾Æ½ĞĞ, (x,y)ÊÇÏà½»µÄ½»µã
+    //ä¸¤ç›´çº¿ç›¸äº¤æ±‚äº¤ç‚¹
+    //è¿”å›ä¸ºï¼ˆINFï¼ŒINFï¼‰è¡¨ç¤ºç›´çº¿é‡åˆ, (-INF,-INF) è¡¨ç¤ºå¹³è¡Œ, (x,y)æ˜¯ç›¸äº¤çš„äº¤ç‚¹
     Point operator &(const Line & b)const
     {
         Point res = s;
         if (sgn((s-e)^(b.s-b.e)) == 0)
         {
             if (sgn((s-b.e)^(b.s-b.e)) == 0)
-                return Point(INF,INF);//ÖØºÏ
-            else return Point(-INF,-INF);//Æ½ĞĞ
+                return Point(INF,INF);//é‡åˆ
+            else return Point(-INF,-INF);//å¹³è¡Œ
         }
         double t = ((s-b.s)^(b.s-b.e))/((s-e)^(b.s-b.e));
         res.x += (e.x-s.x)*t;
         res.y += (e.y-s.y)*t;
         return res;
     }
-    //*ÅĞ¶ÏÏß¶ÎÏà½»
+    //*åˆ¤æ–­çº¿æ®µç›¸äº¤
     bool operator ^ (const Line & b) const
     {
         return
@@ -5740,15 +5740,15 @@ struct Line
             sgn((b.s-e)^(s-e))*sgn((b.e-e)^(s-e)) <= 0 &&
             sgn((s-b.e)^(b.s-b.e))*sgn((e-b.e)^(b.s-b.e)) <= 0;
     }
-    //*ÅĞ¶ÏÖ±Ïßl1ºÍÏß¶Îl2ÊÇ·ñÏà½»
+    //*åˆ¤æ–­ç›´çº¿l1å’Œçº¿æ®µl2æ˜¯å¦ç›¸äº¤
     bool operator % (const Line & b) const
     {
         return sgn((b.s-e)^(s-e))*sgn((b.e-e)^(s-e)) <= 0;
     }
 };
-///1.3 µãÓëÖ±Ïß¹ØÏµ
-//µãµ½Ö±Ïß¾àÀë
-//·µ»ØÎªresult,ÊÇµãµ½Ö±Ïß×î½üµÄµã
+///1.3 ç‚¹ä¸ç›´çº¿å…³ç³»
+//ç‚¹åˆ°ç›´çº¿è·ç¦»
+//è¿”å›ä¸ºresult,æ˜¯ç‚¹åˆ°ç›´çº¿æœ€è¿‘çš„ç‚¹
 Point PtoL(Point P,Line L)
 {
     Point result;
@@ -5758,8 +5758,8 @@ Point PtoL(Point P,Line L)
     return result;
 }
 
-//µãµ½Ïß¶ÎµÄ¾àÀë
-//·µ»Øµãµ½Ïß¶Î×î½üµÄµã
+//ç‚¹åˆ°çº¿æ®µçš„è·ç¦»
+//è¿”å›ç‚¹åˆ°çº¿æ®µæœ€è¿‘çš„ç‚¹
 Point PtoS(Point P,Line L)
 {
     Point res;
@@ -5777,7 +5777,7 @@ Point PtoS(Point P,Line L)
     return res;
 }
 
-//ÅĞ¶ÏµãÔÚÏß¶ÎÉÏ
+//åˆ¤æ–­ç‚¹åœ¨çº¿æ®µä¸Š
 bool onSeg(Point P,Line L)
 {
     return
@@ -5786,9 +5786,9 @@ bool onSeg(Point P,Line L)
         sgn((P.y - L.s.y) * (P.y - L.e.y)) <= 0;
 }
 
-///1.4 ¶à±ßĞÎ
-//¼ÆËã¶à±ßĞÎÃæ»ı
-//µãµÄ±àºÅ´Ó0~n-1
+///1.4 å¤šè¾¹å½¢
+//è®¡ç®—å¤šè¾¹å½¢é¢ç§¯
+//ç‚¹çš„ç¼–å·ä»0~n-1
 double Area(Point p[],int n)
 {
     double res = 0;
@@ -5797,13 +5797,13 @@ double Area(Point p[],int n)
     return fabs(res);
 }
 
-//ÅĞ¶ÏµãÔÚÍ¹¶à±ßĞÎÄÚ
-//µãĞÎ³ÉÒ»¸öÍ¹°ü£¬¶øÇÒ°´ÄæÊ±ÕëÅÅĞò£¨Èç¹ûÊÇË³Ê±Õë°ÑÀïÃæµÄ<0¸ÄÎª>0£©
-//µãµÄ±àºÅ:0~n-1
-//·µ»ØÖµ:
-//-1:µãÔÚÍ¹¶à±ßĞÎÍâ
-//0:µãÔÚÍ¹¶à±ßĞÎ±ß½çÉÏ
-//1:µãÔÚÍ¹¶à±ßĞÎÄÚ
+//åˆ¤æ–­ç‚¹åœ¨å‡¸å¤šè¾¹å½¢å†…
+//ç‚¹å½¢æˆä¸€ä¸ªå‡¸åŒ…ï¼Œè€Œä¸”æŒ‰é€†æ—¶é’ˆæ’åºï¼ˆå¦‚æœæ˜¯é¡ºæ—¶é’ˆæŠŠé‡Œé¢çš„<0æ”¹ä¸º>0ï¼‰
+//ç‚¹çš„ç¼–å·:0~n-1
+//è¿”å›å€¼:
+//-1:ç‚¹åœ¨å‡¸å¤šè¾¹å½¢å¤–
+//0:ç‚¹åœ¨å‡¸å¤šè¾¹å½¢è¾¹ç•Œä¸Š
+//1:ç‚¹åœ¨å‡¸å¤šè¾¹å½¢å†…
 int inConvexPoly(Point a,Point p[],int n)
 {
     for (int i = 0; i < n; i++)
@@ -5814,12 +5814,12 @@ int inConvexPoly(Point a,Point p[],int n)
     return 1;
 }
 
-//ÅĞ¶ÏµãÔÚÈÎÒâ¶à±ßĞÎÄÚ
-//ÉäÏß·¨£¬ poly[]µÄ¶¥µãÊıÒª´óÓÚµÈÓÚ3,µãµÄ±àºÅ0~n-1
-//·µ»ØÖµ
-//-1:µãÔÚÈÎÒâ¶à±ßĞÎÍâ
-//0:µãÔÚÈÎÒâ¶à±ßĞÎ±ß½çÉÏ
-//1:µãÔÚÈÎÒâ¶à±ßĞÎÄÚ
+//åˆ¤æ–­ç‚¹åœ¨ä»»æ„å¤šè¾¹å½¢å†…
+//å°„çº¿æ³•ï¼Œ poly[]çš„é¡¶ç‚¹æ•°è¦å¤§äºç­‰äº3,ç‚¹çš„ç¼–å·0~n-1
+//è¿”å›å€¼
+//-1:ç‚¹åœ¨ä»»æ„å¤šè¾¹å½¢å¤–
+//0:ç‚¹åœ¨ä»»æ„å¤šè¾¹å½¢è¾¹ç•Œä¸Š
+//1:ç‚¹åœ¨ä»»æ„å¤šè¾¹å½¢å†…
 int inPoly(Point p,Point poly[],int n)
 {
     int cnt;
@@ -5827,13 +5827,13 @@ int inPoly(Point p,Point poly[],int n)
     cnt = 0;
     ray.s = p;
     ray.e.y = p.y;
-    ray.e.x = -100000000000.0;//-INF,×¢ÒâÈ¡Öµ·ÀÖ¹Ô½½ç
+    ray.e.x = -100000000000.0;//-INF,æ³¨æ„å–å€¼é˜²æ­¢è¶Šç•Œ
     for (int i = 0; i < n; i++)
     {
         side.s = poly[i];
         side.e = poly[(i+1)%n];
         if (OnSeg(p,side))return 0;
-//Èç¹ûÆ½ĞĞÖáÔò²»¿¼ÂÇ
+//å¦‚æœå¹³è¡Œè½´åˆ™ä¸è€ƒè™‘
         if (sgn(side.s.y - side.e.y) == 0)
             continue;
 
@@ -5852,10 +5852,10 @@ int inPoly(Point p,Point poly[],int n)
     else return -1;
 }
 
-//*ÅĞ¶ÏÍ¹¶à±ßĞÎ
-//ÔÊĞí¹²Ïß±ß
-//µã¿ÉÒÔÊÇË³Ê±Õë¸ø³öÒ²¿ÉÒÔÊÇÄæÊ±Õë¸ø³ö
-//µãµÄ±àºÅ1~n-1
+//*åˆ¤æ–­å‡¸å¤šè¾¹å½¢
+//å…è®¸å…±çº¿è¾¹
+//ç‚¹å¯ä»¥æ˜¯é¡ºæ—¶é’ˆç»™å‡ºä¹Ÿå¯ä»¥æ˜¯é€†æ—¶é’ˆç»™å‡º
+//ç‚¹çš„ç¼–å·1~n-1
 bool isConvex(Point poly[],int n)
 {
     bool s[3]={0};
@@ -5867,15 +5867,15 @@ bool isConvex(Point poly[],int n)
     return true;
 }
 
-///2¡¢Í¹°ü
-//*ÇóÍ¹°ü£¬ GrahamËã·¨
-// µãµÄ±àºÅ0~n-1
-// ·µ»ØÍ¹°ü½á¹ûStack[0~top-1]ÎªÍ¹°üµÄ¡°±àºÅ¡±
+///2ã€å‡¸åŒ…
+//*æ±‚å‡¸åŒ…ï¼Œ Grahamç®—æ³•
+// ç‚¹çš„ç¼–å·0~n-1
+// è¿”å›å‡¸åŒ…ç»“æœStack[0~top-1]ä¸ºå‡¸åŒ…çš„â€œç¼–å·â€
 const int N = 10100;
 Point hull[N];
 int Stack[N],top;
-//Ïà¶ÔÓÚhull[pos]µÄ¼«½ÇÅÅĞò
-//*¼«½ÇÅÅĞòĞèÒª×îµÍµÄÒ»µã¿ªÊ¼
+//ç›¸å¯¹äºhull[pos]çš„æè§’æ’åº
+//*æè§’æ’åºéœ€è¦æœ€ä½çš„ä¸€ç‚¹å¼€å§‹
 bool _cmp(Point p1,Point p2)
 {
     const int pos = 0;
@@ -5890,7 +5890,7 @@ void Graham(int n)
     Point p0;
     int k = 0;
     p0 = hull[0];
-//ÕÒ×îÏÂ±ßµÄÒ»¸öµã
+//æ‰¾æœ€ä¸‹è¾¹çš„ä¸€ä¸ªç‚¹
     for(int i = 1; i < n; i++)
     {
         if ( (p0.y > hull[i].y) || (p0.y == hull[i].y && p0.x > hull[i].x) )
@@ -5925,7 +5925,7 @@ void Graham(int n)
     }
 }
 
-///3¡¢Æ½Ãæ×î½üµã¶Ô
+///3ã€å¹³é¢æœ€è¿‘ç‚¹å¯¹
 int n;
 Point p[N];
 Point tmpt[N];
@@ -5965,8 +5965,8 @@ double Closest_Pair()
     return Closest_Pair(0,n-1)/2;
 }
 
-///4¡¢Ğı×ª¿¨¿Ç
-//4.1 ÇóÁ½µã¼ä¾àÀëÆ½·½µÄ×î´óÖµ
+///4ã€æ—‹è½¬å¡å£³
+//4.1 æ±‚ä¸¤ç‚¹é—´è·ç¦»å¹³æ–¹çš„æœ€å¤§å€¼
 int dist2(Point a,Point b)
 {
     return (a-b)*(a-b);
@@ -5993,7 +5993,7 @@ int len(int n)
     return rotating_calipers(p,top);
 }
 
-//4.2 Ğı×ª¿¨¿Ç¼ÆËãÆ½Ãæµã¼¯×î´óÈı½ÇĞÎÃæ»ı
+//4.2 æ—‹è½¬å¡å£³è®¡ç®—å¹³é¢ç‚¹é›†æœ€å¤§ä¸‰è§’å½¢é¢ç§¯
 int rotating_calipers(Point p[],int n)
 {
     int ans = 0;
@@ -6021,8 +6021,8 @@ double maxArea(int n)
     return 0;
 }
 
-//4.3 Çó½âÁ½Í¹°ü×îĞ¡¾àÀë
-//µãp0µ½Ïß¶Îp1p2µÄ¾àÀë
+//4.3 æ±‚è§£ä¸¤å‡¸åŒ…æœ€å°è·ç¦»
+//ç‚¹p0åˆ°çº¿æ®µp1p2çš„è·ç¦»
 Point PtoS(Point P,Line L)
 {
     Point res;
@@ -6043,14 +6043,14 @@ double pointtoseg(Point p0,Point p1,Point p2)
 {
     return (p0&PtoS(p0,Line(p1,p2)));
 }
-//Æ½ĞĞÏß¶Îp0p1ºÍp2p3µÄ¾àÀë
+//å¹³è¡Œçº¿æ®µp0p1å’Œp2p3çš„è·ç¦»
 double dispallseg(Point p0,Point p1,Point p2,Point p3)
 {
     double ans1 = min(pointtoseg(p0,p2,p3),pointtoseg(p1,p2,p3));
     double ans2 = min(pointtoseg(p2,p0,p1),pointtoseg(p3,p0,p1));
     return min(ans1,ans2);
 }
-//µÃµ½ÏòÁ¿a1a2ºÍb1b2µÄÎ»ÖÃ¹ØÏµ
+//å¾—åˆ°å‘é‡a1a2å’Œb1b2çš„ä½ç½®å…³ç³»
 double Get_angle(Point a1,Point a2,Point b1,Point b2)
 {
     return (a2-a1)^(b1-b2);
@@ -6095,8 +6095,8 @@ double len(int n,int m)
     return solve(p,n,q,m);
 }
 
-///6¡¢Ô²
-//*¹ıÈıµãÇóÔ²ĞÄ×ø±ê£¨Èı½ÇĞÎÍâĞÄ£©
+///6ã€åœ†
+//*è¿‡ä¸‰ç‚¹æ±‚åœ†å¿ƒåæ ‡ï¼ˆä¸‰è§’å½¢å¤–å¿ƒï¼‰
 Point waixin(Point a,Point b,Point c)
 {
     double a1 = b.x - a.x, b1 = b.y - a.y, c1 = (a1*a1 + b1*b1)/2;
@@ -6105,7 +6105,7 @@ Point waixin(Point a,Point b,Point c)
     return Point(a.x + (c1*b2 - c2*b1)/d, a.y + (a1*c2 -a2*c1)/d);
 }
 
-//*Á½¸öÔ²µÄ¹«¹²²¿·ÖÃæ»ı
+//*ä¸¤ä¸ªåœ†çš„å…¬å…±éƒ¨åˆ†é¢ç§¯
 double Area_of_overlap(Point c1,double r1,Point c2,double r2)
 {
     double d = dist(c1,c2);
@@ -6121,26 +6121,26 @@ double Area_of_overlap(Point c1,double r1,Point c2,double r2)
     return r1*r1*t1 + r2*r2*t2 - d*r1*sin(t1);
 }
 
-///Èı½ÇĞÎ¹«Ê½
-//Èı½ÇĞÎÃæ»ı¹«Ê½
-p=(a+b+c)/2;//°ëÖÜ³¤
+///ä¸‰è§’å½¢å…¬å¼
+//ä¸‰è§’å½¢é¢ç§¯å…¬å¼
+p=(a+b+c)/2;//åŠå‘¨é•¿
 s=sqrt(p*(p-a)*(p-b)*(p-c));
 
-//Èı½ÇĞÎÄÚÇĞÔ²°ë¾¶¹«Ê½
+//ä¸‰è§’å½¢å†…åˆ‡åœ†åŠå¾„å…¬å¼
 r=(2*s)/(a+b+c);
 r=(sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c))/2)/(a+b+c);
 
-//Èı½ÇĞÎÍâ½ÓÔ²°ë¾¶¹«Ê½
+//ä¸‰è§’å½¢å¤–æ¥åœ†åŠå¾„å…¬å¼
 R=(a*b*c)/(4*s);
 R=(a*b*c/sqrt((a+b+c)*(b+c-a)*(a+c-b)*(a+b-c)));
 
-//Ô²ÄÚ½ÓËÄ±ßĞÎÃæ»ı¹«Ê½
+//åœ†å†…æ¥å››è¾¹å½¢é¢ç§¯å…¬å¼
 p=(a+b+c+d)/2;
 s=sqrt((p-a)*(p-b)*(p-c)*(p-d));
 
-//Èı·ÖÇó¼«Öµ
-//ÈıµÈ·ÖÇóÍ¼ĞÎº¯Êı¼«Öµ
-//Çó(x,y)µ½y=a*x^2+b*x+cµÄ×î¶Ì¾àÀë£»
+//ä¸‰åˆ†æ±‚æå€¼
+//ä¸‰ç­‰åˆ†æ±‚å›¾å½¢å‡½æ•°æå€¼
+//æ±‚(x,y)åˆ°y=a*x^2+b*x+cçš„æœ€çŸ­è·ç¦»ï¼›
 int a,b,c,x,y;
 double dis(double now)
 {
@@ -6164,15 +6164,15 @@ int main()
     return 0;
 }
 
-///²©ŞÄÂÛ£¡£¡£¡£¡£¡
-///°ÍÊ²²©ŞÄ£º
-//¶şÈËÂÖÁ÷È¡Ò»¶Ñn¸öÊ¯×ÓÒ»´ÎÈ¡1µ½m¸ö£¬ÎÊË­ÏÈÈ¡Íê
-//±Ø°ÜÌ¬£ºn=k(m+1)£¬Ã¿ÂÖ¹²È¡m+1¸ö¡£
+///åšå¼ˆè®ºï¼ï¼ï¼ï¼ï¼
+///å·´ä»€åšå¼ˆï¼š
+//äºŒäººè½®æµå–ä¸€å †nä¸ªçŸ³å­ä¸€æ¬¡å–1åˆ°mä¸ªï¼Œé—®è°å…ˆå–å®Œ
+//å¿…è´¥æ€ï¼šn=k(m+1)ï¼Œæ¯è½®å…±å–m+1ä¸ªã€‚
 if(n%(m+1)==0)printf("second win\n");
 
-///Íş×ô·ò²©ŞÄ£º
-//¶şÈËÂÖÁ÷È¡2¶Ña£¬b¸öÊ¯×Ó£¬Ò»´ÎÈ¡ÆäÖĞÒ»¶ÑÈÎÒâ¸ö»òÁ½¶ÑÏàÍ¬ÊıÁ¿¸ö£¬ÎÊË­ÏÈÈ¡Íê
-±Ø°ÜÌ¬£ºa=k(1+sqrt(5))/2,b=a+k;¼´aÎª»Æ½ğ·Ö¸îÊıÏòÏÂÈ¡Õû£¬
+///å¨ä½å¤«åšå¼ˆï¼š
+//äºŒäººè½®æµå–2å †aï¼Œbä¸ªçŸ³å­ï¼Œä¸€æ¬¡å–å…¶ä¸­ä¸€å †ä»»æ„ä¸ªæˆ–ä¸¤å †ç›¸åŒæ•°é‡ä¸ªï¼Œé—®è°å…ˆå–å®Œ
+å¿…è´¥æ€ï¼ša=k(1+sqrt(5))/2,b=a+k;å³aä¸ºé»„é‡‘åˆ†å‰²æ•°å‘ä¸‹å–æ•´ï¼Œ
 if(a>b)a^=b,b^=a,a^=b;
 double r=(sqrt(5.0)-1)/2;
 double R=1.0/r;
@@ -6180,9 +6180,9 @@ double j=(int)(r*a);
 if(a!=(int)(j*R))j+=1;
 printf(b!=(int)(j*R)+j?"first win\n":"second win\n");
 
-///nim²©ŞÄ£º
-//È¡n¶ÑÊ¯×Ó£¬Ò»´Î´ÓÒ»¶ÑÖĞÈ¡ÈÎÒâ¸ö
-//±Ø°ÜÌ¬£ºa1^a2^a3^an=0,¼´¸÷¶ÑÊıÁ¿°´Î»Òì»òÎª0£¬×ª»»Îª¶ş½øÖÆÖ®ºóÃ¿Î»ÏàÍ¬Êı¾ùÎªÅ¼Êı¡£
+///nimåšå¼ˆï¼š
+//å–nå †çŸ³å­ï¼Œä¸€æ¬¡ä»ä¸€å †ä¸­å–ä»»æ„ä¸ª
+//å¿…è´¥æ€ï¼ša1^a2^a3^an=0,å³å„å †æ•°é‡æŒ‰ä½å¼‚æˆ–ä¸º0ï¼Œè½¬æ¢ä¸ºäºŒè¿›åˆ¶ä¹‹åæ¯ä½ç›¸åŒæ•°å‡ä¸ºå¶æ•°ã€‚
 int a[N];
 int nim(int n)
 {
@@ -6192,7 +6192,7 @@ int nim(int n)
     if(cnt==0)return 0;
     return 1;
 }
-//µ±È¡×îºóÒ»¸öÕßÊäÊ±£º
+//å½“å–æœ€åä¸€ä¸ªè€…è¾“æ—¶ï¼š
 int a[N];
 int nim(int n)
 {
@@ -6206,19 +6206,19 @@ int nim(int n)
     return 0;
 }
 
-///k±¶¼õ·¨²©ŞÄ£º
-//¶şÈËÂÖÁ÷È¡Ò»¶ÑÊ¯×Ó£¬ºóÒ»ÈËÈ¡µÃÊıÁ¿²»µÃ³¬¶àÇ¨ÒÆÈËÊıÁ¿µÄk±¶£»
-//k=1Ê±£º
-//×ª»»Îª¶ş½øÖÆÈ¡×îºóÒ»¸ö1£¬ÔòºóÒ»ÈËÎŞ·¨È¡µ½ÏÂÒ»¸ö1£¬±ØÊ¤(ÈôÖ»ÓĞÒ»¸ö1±Ø°Ü)
-//k=2Ê±£º
-//¼´ì³²¨ÄÇÆõ²©ŞÄ£º±Ø°ÜÌ¬£ºì³²¨ÄÉÆõÊıÁĞ£»
-//½«·Çì³²¨ÄÉÆõÊıĞ´³ÉÁ½¸ö²»Á¬ĞøµÄì³²¨ÄÉÆõÊıÖ®ºÍ£¬È¡ºóÒ»¸öÊı¡£
-//Ãæ¶Ô·Çì³²¨ÄÉÆõÊıÊ±±ØÊ¤£»
-//k>2Ê±£º
-//ÀàËÆÓÚì³²¨ÄÉÆõ²©ŞÄ£¬¸ù¾İk×ÔĞĞ¹¹ÔìÊıÁĞ£¬
-//ÄæÏòË¼Î¬£¬a[0~i]ÊıÁĞ×î´ó¿ÉÒÔ¹¹ÔìÊıÎªb[i],Ôòa[i+1]=b[i]+1,b[i]=a[i]+b[t](a[t]*k<a[i]);
+///kå€å‡æ³•åšå¼ˆï¼š
+//äºŒäººè½®æµå–ä¸€å †çŸ³å­ï¼Œåä¸€äººå–å¾—æ•°é‡ä¸å¾—è¶…å¤šè¿ç§»äººæ•°é‡çš„kå€ï¼›
+//k=1æ—¶ï¼š
+//è½¬æ¢ä¸ºäºŒè¿›åˆ¶å–æœ€åä¸€ä¸ª1ï¼Œåˆ™åä¸€äººæ— æ³•å–åˆ°ä¸‹ä¸€ä¸ª1ï¼Œå¿…èƒœ(è‹¥åªæœ‰ä¸€ä¸ª1å¿…è´¥)
+//k=2æ—¶ï¼š
+//å³æ–æ³¢é‚£å¥‘åšå¼ˆï¼šå¿…è´¥æ€ï¼šæ–æ³¢çº³å¥‘æ•°åˆ—ï¼›
+//å°†éæ–æ³¢çº³å¥‘æ•°å†™æˆä¸¤ä¸ªä¸è¿ç»­çš„æ–æ³¢çº³å¥‘æ•°ä¹‹å’Œï¼Œå–åä¸€ä¸ªæ•°ã€‚
+//é¢å¯¹éæ–æ³¢çº³å¥‘æ•°æ—¶å¿…èƒœï¼›
+//k>2æ—¶ï¼š
+//ç±»ä¼¼äºæ–æ³¢çº³å¥‘åšå¼ˆï¼Œæ ¹æ®kè‡ªè¡Œæ„é€ æ•°åˆ—ï¼Œ
+//é€†å‘æ€ç»´ï¼Œa[0~i]æ•°åˆ—æœ€å¤§å¯ä»¥æ„é€ æ•°ä¸ºb[i],åˆ™a[i+1]=b[i]+1,b[i]=a[i]+b[t](a[t]*k<a[i]);
 a[0]=b[0]=1;
-while (a[i]<n)//¹¹ÔìÊıÁĞ
+while (a[i]<n)//æ„é€ æ•°åˆ—
 {
     i++;
     a[i]=b[i-1]+1;
@@ -6230,12 +6230,12 @@ while (a[i]<n)//¹¹ÔìÊıÁĞ
         b[i]=a[i];
 }
 
-///sgº¯Êı£º
-//sg(x)=mex(f(y)|yÊÇxµÄºó¼Ì£©£¬¼´È¡ºó¼Ì½Úµã¼¯ºÏÖĞÃ»ÓĞµÄ×îĞ¡·Ç¸ºÕûÊı
-//±Ø°ÜÌ¬£ºsg(x)=0
-//ÓÉsgº¯Êı¿ÉÇó×éºÏÓÎÏ·£¬¼´sum=sg(1)^sg(2)^sg(n),²Î¿¼nim²©ŞÄ¡£
-//f[]£º¿ÉÒÔÈ¡×ßµÄÊ¯×Ó¸öÊı
-//sg[]:0~nµÄSGº¯ÊıÖµ
+///sgå‡½æ•°ï¼š
+//sg(x)=mex(f(y)|yæ˜¯xçš„åç»§ï¼‰ï¼Œå³å–åç»§èŠ‚ç‚¹é›†åˆä¸­æ²¡æœ‰çš„æœ€å°éè´Ÿæ•´æ•°
+//å¿…è´¥æ€ï¼šsg(x)=0
+//ç”±sgå‡½æ•°å¯æ±‚ç»„åˆæ¸¸æˆï¼Œå³sum=sg(1)^sg(2)^sg(n),å‚è€ƒnimåšå¼ˆã€‚
+//f[]ï¼šå¯ä»¥å–èµ°çš„çŸ³å­ä¸ªæ•°
+//sg[]:0~nçš„SGå‡½æ•°å€¼
 //mex[]:mex{}
 int n,m,ans;
 int f[N],sg[M];
@@ -6277,8 +6277,8 @@ void solve()
     if(ans)return 1;
     else return 0;
 }
-//f[]£º¿ÉÒÔÈ¡×ßµÄÊ¯×Ó¸öÊı
-//sg[]:0~nµÄSGº¯ÊıÖµ
+//f[]ï¼šå¯ä»¥å–èµ°çš„çŸ³å­ä¸ªæ•°
+//sg[]:0~nçš„SGå‡½æ•°å€¼
 //mex[]:mex{}
 int n;
 int f[N],sg[M],mex[N];
@@ -6291,7 +6291,7 @@ void getSG(int n)
         memset(mex,0,sizeof(mex));
         for(j=0;f[j]<=i;j++)
             mex[sg[i-f[j]]]=1;
-        for(j=0;j<=n;j++)    //Çómes{}ÖĞÎ´³öÏÖµÄ×îĞ¡µÄ·Ç¸ºÕûÊı
+        for(j=0;j<=n;j++)    //æ±‚mes{}ä¸­æœªå‡ºç°çš„æœ€å°çš„éè´Ÿæ•´æ•°
         {
             if(mex[j]==0)
             {
@@ -6303,7 +6303,7 @@ void getSG(int n)
 }
 void solve()
 {
-    //¸ø³öf[]£»
+    //ç»™å‡ºf[]ï¼›
     scanf("%d",&n);
     for(int i=0;i<n;i++)
         scanf("%d",&f[i]);
